@@ -5,6 +5,7 @@ using UnityEngine;
 public class CharacterMove : MonoBehaviour
 {
   public float moveSpeed = 10.0f;
+  public float rotateSpeed = 10.0f;
   Rigidbody body;
 
   private float fHorizontal;
@@ -20,6 +21,7 @@ public class CharacterMove : MonoBehaviour
   {  
     SetPlayerMovement();
     MovePlayer();
+    RotatePlayer();
   }
 
   void SetPlayerMovement()
@@ -35,5 +37,13 @@ public class CharacterMove : MonoBehaviour
     playerMovement = playerMovement.normalized*moveSpeed*Time.fixedDeltaTime;
     body.MovePosition(transform.position + playerMovement);
   }
+
+  void RotatePlayer()
+  {
+    if (fHorizontal == 0 && fVertical == 0) {
+      return;
+    }
+
+    body.rotation = Quaternion.Slerp(body.rotation,Quaternion.LookRotation(playerMovement), rotateSpeed * Time.fixedDeltaTime);
   }
 }

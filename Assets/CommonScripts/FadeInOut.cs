@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class FadeInOut : MonoBehaviour
 {
+    private bool isFade = false;
 
     void OnTriggerStay(Collider coll)
     {
@@ -11,7 +12,7 @@ public class FadeInOut : MonoBehaviour
         {
             if(Input.GetKeyUp(KeyCode.Q))
             {
-                print("check");
+                isFade = true;
             }
         }
     }

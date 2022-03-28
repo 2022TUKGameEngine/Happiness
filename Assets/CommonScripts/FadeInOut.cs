@@ -8,7 +8,7 @@ public class FadeInOut : MonoBehaviour
     private bool isFade = false;
     private Image fadeImage;
    
-    public float animSpeed = 2f;
+    public float fAnimSpeed = 2f;
     private float fStart = 0f;
     private float fEnd = 1f;
     private float fTime = 0f; 

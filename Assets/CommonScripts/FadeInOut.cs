@@ -6,14 +6,15 @@ using UnityEngine.UI;
 public class FadeInOut : MonoBehaviour
 {
     private bool isFade = false;
+    private bool isFadeIn = true;
+    
     private Image fadeImage;
+    private Color fadeColor;
    
     public float fAnimSpeed = 2f;
     private float fStart = 0f;
     private float fEnd = 1f;
     private float fTime = 0f; 
-    private Color fadeColor;
-    private bool isFadeIn = true;
 
     private void Awake() 
     {
@@ -24,7 +25,7 @@ public class FadeInOut : MonoBehaviour
     {
         if(IsFadeStart(ref coll))
         {
-            StartCoroutine("FadeInPlay");
+            StartCoroutine("FadesPlay");
         }
     }
 
@@ -37,23 +38,28 @@ public class FadeInOut : MonoBehaviour
         return true;
     }
 
-    IEnumerator FadeInPlay()
+    IEnumerator FadesPlay()
+    {
+        yield return StartCoroutine("FadeInOutPlay");
+        isFadeIn = false;
+        StartCoroutine("FadeInOutPlay");
+    }
+
+    IEnumerator FadeInOutPlay()
     {
         InitFade();
 
         WaitForSeconds wait = new WaitForSeconds(0.01f);
         while (IsFadeEnd())
         {
-            UpdateFadeImageAlpha();
+            fTime += Time.deltaTime / fAnimSpeed;
+            fadeColor.a = Mathf.Lerp(fStart, fEnd, fTime);
+            fadeImage.color = fadeColor;
+
             yield return wait;
         }
 
-        isFadeIn = !isFadeIn;
         isFade = false;
-        if (!isFadeIn)
-        {
-            StartCoroutine("FadeInPlay");
-        }
     }
 
     bool IsFadeEnd()
@@ -69,12 +75,5 @@ public class FadeInOut : MonoBehaviour
         fStart = (isFadeIn) ? 0f : 1f;
         fEnd = (isFadeIn) ? 1f : 0f;
         fTime = 0f;
-    }
-
-    void UpdateFadeImageAlpha()
-    {
-        fTime += Time.deltaTime / fAnimSpeed;
-        fadeColor.a = Mathf.Lerp(fStart, fEnd, fTime);
-        fadeImage.color = fadeColor;
     }
 }

@@ -8,18 +8,17 @@ public class FadeInOut : MonoBehaviour
     private bool isFade = false;
     private bool isFadeIn = true;
     
-    private Image fadeImage;
+    public Image fadeImage;
     private Color fadeColor;
-   
     public float fAnimSpeed = 2f;
     private float fStart = 0f;
     private float fEnd = 1f;
     private float fTime = 0f; 
 
-    private void Awake() 
-    {
-        fadeImage = GameObject.FindGameObjectWithTag("FadeImage").GetComponent<Image>();
-    }
+    // private void Awake() 
+    // {
+    //     fadeImage = GameObject.FindGameObjectWithTag("FadeImage").GetComponent<Image>();
+    // }
 
     void OnTriggerStay(Collider coll)
     {
@@ -52,7 +51,7 @@ public class FadeInOut : MonoBehaviour
         WaitForSeconds wait = new WaitForSeconds(0.01f);
         while (IsFadeEnd())
         {
-            fTime += Time.deltaTime / fAnimSpeed;
+            fTime += fAnimSpeed / 1000f;
             fadeColor.a = Mathf.Lerp(fStart, fEnd, fTime);
             fadeImage.color = fadeColor;
 

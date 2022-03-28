@@ -6,6 +6,7 @@ public class TimeLapse : MonoBehaviour
 {
     public GameObject dirLight;
     public float TimeForOneDayByMinutes;
+    
     Vector3 angleFactor;
 
     // Start is called before the first frame update

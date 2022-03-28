@@ -12,6 +12,8 @@ public class FadeInOut : MonoBehaviour
     private float fStart = 0f;
     private float fEnd = 1f;
     private float fTime = 0f; 
+    private Color fadeColor;
+    private bool isFadeIn = true;
 
     private void Awake() 
     {
@@ -22,7 +24,7 @@ public class FadeInOut : MonoBehaviour
     {
         if(IsFadeStart(ref coll))
         {
-            StartCoroutine(FadeInPlay(true));
+            StartCoroutine("FadeInPlay");
         }
     }
 
@@ -35,33 +37,44 @@ public class FadeInOut : MonoBehaviour
         return true;
     }
 
-    IEnumerator FadeInPlay(bool isFadeIn)
+    IEnumerator FadeInPlay()
+    {
+        InitFade();
+
+        WaitForSeconds wait = new WaitForSeconds(0.01f);
+        while (IsFadeEnd())
+        {
+            UpdateFadeImageAlpha();
+            yield return wait;
+        }
+
+        isFadeIn = !isFadeIn;
+        isFade = false;
+        if (!isFadeIn)
+        {
+            StartCoroutine("FadeInPlay");
+        }
+    }
+
+    bool IsFadeEnd()
+    {
+        bool isColoring = (isFadeIn) ? fadeColor.a < fEnd : fadeColor.a > fEnd;
+        return (isColoring) ? true : false;
+    }
+
+    void InitFade()
     {
         isFade = true;
-
-        Color fadeColor = fadeImage.color;
+        fadeColor = fadeImage.color;
         fStart = (isFadeIn) ? 0f : 1f;
         fEnd = (isFadeIn) ? 1f : 0f;
         fTime = 0f;
-        fadeColor.a = Mathf.Lerp(fStart, fEnd, fTime);
-
-        while (IsFadeEnd(ref fadeColor,isFadeIn))
-        {
-            fTime += Time.deltaTime/fAnimSpeed;
-            fadeColor.a = Mathf.Lerp(fStart, fEnd, fTime);
-            fadeImage.color = fadeColor;
-
-            yield return null;
-        }
-
-        isFade = false;
-        if (isFadeIn){StartCoroutine(FadeInPlay(false));}
-
     }
 
-    bool IsFadeEnd(ref Color color, bool isFadeIn)
+    void UpdateFadeImageAlpha()
     {
-        bool isColoring = (isFadeIn) ? color.a < fEnd : color.a > fEnd;
-        return (isColoring) ? true : false;
+        fTime += Time.deltaTime / fAnimSpeed;
+        fadeColor.a = Mathf.Lerp(fStart, fEnd, fTime);
+        fadeImage.color = fadeColor;
     }
 }

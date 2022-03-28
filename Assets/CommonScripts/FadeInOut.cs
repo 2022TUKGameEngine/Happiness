@@ -22,7 +22,7 @@ public class FadeInOut : MonoBehaviour
     {
         if(IsFadeStart(ref coll))
         {
-            StartCoroutine("FadeInPlay");
+            StartCoroutine(FadeInPlay(true));
         }
     }
 
@@ -35,16 +35,19 @@ public class FadeInOut : MonoBehaviour
         return true;
     }
 
-    IEnumerator FadeInPlay()
+    IEnumerator FadeInPlay(bool isFadeIn)
     {
         isFade = true;
 
         Color fadeColor = fadeImage.color;
+        fStart = (isFadeIn) ? 0f : 1f;
+        fEnd = (isFadeIn) ? 1f : 0f;
         fTime = 0f;
+        fadeColor.a = Mathf.Lerp(fStart, fEnd, fTime);
 
-        while (fadeColor.a < fEnd)
+        while (IsFadeEnd(ref fadeColor,isFadeIn))
         {
-            fTime += Time.deltaTime/animSpeed;
+            fTime += Time.deltaTime/fAnimSpeed;
             fadeColor.a = Mathf.Lerp(fStart, fEnd, fTime);
             fadeImage.color = fadeColor;
 
@@ -52,5 +55,19 @@ public class FadeInOut : MonoBehaviour
         }
 
         isFade = false;
+        if (isFadeIn){StartCoroutine(FadeInPlay(false));}
+
+    }
+
+    bool IsFadeEnd(ref Color color, bool isFadeIn)
+    {
+        if (isFadeIn)
+        {
+            return (color.a < fEnd) ? true : false;
+        }
+        else
+        {
+            return (color.a > fEnd) ? true : false;
+        }
     }
 }

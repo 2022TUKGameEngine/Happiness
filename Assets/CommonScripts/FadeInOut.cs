@@ -7,6 +7,11 @@ public class FadeInOut : MonoBehaviour
 {
     private bool isFade = false;
     private Image fadeImage;
+   
+    public float animSpeed = 2f;
+    private float fStart = 0f;
+    private float fEnd = 1f;
+    private float fTime = 0f; 
 
     private void Awake() 
     {
@@ -17,7 +22,7 @@ public class FadeInOut : MonoBehaviour
     {
         if(IsFadeStart(ref coll))
         {
-            isFade = true;
+            StartCoroutine("FadeInPlay");
         }
     }
 
@@ -25,7 +30,27 @@ public class FadeInOut : MonoBehaviour
     {
         if (!coll.CompareTag("Player")) {return false;}
         if (!Input.GetKeyUp(KeyCode.Q)) {return false;}
+        if (isFade) {return false;}
     
         return true;
+    }
+
+    IEnumerator FadeInPlay()
+    {
+        isFade = true;
+
+        Color fadeColor = fadeImage.color;
+        fTime = 0f;
+
+        while (fadeColor.a < fEnd)
+        {
+            fTime += Time.deltaTime/animSpeed;
+            fadeColor.a = Mathf.Lerp(fStart, fEnd, fTime);
+            fadeImage.color = fadeColor;
+
+            yield return null;
+        }
+
+        isFade = false;
     }
 }

@@ -8,12 +8,17 @@ public class FadeInOut : MonoBehaviour
 
     void OnTriggerStay(Collider coll)
     {
-        if (coll.CompareTag("Player"))
+        if(IsFadeStart(ref coll))
         {
-            if(Input.GetKeyUp(KeyCode.Q))
-            {
-                isFade = true;
-            }
+            isFade = true;
         }
+    }
+
+    bool IsFadeStart(ref Collider coll)
+    {
+        if (!coll.CompareTag("Player")) {return false;}
+        if (!Input.GetKeyUp(KeyCode.Q)) {return false;}
+    
+        return true;
     }
 }

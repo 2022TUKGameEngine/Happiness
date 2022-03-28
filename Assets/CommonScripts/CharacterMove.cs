@@ -6,6 +6,7 @@ public class CharacterMove : MonoBehaviour
 {
   public float moveSpeed = 10.0f;
   public float rotateSpeed = 10.0f;
+  public Animator playerAnimController;
   Rigidbody body;
 
   private float fHorizontal;
@@ -14,10 +15,12 @@ public class CharacterMove : MonoBehaviour
 
   void Start()
   {
-     body = GetComponent<Rigidbody>();
+    body = GetComponent<Rigidbody>();
+     
+    playerAnimController.SetBool("isWalking", false);
   }
   
-  void FixedUpdate()
+  void Update()
   {  
     SetPlayerMovement();
     MovePlayer();
@@ -28,6 +31,17 @@ public class CharacterMove : MonoBehaviour
   {
     fHorizontal = Input.GetAxis("Horizontal");
     fVertical = Input.GetAxis("Vertical");
+
+    //Debug.Log(fHorizontal + fVertical);
+
+    if (Mathf.Abs(fHorizontal) + Mathf.Abs(fVertical) <= 0)
+    {
+      playerAnimController.SetBool("isWalking", false);
+    }
+    else
+    {
+      playerAnimController.SetBool("isWalking", true);
+    }
     
     playerMovement.Set(fHorizontal,0,fVertical);
   }
@@ -35,7 +49,7 @@ public class CharacterMove : MonoBehaviour
   void MovePlayer()
   {
     playerMovement = playerMovement.normalized*moveSpeed*Time.fixedDeltaTime;
-    body.MovePosition(transform.position + playerMovement);
+    body.MovePosition(body.position + playerMovement);
   }
 
   void RotatePlayer()

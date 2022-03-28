@@ -20,7 +20,7 @@ public class CharacterMove : MonoBehaviour
     playerAnimController.SetBool("isWalking", false);
   }
   
-  void Update()
+  void FixedUpdate()
   {  
     SetPlayerMovement();
     MovePlayer();

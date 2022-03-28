@@ -61,13 +61,7 @@ public class FadeInOut : MonoBehaviour
 
     bool IsFadeEnd(ref Color color, bool isFadeIn)
     {
-        if (isFadeIn)
-        {
-            return (color.a < fEnd) ? true : false;
-        }
-        else
-        {
-            return (color.a > fEnd) ? true : false;
-        }
+        bool isColoring = (isFadeIn) ? color.a < fEnd : color.a > fEnd;
+        return (isColoring) ? true : false;
     }
 }

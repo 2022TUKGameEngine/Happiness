@@ -211,8 +211,8 @@ GameObject:
   m_Component:
   - component: {fileID: 39509564}
   - component: {fileID: 39509566}
-  - component: {fileID: 39509565}
   - component: {fileID: 39509567}
+  - component: {fileID: 39509568}
   m_Layer: 0
   m_Name: SleepRange
   m_TagString: EventCollider
@@ -235,20 +235,6 @@ Transform:
   m_Father: {fileID: 636988854}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &39509565
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 39509563}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8763f52ff391b644385e7e6d1ff056b0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fadeImage: {fileID: 982050677}
-  fAnimSpeed: 4
 --- !u!135 &39509566
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -274,6 +260,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b458a0941021f240aadbafff3bc38d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  EventType: Sleep
+--- !u!114 &39509568
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 39509563}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8763f52ff391b644385e7e6d1ff056b0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fadeImage: {fileID: 0}
+  fAnimSpeed: 2
 --- !u!1 &69249519
 GameObject:
   m_ObjectHideFlags: 0
@@ -1355,7 +1356,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 636988849}
   m_LocalRotation: {x: -0.00006539325, y: -0.008351717, z: -0.0025334898, w: 0.9999619}
-  m_LocalPosition: {x: 165.31337, y: 21.34, z: 78.57}
+  m_LocalPosition: {x: 155.14, y: 21.34, z: 83.73}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2659,7 +2660,7 @@ MonoBehaviour:
   TimeForOneDayByMinutes: 12
   Hour: 0
   Minute: 0
-  DayOrNight: 0
+  isDay: 0
   CountDay: 0
   AngleX: 0
 --- !u!1 &1756357182

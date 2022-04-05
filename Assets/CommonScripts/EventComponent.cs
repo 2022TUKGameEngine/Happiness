@@ -4,15 +4,16 @@ using UnityEngine;
 
 public class EventComponent : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public string EventType;
+    
+    public void TriggerEvent()
     {
-        
-    }
+        Debug.Log(EventType);
+        switch(EventType)
+        {
+        case "Sleep":
+            break;
+        }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }

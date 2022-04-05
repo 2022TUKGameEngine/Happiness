@@ -15,6 +15,8 @@ public class CharacterManager : MonoBehaviour
     public float _money;
     public float _level;
 
+    private Collider detectedCollider = null;
+
     void OnStatus(InputValue value)
     {
         if(value.Get<float>() > 0f)
@@ -27,6 +29,17 @@ public class CharacterManager : MonoBehaviour
             else
             {
                 statusPackage.SetActive(true);
+            }
+        }
+    }
+
+    void OnInteraction(InputValue value)
+    {
+        if(value.Get<float>() > 0f)
+        {
+            if (detectedCollider != null)
+            {
+                detectedCollider.gameObject.GetComponent<EventComponent>().TriggerEvent();
             }
         }
     }
@@ -63,6 +76,25 @@ public class CharacterManager : MonoBehaviour
 
         Money.text = _money.ToString();
         Level.text = _level.ToString();
+    }
+
+    private void OnTriggerEnter(Collider collision)
+    {
+        if (collision.CompareTag("EventCollider"))
+        {
+            detectedCollider = collision;
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("EventCollider"))
+        {
+            if (detectedCollider == other)
+            {
+                detectedCollider = null;
+            }
+        }
     }
 
 }

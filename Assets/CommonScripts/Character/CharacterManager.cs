@@ -6,25 +6,28 @@ public class CharacterManager : MonoBehaviour
 {
     public Image HPBar;
 
-    public float PlayerMAXHP;
     public float PlayerHP;
+    public float Money;
+    public float Level;
 
     // Start is called before the first frame update
     void Start()
     {
-        PlayerMAXHP = 100;
-        PlayerHP = 100;
+        PlayerHP = 0;
     }
 
     // Update is called once per frame
     void Update()
     {
-        PlayerHP -= Time.deltaTime;
         UIReflect();
     }
 
     void UIReflect()
     {
-        HPBar.fillAmount = PlayerHP / PlayerMAXHP;
+        if (HPBar)
+        {
+            HPBar.fillAmount = PlayerHP / 50;
+            HPBar.color = new Color(HPBar.fillAmount, 0, 0);
+        }
     }
 }

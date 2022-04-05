@@ -23,20 +23,20 @@ public class DebugMode : MonoBehaviour
     {
         if (debugMode)
         {
-            if (Input.GetKeyDown(KeyCode.PageUp))
-            {
-                player.GetComponent<CharacterMove>().moveSpeed += 0.05f;
-            }
-            if (Input.GetKeyDown(KeyCode.PageDown))
-            {
-                player.GetComponent<CharacterMove>().moveSpeed -= 0.05f;
-            }
+            // if (Input.GetKeyDown(KeyCode.PageUp))
+            // {
+            //     player.GetComponent<CharacterMove>().moveSpeed += 0.05f;
+            // }
+            // if (Input.GetKeyDown(KeyCode.PageDown))
+            // {
+            //     player.GetComponent<CharacterMove>().moveSpeed -= 0.05f;
+            // }
             
-            //채소 심기
-            if (Input.GetKeyDown(KeyCode.Alpha1))
-            {
+            // //채소 심기
+            // if (Input.GetKeyDown(KeyCode.Alpha1))
+            // {
                 
-            }
+            // }
         }
     }
 }

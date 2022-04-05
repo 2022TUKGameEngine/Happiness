@@ -212,9 +212,10 @@ GameObject:
   - component: {fileID: 39509564}
   - component: {fileID: 39509566}
   - component: {fileID: 39509565}
+  - component: {fileID: 39509567}
   m_Layer: 0
   m_Name: SleepRange
-  m_TagString: Untagged
+  m_TagString: EventCollider
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -261,6 +262,18 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 2
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &39509567
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 39509563}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b458a0941021f240aadbafff3bc38d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &69249519
 GameObject:
   m_ObjectHideFlags: 0
@@ -1470,7 +1483,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &697925875
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2643,7 +2656,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dirLight: {fileID: 1705217674}
-  TimeForOneDayByMinutes: 6
+  TimeForOneDayByMinutes: 12
+  Hour: 0
+  Minute: 0
+  DayOrNight: 0
+  CountDay: 0
+  AngleX: 0
 --- !u!1 &1756357182
 GameObject:
   m_ObjectHideFlags: 0
@@ -2746,6 +2764,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TimeManager: {fileID: 1705217678}
   player: {fileID: 807676029}
+  time: {fileID: 707056714}
 --- !u!4 &1887567401
 Transform:
   m_ObjectHideFlags: 0

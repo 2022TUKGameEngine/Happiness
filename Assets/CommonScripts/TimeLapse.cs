@@ -14,8 +14,8 @@ public class TimeLapse : MonoBehaviour
     public int Hour;
     public int Minute;
 
-    public bool DayOrNight;
-    public float CountDay;
+    public bool isDay;
+    public int CountDay;
     public float AngleX;
 
 
@@ -23,7 +23,7 @@ public class TimeLapse : MonoBehaviour
     void Start()
     {
         angleFactor = new Vector3(0, -90, 0);
-        DayOrNight=true;
+        isDay=true;
         CountDay=1;
     }
 
@@ -32,18 +32,18 @@ public class TimeLapse : MonoBehaviour
     {
         AngleX=angleFactor.x;
 
-        //360.f / (angleFactor.x % 360) = ����ð�(-25%)
+        //360.f / (angleFactor.x % 360) = (-25%)
         angleFactor.x += Time.deltaTime * 360f / 60f / TimeForOneDayByMinutes;
         //angleFactor.y += Time.deltaTime * 360f / 60f / TimeForOneDayByMinutes;
         
         dirLight.transform.localEulerAngles=angleFactor;
 
         if(AngleX>180f)
-            DayOrNight=false;
+            isDay=false;
 
         if(AngleX>360f)
         {
-            DayOrNight=true;
+            isDay=true;
             CountDay+=1;
             angleFactor.x=0;
         }
@@ -51,7 +51,10 @@ public class TimeLapse : MonoBehaviour
         Hour=(int)(AngleX/15);
         Minute=(int)(AngleX%15*4);
 
+    }
 
-
+    public string getTimeContext()
+    {
+        return CountDay.ToString()+" days, "+Hour.ToString()+":"+Minute.ToString();
     }
 }

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class CharacterMove : MonoBehaviour
 {
@@ -9,8 +10,6 @@ public class CharacterMove : MonoBehaviour
   public Animator playerAnimController;
   Rigidbody body;
 
-  private float fHorizontal;
-  private float fVertical;
   private Vector3 playerMovement;
 
   void Start()
@@ -29,12 +28,9 @@ public class CharacterMove : MonoBehaviour
 
   void SetPlayerMovement()
   {
-    fHorizontal = Input.GetAxis("Horizontal");
-    fVertical = Input.GetAxis("Vertical");
-
     //Debug.Log(fHorizontal + fVertical);
 
-    if (Mathf.Abs(fHorizontal) + Mathf.Abs(fVertical) <= 0)
+    if (Mathf.Abs(playerMovement.x) + Mathf.Abs(playerMovement.z) <= 0)
     {
       playerAnimController.SetBool("isWalking", false);
     }
@@ -43,7 +39,12 @@ public class CharacterMove : MonoBehaviour
       playerAnimController.SetBool("isWalking", true);
     }
     
-    playerMovement.Set(fHorizontal,0,fVertical);
+  }
+
+  public void OnMove(InputValue value)
+  {
+    Vector2 input = value.Get<Vector2>();
+    playerMovement = new Vector3(input.x, 0, input.y);
   }
 
   void MovePlayer()
@@ -54,7 +55,7 @@ public class CharacterMove : MonoBehaviour
 
   void RotatePlayer()
   {
-    if (fHorizontal == 0 && fVertical == 0) {
+    if (playerMovement == Vector3.zero) {
       return;
     }
 

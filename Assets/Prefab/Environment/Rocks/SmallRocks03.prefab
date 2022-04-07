@@ -11,6 +11,10 @@ GameObject:
   - component: {fileID: 3150348513105586755}
   - component: {fileID: 2024248036692698598}
   - component: {fileID: 4319908156697825580}
+  - component: {fileID: 7771350718188747717}
+  - component: {fileID: 7252648618468274202}
+  - component: {fileID: 2948925702952858950}
+  - component: {fileID: 5862364472151105788}
   m_Layer: 0
   m_Name: SmallRocks03
   m_TagString: Untagged
@@ -25,8 +29,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2374410635517030649}
-  m_LocalRotation: {x: -6.123234e-17, y: 1, z: 6.123234e-17, w: -3.7493994e-33}
-  m_LocalPosition: {x: 129.76495, y: 19.80018, z: 70.64019}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 128.155, y: 19.901146, z: 71.89249}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -83,3 +87,64 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!136 &7771350718188747717
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2374410635517030649}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.12
+  m_Height: 0.09
+  m_Direction: 1
+  m_Center: {x: 0.1, y: 0.110318415, z: 0.015}
+--- !u!136 &7252648618468274202
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2374410635517030649}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.09
+  m_Height: 0.11
+  m_Direction: 1
+  m_Center: {x: 0.07, y: 0.03, z: -0.2}
+--- !u!136 &2948925702952858950
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2374410635517030649}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.16
+  m_Height: 0.3
+  m_Direction: 1
+  m_Center: {x: -0.13, y: 0.110318415, z: 0}
+--- !u!205 &5862364472151105788
+LODGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2374410635517030649}
+  serializedVersion: 2
+  m_LocalReferencePoint: {x: -0.027470604, y: 0.110318415, z: -0.0733071}
+  m_Size: 1.5
+  m_FadeMode: 0
+  m_AnimateCrossFading: 0
+  m_LastLODIsBillboard: 0
+  m_LODs:
+  - screenRelativeHeight: 0.1
+    fadeTransitionWidth: 0
+    renderers:
+    - renderer: {fileID: 4319908156697825580}
+  m_Enabled: 1

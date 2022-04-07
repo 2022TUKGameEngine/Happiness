@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 413218}
   - component: {fileID: 3367454}
   - component: {fileID: 2393902}
+  - component: {fileID: 5427576844395279730}
+  - component: {fileID: 1544431934934532856}
   m_Layer: 0
   m_Name: Poplar_Tree
   m_TagString: Untagged
@@ -26,7 +28,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 137650}
   m_LocalRotation: {x: 0.000000021855694, y: 0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 119.253204, y: 19.742733, z: 70.2271}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -83,3 +85,36 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!136 &5427576844395279730
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 137650}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.38
+  m_Height: 5.8196263
+  m_Direction: 1
+  m_Center: {x: 0.037836492, y: 2.9017284, z: -0.0047776103}
+--- !u!205 &1544431934934532856
+LODGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 137650}
+  serializedVersion: 2
+  m_LocalReferencePoint: {x: 0.03783655, y: 2.9017284, z: -0.00477767}
+  m_Size: 1.8
+  m_FadeMode: 0
+  m_AnimateCrossFading: 0
+  m_LastLODIsBillboard: 0
+  m_LODs:
+  - screenRelativeHeight: 0.1
+    fadeTransitionWidth: 0
+    renderers:
+    - renderer: {fileID: 2393902}
+  m_Enabled: 1

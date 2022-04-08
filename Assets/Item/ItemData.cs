@@ -4,30 +4,41 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
+public enum ITEM_TYPE
+{
+    NONE = 0,
+    Fish,
+    Fish_Normal,
+    Fish_Rare,
+    Fish_SuperRare,
+    Fish_Legend,
+}
 
 public class ItemData : MonoBehaviour
 {
-    public ITEM_TYPE itemType { get { return (ITEM_TYPE)PlayerPrefs.GetInt("InventoryType"+inventoryIndex, (int)ITEM_TYPE.NONE); }
+    [SerializeField]
+    private ITEM_TYPE itemType { get { return (ITEM_TYPE)PlayerPrefs.GetInt("InventoryType"+inventoryIndex, 0); }
                                  set { PlayerPrefs.SetInt("InventoryType"+inventoryIndex, (int)value); } }
 
-    public int itemGrade { get { return PlayerPrefs.GetInt("InventoryGrade"+inventoryIndex, 0); } 
+    [SerializeField]
+    private int itemGrade { get { return PlayerPrefs.GetInt("InventoryGrade"+inventoryIndex, 0); } 
                             set { PlayerPrefs.SetInt("InventoryGrade"+inventoryIndex, value); } }
 
     public ItemSpriteData itemSprite;
     public Sprite ItemSprite { get { return itemSprite.ItemSprites[(int)itemType+itemGrade]; } }
 
-    public string itemName { get { return itemSprite.ItemNames[(int)itemType+itemGrade]; } }
+    [SerializeField]
+    private string itemName { get { return itemSprite.ItemNames[(int)itemType+itemGrade]; } }
 
+    [SerializeField]
+    private int itemPrice { get { return itemSprite.ItemPrices[(int)itemType+itemGrade]; } }
 
-    public int itemPrice { get { return itemSprite.ItemPrices[(int)itemType+itemGrade]; } }
-
-
-    public bool isAlchemicable { get { return itemSprite.IsAlchemicables[(int)itemType+itemGrade]; } }
+    [SerializeField]
+    private bool isAlchemicable { get { return itemSprite.IsAlchemicables[(int)itemType+itemGrade]; } }
 
     Image selfImage;
 
-    public int numbers { get { return PlayerPrefs.GetInt("InventoryNumbers"+inventoryIndex, 0); } 
-                            set { PlayerPrefs.SetInt("InventoryNumbers"+inventoryIndex, value); } }
+    public int numbers;
     TMP_Text txt_numbers;
 
     public int inventoryIndex;
@@ -38,27 +49,18 @@ public class ItemData : MonoBehaviour
         selfImage.sprite = ItemSprite;
         //print((int)itemType+itemGrade);
         txt_numbers = GetComponentInChildren<TMP_Text>();
-
-        if (numbers>0)
-            txt_numbers.text = numbers.ToString();
-        else
-            txt_numbers.text = "";
-
+        txt_numbers.text = "";
     }
 
     public void SetItem(ITEM_TYPE type, int grade, int num=-1)
     {
         itemType = type;
         itemGrade = grade;
-        selfImage.sprite = ItemSprite;
         if(num != -1)
         {
             numbers = num;
         }
-        if (numbers>0)
-            txt_numbers.text = numbers.ToString();
-        else
-            txt_numbers.text = "";
+        txt_numbers.text = numbers.ToString();
     }
 
     public void changeNumber(int plus)
@@ -70,7 +72,6 @@ public class ItemData : MonoBehaviour
             itemGrade = 0;
             numbers = 0;
             txt_numbers.text = "";
-            selfImage.sprite = ItemSprite;
         }
         else
         {

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 53305747436223079}
   - component: {fileID: 53305747436223077}
   - component: {fileID: 53305747436223076}
-  - component: {fileID: 7087076807303322160}
+  - component: {fileID: 3458077623722753611}
   m_Layer: 5
   m_Name: ItemObject
   m_TagString: Untagged
@@ -78,7 +78,7 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &7087076807303322160
+--- !u!114 &3458077623722753611
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -87,16 +87,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 53305747436223078}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d7a2ac50e10e55147b0f41c5479be447, type: 3}
+  m_Script: {fileID: 11500000, guid: 298617df84309c8489746bd256f247df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemType: 0
-  itemGrade: 0
   itemSprite: {fileID: 11400000, guid: 41d634a1997c97e46b8888a40a26fa76, type: 2}
-  itemName: "\uC5C6\uC74C"
-  itemPrice: 0
-  isAlchemicable: 0
-  numbers: 0
+  inventoryIndex: 0
 --- !u!1 &2365259961378281073
 GameObject:
   m_ObjectHideFlags: 0

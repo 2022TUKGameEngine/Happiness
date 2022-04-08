@@ -1,24 +1,33 @@
 using UnityEngine;
-using System.Collections.Generic;
+
+public enum ITEM_TYPE
+{
+    NONE = 0,
+    Fish,
+    Fish_Normal,
+    Fish_Rare,
+    Fish_SuperRare,
+    Fish_Legend,
+}
 
 [CreateAssetMenu(fileName = "Item Sprite Data", menuName = "Scriptable Object/Item Sprite Data", order = int.MaxValue)]
 public class ItemSpriteData : ScriptableObject
 {
     [SerializeField]
-    private List<Sprite> itemSprites;
-    public List<Sprite> ItemSprites { get { return itemSprites; } }
+    private Sprite[] itemSprites;
+    public Sprite[] ItemSprites { get { return itemSprites; } }
 
     [SerializeField]
-    private List<string> itemNames;
-    public List<string> ItemNames { get { return itemNames; } }
+    private string[] itemNames;
+    public string[] ItemNames { get { return itemNames; } }
 
 
     [SerializeField]
-    private List<int> itemPrices;
-    public List<int> ItemPrices { get { return itemPrices; } }
+    private int[] itemPrices;
+    public int[] ItemPrices { get { return itemPrices; } }
 
     [SerializeField]
-    private List<bool> isAlchemicables;
-    public List<bool> IsAlchemicables { get { return isAlchemicables; } }
+    private bool[] isAlchemicables;
+    public bool[] IsAlchemicables { get { return isAlchemicables; } }
 
 }

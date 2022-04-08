@@ -1,14 +1,6 @@
 using UnityEngine;
 
-public enum ITEM_TYPE
-{
-    NONE = 0,
-    Fish,
-    Fish_Normal,
-    Fish_Rare,
-    Fish_SuperRare,
-    Fish_Legend,
-}
+
 
 [CreateAssetMenu(fileName = "Item Numeric Data", menuName = "Scriptable Object/Item Numeric Data", order = int.MaxValue)]
 public class ItemNumericData : ScriptableObject
@@ -16,6 +8,10 @@ public class ItemNumericData : ScriptableObject
     [SerializeField]
     private ITEM_TYPE itemType;
     public ITEM_TYPE ItemType { get { return itemType; } }
+
+    [SerializeField]
+    private int itemGrade;
+    public int ItemGrade { get { return itemGrade; } }
     
     public ItemSpriteData itemSprite;
     public Sprite ItemSprite { get { return itemSprite.ItemSprites[(int)ItemType]; } }

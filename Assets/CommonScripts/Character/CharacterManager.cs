@@ -19,6 +19,8 @@ public class CharacterManager : MonoBehaviour
 
     private Collider detectedCollider = null;
 
+    public int debug_grade;
+
     void OnStatus(InputValue value)
     {
         if(value.Get<float>() > 0f)
@@ -59,21 +61,6 @@ public class CharacterManager : MonoBehaviour
         }
     }
 
-//     public void OnStatus(InputAction.CallbackContext context)
-//  {
-     
-//      if (context.started)
-//      {
-//          Debug.Log("Tab2");
-//          //button is press
-//      }
-//      else if (context.canceled)
-//      {
-//          Debug.Log("Tab3");
-//          //button is released
-//      }
-//  }
-
     // Start is called before the first frame update
     void Start()
     {
@@ -109,6 +96,18 @@ public class CharacterManager : MonoBehaviour
             if (detectedCollider == other)
             {
                 detectedCollider = null;
+            }
+        }
+    }
+
+    
+    void OnDebugStage(InputValue value)
+    {
+        if(value.Get<float>() > 0f)
+        {
+            if(DebugMode.instance.debugMode)
+            {
+                InventorySystem.instance.GetItem(ITEM_TYPE.Fish,debug_grade,1);
             }
         }
     }

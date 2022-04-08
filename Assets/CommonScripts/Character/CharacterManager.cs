@@ -7,6 +7,8 @@ using TMPro;
 public class CharacterManager : MonoBehaviour
 {
     public GameObject statusPackage;
+    public GameObject inventory;
+    private bool inventoryOpened;
     public Image HPBar;
     public TMP_Text Money;
     public TMP_Text Level;
@@ -43,6 +45,19 @@ public class CharacterManager : MonoBehaviour
             }
         }
     }
+    void OnInventory(InputValue value)
+    {
+        if(inventoryOpened)
+        {
+            inventory.GetComponentInChildren<Animator>().SetTrigger("CloseInventory");
+            inventoryOpened = false;
+        }
+        else
+        {
+            inventory.GetComponentInChildren<Animator>().SetTrigger("OpenInventory");
+            inventoryOpened = true;
+        }
+    }
 
 //     public void OnStatus(InputAction.CallbackContext context)
 //  {
@@ -63,6 +78,7 @@ public class CharacterManager : MonoBehaviour
     void Start()
     {
         PlayerHP = 50;
+        inventoryOpened = false;
     }
 
     // Update is called once per frame

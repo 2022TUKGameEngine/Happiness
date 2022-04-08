@@ -32,6 +32,8 @@ public class ItemData : MonoBehaviour
 
     public int inventoryIndex;
 
+    public GameObject SellingPriceImage;
+
     void Start()
     {
         selfImage = GetComponent<Image>();
@@ -78,7 +80,7 @@ public class ItemData : MonoBehaviour
         }
     }
 
-    public void LeftClick()
+    public void SellItem()
     {
         //print(itemType);
         if (itemType == ITEM_TYPE.NONE)
@@ -87,17 +89,31 @@ public class ItemData : MonoBehaviour
         {
             if (numbers > 0)
             {
-                changeNumber(-1);
                 CharacterManager.data.EarnMoney(itemPrice);
+                changeNumber(-1);
             }
         }
         else
         {
             if (numbers > 0)
             {
-                changeNumber(-1);
                 CharacterManager.data.EarnMoney(itemPrice);
+                changeNumber(-1);
             }
         }
+    }
+
+    public void On_MouseEnter()
+    {
+        //print("enter");
+        if (itemType == ITEM_TYPE.NONE)
+            return;
+        SellingPriceImage.GetComponentInChildren<TMP_Text>().text = itemPrice.ToString();
+        SellingPriceImage.SetActive(true);
+    }
+
+    public void On_MouseExit()
+    {
+        SellingPriceImage.SetActive(false);
     }
 }

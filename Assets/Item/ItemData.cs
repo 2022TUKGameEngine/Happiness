@@ -77,4 +77,27 @@ public class ItemData : MonoBehaviour
             txt_numbers.text = numbers.ToString();
         }
     }
+
+    public void LeftClick()
+    {
+        //print(itemType);
+        if (itemType == ITEM_TYPE.NONE)
+            return;
+        if (isAlchemicable)
+        {
+            if (numbers > 0)
+            {
+                changeNumber(-1);
+                CharacterManager.data.EarnMoney(itemPrice);
+            }
+        }
+        else
+        {
+            if (numbers > 0)
+            {
+                changeNumber(-1);
+                CharacterManager.data.EarnMoney(itemPrice);
+            }
+        }
+    }
 }

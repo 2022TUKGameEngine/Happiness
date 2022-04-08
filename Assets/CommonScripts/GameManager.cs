@@ -32,11 +32,11 @@ public class GameManager : MonoBehaviour
             nowHour = TimeManager.Hour;
             if (TimeManager.isDay)
             {
-                player.PlayerHP+=1;
+                player.EarnHP(1);
             }
             else
             {
-                player.PlayerHP+=2;
+                player.EarnHP(2);
             }
             
         }

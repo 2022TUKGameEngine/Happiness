@@ -6,6 +6,7 @@ using UnityEngine.UI;
 using TMPro;
 public class CharacterManager : MonoBehaviour
 {
+    static public CharacterManager data;
     public GameObject statusPackage;
     public GameObject inventory;
     private bool inventoryOpened;
@@ -61,14 +62,17 @@ public class CharacterManager : MonoBehaviour
         }
     }
 
-    // Start is called before the first frame update
+    void Awake()
+    {
+        data = this;
+    }
+
     void Start()
     {
         PlayerHP = 50;
         inventoryOpened = false;
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (HPBar)
@@ -110,6 +114,25 @@ public class CharacterManager : MonoBehaviour
                 InventorySystem.instance.GetItem(ITEM_TYPE.Fish,debug_grade,1);
             }
         }
+    }
+
+    public void EarnHP(int hp)
+    {
+        PlayerHP += hp;
+        if(PlayerHP > 200)
+        {
+            PlayerHP = 200;
+        }
+    }
+
+    public void EarnMoney(int money)
+    {
+        _money += money;
+    }
+
+    public void EarnLevel(int level)
+    {
+        _level += level;
     }
 
 }

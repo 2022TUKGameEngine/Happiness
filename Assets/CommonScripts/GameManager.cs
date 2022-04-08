@@ -29,6 +29,7 @@ public class GameManager : MonoBehaviour
         }
         if (TimeManager.Hour != nowHour)
         {
+            nowHour = TimeManager.Hour;
             if (TimeManager.isDay)
             {
                 player.PlayerHP+=1;

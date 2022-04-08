@@ -9,11 +9,22 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0e79f69e435e37f48a7e39139e45d479, type: 3}
+  m_Script: {fileID: 11500000, guid: 86fd61c97eaa9214cb4c17db866bafb5, type: 3}
   m_Name: Item Sprite Data
   m_EditorClassIdentifier: 
   itemSprites:
+  - {fileID: 0}
+  - {fileID: 21300000, guid: abfc946f069d6444a94d10ac6dbcc876, type: 3}
   - {fileID: 21300000, guid: abfc946f069d6444a94d10ac6dbcc876, type: 3}
   - {fileID: 21300000, guid: b8787a1dfd939174ea92da289a86c14b, type: 3}
   - {fileID: 21300000, guid: 00903075152547741923303a588e87a4, type: 3}
   - {fileID: 21300000, guid: 05195427fe6cdba4293721ea1a9c705e, type: 3}
+  itemNames:
+  - 
+  - "\uBB3C\uACE0\uAE30"
+  - "\uC77C\uBC18 \uBB3C\uACE0\uAE30"
+  - "\uC88B\uC740 \uBB3C\uACE0\uAE30"
+  - "\uADC0\uD55C \uBB3C\uACE0\uAE30"
+  - "\uC804\uC124 \uBB3C\uACE0\uAE30"
+  itemPrices: 0000000032000000320000006400000096000000c8000000
+  isAlchemicables: 000101010101

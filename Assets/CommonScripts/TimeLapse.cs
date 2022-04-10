@@ -14,7 +14,16 @@ public class TimeLapse : MonoBehaviour
     public int Hour;
     public int Minute;
 
-    public bool isDay;
+    public  enum Cycle
+    {
+        Morning,
+        Afternoon,
+        Evening,
+        Night
+    };
+
+    public Cycle DayCycle;
+
     public int CountDay;
     public float AngleX;
 
@@ -23,7 +32,7 @@ public class TimeLapse : MonoBehaviour
     void Start()
     {
         angleFactor = new Vector3(0, -90, 0);
-        isDay=true;
+        DayCycle=Cycle.Morning;
         CountDay=1;
     }
 
@@ -38,12 +47,24 @@ public class TimeLapse : MonoBehaviour
         
         dirLight.transform.localEulerAngles=angleFactor;
 
-        if(AngleX>180f)
-            isDay=false;
+        if(AngleX>=0f && AngleX<90f)
+            DayCycle=Cycle.Morning;
 
-        if(AngleX>360f)
+        else if(AngleX>=90f && AngleX<180f)
         {
-            isDay=true;
+            DayCycle=Cycle.Afternoon;
+        }
+        else if(AngleX>=180f && AngleX<270f)
+        {
+            DayCycle=Cycle.Evening;
+        }
+        else if(AngleX>=270f&&AngleX<360f)
+        {
+            DayCycle=Cycle.Night;
+        }
+
+        if(angleFactor.x>360f)
+        {
             CountDay+=1;
             angleFactor.x=0;
         }
@@ -56,5 +77,10 @@ public class TimeLapse : MonoBehaviour
     public string getTimeContext()
     {
         return CountDay.ToString()+" days, "+Hour.ToString()+":"+Minute.ToString();
+    }
+
+    public int getHour()
+    {
+        return Hour;
     }
 }

@@ -2497,9 +2497,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   EventType: Fishing
-  Time: {fileID: 0}
+  timeLapse: {fileID: 0}
   GameStatus: {fileID: 0}
-  inventory: {fileID: 0}
+  minFish: 3
+  maxFish: 7
+  inventory: {fileID: 1411424443}
 --- !u!4 &664862479
 Transform:
   m_ObjectHideFlags: 0

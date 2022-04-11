@@ -54,12 +54,7 @@ public class EventComponent : MonoBehaviour
     {
         if (_isFishing)
         {
-            _fishTimer += Time.deltaTime;
-            if (_fishTimer > _waitingTime)
-            {
-                inventory.GetItem(ITEM_TYPE.Fish,1);
-                InitFishTimer();
-            }
+            doFishing();
         }    
     }
 
@@ -67,5 +62,15 @@ public class EventComponent : MonoBehaviour
     {
         _waitingTime = Random.Range(minFish, maxFish);
         _fishTimer = 0.0f;
+    }
+
+    private void doFishing()
+    {
+        _fishTimer += Time.deltaTime;
+        if (_fishTimer > _waitingTime)
+        {
+            inventory.GetItem(ITEM_TYPE.Fish, 1);
+            InitFishTimer();
+        }
     }
 }

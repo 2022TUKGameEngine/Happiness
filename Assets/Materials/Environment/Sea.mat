@@ -95,14 +95,14 @@ Material:
     m_Floats:
     - Vector1_2E11270D: 1
     - Vector1_39D35881: 1
-    - Vector1_3B48FD24: -0.03
+    - Vector1_3B48FD24: -0.15
     - Vector1_5AE4170F: 0.01
     - Vector1_80CAEB23: 0.01
     - Vector1_8E5091B8: 0.5
-    - Vector1_981A3A67: 1
+    - Vector1_981A3A67: 0.5
     - Vector1_C1C7D298: 0.118
     - Vector1_ECB3F2B8: 0.5
-    - _Alpha: 0.6
+    - _Alpha: 0.9
     - _AlphaClip: 0
     - _Blend: 0
     - _BumpScale: 1

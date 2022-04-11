@@ -5,9 +5,8 @@ using UnityEngine;
 public class EventComponent : MonoBehaviour
 {
     public string EventType;
-    public TimeLapse Time;
+    public TimeLapse timeLapse;
     public GameManager GameStatus;
-    
     [SerializeField]
     private InventorySystem inventory;
 
@@ -17,14 +16,14 @@ public class EventComponent : MonoBehaviour
         switch(EventType)
         {
         case "Sleep":
-            if(Time.AngleX<180f && Time.AngleX>0f)
+            if(timeLapse.AngleX<180f && timeLapse.AngleX>0f)
             {
-                Time.AngleX=180f;
+                timeLapse.AngleX=180f;
             }
             else
             {
-                Time.AngleX=0f;
-                Time.CountDay+=1;
+                timeLapse.AngleX=0f;
+                timeLapse.CountDay+=1;
 
             }
 

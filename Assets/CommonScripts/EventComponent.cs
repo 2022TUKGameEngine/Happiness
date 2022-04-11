@@ -26,6 +26,9 @@ public class EventComponent : MonoBehaviour
             }
 
             break;
+
+        case "Fishing":
+            break; 
         }
 
     }

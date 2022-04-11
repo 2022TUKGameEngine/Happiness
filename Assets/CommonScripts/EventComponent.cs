@@ -8,6 +8,9 @@ public class EventComponent : MonoBehaviour
     public TimeLapse timeLapse;
     public GameManager GameStatus;
     private bool _isFishing = false;
+    private float _waitingTime = 0.0f;
+    private float _fishTimer = 0.0f;
+
     [SerializeField]
     private InventorySystem inventory;
 
@@ -37,6 +40,8 @@ public class EventComponent : MonoBehaviour
             {
                 return;
             }
+
+            InitFishTimer();
             break; 
         }
     }
@@ -45,8 +50,18 @@ public class EventComponent : MonoBehaviour
     {
         if (_isFishing)
         {
+            _fishTimer += Time.deltaTime;
+            if (_fishTimer > _waitingTime)
+            {
+                inventory.GetItem(ITEM_TYPE.Fish,1);
+                InitFishTimer();
+            }
         }    
     }
 
+    private void InitFishTimer()
+    {
+        _waitingTime = Random.Range(1.5f, 2.5f);
+        _fishTimer = 0.0f;
     }
 }

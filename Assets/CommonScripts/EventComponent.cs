@@ -7,9 +7,13 @@ public class EventComponent : MonoBehaviour
     public string EventType;
     public TimeLapse timeLapse;
     public GameManager GameStatus;
+    
     private bool _isFishing = false;
     private float _waitingTime = 0.0f;
     private float _fishTimer = 0.0f;
+
+    public float minFish = 3.0f;
+    public float maxFish = 7.0f;
 
     [SerializeField]
     private InventorySystem inventory;
@@ -61,7 +65,7 @@ public class EventComponent : MonoBehaviour
 
     private void InitFishTimer()
     {
-        _waitingTime = Random.Range(1.5f, 2.5f);
+        _waitingTime = Random.Range(minFish, maxFish);
         _fishTimer = 0.0f;
     }
 }

@@ -8,6 +8,9 @@ public class EventComponent : MonoBehaviour
     public TimeLapse Time;
     public GameManager GameStatus;
     
+    [SerializeField]
+    private InventorySystem inventory;
+
     public void TriggerEvent()
     {
         Debug.Log(EventType);

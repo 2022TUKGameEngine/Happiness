@@ -2499,6 +2499,7 @@ MonoBehaviour:
   EventType: Fishing
   Time: {fileID: 0}
   GameStatus: {fileID: 0}
+  inventory: {fileID: 0}
 --- !u!4 &664862479
 Transform:
   m_ObjectHideFlags: 0

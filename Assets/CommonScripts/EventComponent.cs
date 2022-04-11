@@ -7,6 +7,7 @@ public class EventComponent : MonoBehaviour
     public string EventType;
     public TimeLapse timeLapse;
     public GameManager GameStatus;
+    private bool _isFishing = false;
     [SerializeField]
     private InventorySystem inventory;
 
@@ -30,8 +31,22 @@ public class EventComponent : MonoBehaviour
             break;
 
         case "Fishing":
+            _isFishing = !_isFishing;
+            
+            if (_isFishing == false)
+            {
+                return;
+            }
             break; 
         }
+    }
+
+    private void Update() 
+    {
+        if (_isFishing)
+        {
+        }    
+    }
 
     }
 }

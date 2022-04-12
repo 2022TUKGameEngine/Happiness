@@ -2612,7 +2612,6 @@ MonoBehaviour:
   GameStatus: {fileID: 0}
   minFish: 3
   maxFish: 7
-  inventory: {fileID: 1411424443}
 --- !u!4 &664862479
 Transform:
   m_ObjectHideFlags: 0

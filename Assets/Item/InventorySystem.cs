@@ -14,6 +14,10 @@ public class InventorySystem : MonoBehaviour
     
     public void GetItem(ITEM_TYPE type, int grade, int num = 1)
     {
+        if (type == ITEM_TYPE.NONE)
+        {
+            return;
+        }
         //print("GetItem Func");
         for (int i = 0; i < inven.Length; i++)
         {

@@ -67,7 +67,6 @@ public class EventComponent : MonoBehaviour
         if (_fishTimer > _waitingTime)
         {
             InventorySystem.instance.GetItem(ITEM_TYPE.Fish, 1);
-            print("GetItems!");
             InitFishTimer();
         }
     }

@@ -14,10 +14,7 @@ public class EventComponent : MonoBehaviour
 
     public float minFish = 3.0f;
     public float maxFish = 7.0f;
-
-    [SerializeField]
-    private InventorySystem inventory;
-
+    
     public void TriggerEvent()
     {
         Debug.Log(EventType);
@@ -69,7 +66,7 @@ public class EventComponent : MonoBehaviour
         _fishTimer += Time.deltaTime;
         if (_fishTimer > _waitingTime)
         {
-            inventory.GetItem(ITEM_TYPE.Fish, 1);
+            InventorySystem.instance.GetItem(ITEM_TYPE.Fish, 1);
             InitFishTimer();
         }
     }

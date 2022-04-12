@@ -125,6 +125,15 @@ public class CharacterManager : MonoBehaviour
         }
     }
 
+    public void LoseHP(int hp)
+    {
+        PlayerHP-=hp;
+        if(PlayerHP<=0)
+        {
+            PlayerHP=0;
+        }
+    }
+
     public void EarnMoney(int money)
     {
         _money += money;

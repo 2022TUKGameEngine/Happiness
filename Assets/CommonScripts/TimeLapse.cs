@@ -9,7 +9,7 @@ public class TimeLapse : MonoBehaviour
     public GameObject dirLight;
     public float TimeForOneDayByMinutes;
     
-    Vector3 angleFactor;
+    public Vector3 angleFactor;
 
     public int Hour;
     public int Minute;
@@ -25,7 +25,6 @@ public class TimeLapse : MonoBehaviour
     public Cycle DayCycle;
 
     public int CountDay;
-    public float AngleX;
 
 
     // Start is called before the first frame update
@@ -39,7 +38,6 @@ public class TimeLapse : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        AngleX=angleFactor.x;
 
         //360.f / (angleFactor.x % 360) = (-25%)
         angleFactor.x += Time.deltaTime * 360f / 60f / TimeForOneDayByMinutes;
@@ -47,18 +45,18 @@ public class TimeLapse : MonoBehaviour
         
         dirLight.transform.localEulerAngles=angleFactor;
 
-        if(AngleX>=0f && AngleX<90f)
+        if(angleFactor.x>=0f && angleFactor.x<90f)
             DayCycle=Cycle.Morning;
 
-        else if(AngleX>=90f && AngleX<180f)
+        else if(angleFactor.x>=90f && angleFactor.x<180f)
         {
             DayCycle=Cycle.Afternoon;
         }
-        else if(AngleX>=180f && AngleX<270f)
+        else if(angleFactor.x>=180f && angleFactor.x<270f)
         {
             DayCycle=Cycle.Evening;
         }
-        else if(AngleX>=270f&&AngleX<360f)
+        else if(angleFactor.x>=270f&&angleFactor.x<360f)
         {
             DayCycle=Cycle.Night;
         }
@@ -69,8 +67,8 @@ public class TimeLapse : MonoBehaviour
             angleFactor.x=0;
         }
 
-        Hour=(int)(AngleX/15);
-        Minute=(int)(AngleX%15*4);
+        Hour=(int)(angleFactor.x/15);
+        Minute=(int)(angleFactor.x%15*4);
 
     }
 

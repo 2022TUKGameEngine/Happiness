@@ -8,6 +8,7 @@ public class EventComponent : MonoBehaviour
     public TimeLapse timeLapse;
     public GameManager GameStatus;
     public Animator animController;
+    public CharacterManager CharacterStatus;
     
     private bool _isFishing = false;
     private float _waitingTime = 0.0f;
@@ -22,20 +23,32 @@ public class EventComponent : MonoBehaviour
         switch(EventType)
         {
         case "Sleep":
-            if(timeLapse.AngleX<180f && timeLapse.AngleX>0f)
+            if(timeLapse.angleFactor.x>=0f && timeLapse.angleFactor.x<180f)
             {
-                timeLapse.AngleX=180f;
+                timeLapse.angleFactor.x=180f;
+                CharacterStatus.EarnHP(100);
+                if(timeLapse.Hour>6)
+                {
+                    CharacterStatus.LoseHP(10*(timeLapse.Hour-6));
+                }
             }
             else
             {
-                timeLapse.AngleX=0f;
+                timeLapse.angleFactor.x=0f;
                 timeLapse.CountDay+=1;
+
+                CharacterStatus.EarnHP(100);
+                if(timeLapse.Hour>18)
+                {
+                    CharacterStatus.LoseHP(10*(timeLapse.Hour-18));
+                }
 
             }
 
             break;
 
         case "Fishing":
+
             _isFishing = !_isFishing;
             animController.SetBool("isSitting", _isFishing);
 

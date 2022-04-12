@@ -7,6 +7,7 @@ public class EventComponent : MonoBehaviour
     public string EventType;
     public TimeLapse timeLapse;
     public GameManager GameStatus;
+    public Animator animController;
     
     private bool _isFishing = false;
     private float _waitingTime = 0.0f;
@@ -36,12 +37,13 @@ public class EventComponent : MonoBehaviour
 
         case "Fishing":
             _isFishing = !_isFishing;
-            
+            animController.SetBool("isSitting", _isFishing);
+
             if (_isFishing == false)
             {
                 return;
             }
-
+            
             InitFishTimer();
             break; 
         }

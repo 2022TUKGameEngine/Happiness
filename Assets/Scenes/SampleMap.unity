@@ -2611,6 +2611,7 @@ MonoBehaviour:
   EventType: Fishing
   timeLapse: {fileID: 0}
   GameStatus: {fileID: 0}
+  animController: {fileID: 807676027}
   minFish: 3
   maxFish: 7
 --- !u!4 &664862479

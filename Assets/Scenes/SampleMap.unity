@@ -1656,7 +1656,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spaceID: 1
-  dropItemTypes: 02000000
+  dropItemTypes: 01000000
+  dropItemGrades: 01000000
   dropItemRatio: 01000000
 --- !u!65 &387463147
 BoxCollider:

@@ -59,6 +59,12 @@ public class EventComponent : MonoBehaviour
             
             InitFishTimer();
             break; 
+
+        case "Farming":
+            
+            
+
+            break;
         }
     }
 

@@ -6,16 +6,20 @@ public class Farm
 {
     public int groundNum;
     public ITEM_TYPE farmedItem;
-    public int growthTime;  //0 - None, 1 < - exist, -1 - withered
+    public int grd;
+    public int growthTime;  //0 - None, 1 < - exist, -1 - withered, -2 max
+    public int maxGrowthTime;
     public bool isWateredToday;
     public int thisPlantDead;
     public Farm() { }
-    public Farm(int _g, ITEM_TYPE _i, int _gT)
+    public Farm(int _g, ITEM_TYPE _i, int _grd, int _gT)
     {
         thisPlantDead = 0;
         groundNum = _g;
+        grd = _grd;
         farmedItem = _i;
-        growthTime = _gT;
+        growthTime = 1;
+        maxGrowthTime = _gT+1;
         isWateredToday = false;
     }
 
@@ -37,6 +41,7 @@ public class Farm
         {
             if (thisPlantDead == 1 || !isWateredToday)
             {
+                Debug.Log("Dead!");
                 growthTime = -1;
                 return;
             }
@@ -45,12 +50,18 @@ public class Farm
                 growthTime++;
                 isWateredToday = false;
 
-                //완성 처리, 초기화
+                if (growthTime >= maxGrowthTime)
                 {
-                    //thisPlantDead = -1;
+                    Debug.Log("Finish");
+                    growthTime = -2;
                 }
             }
         }
+    }
+
+    public void getItem()
+    {
+        InventorySystem.instance.GetItem(farmedItem, grd);
     }
 }
 
@@ -66,6 +77,7 @@ public class FarmingSystem : MonoBehaviour
 
     public void dayUpdate()
     {
+        print("daytime");
         foreach(var g in currentUseGrounds)
         {
             g.newDay();
@@ -74,12 +86,20 @@ public class FarmingSystem : MonoBehaviour
 
     public void watering(int groundNum)
     {
-        currentUseGrounds[groundNum].Watering();
+        foreach(var g in currentUseGrounds)
+        {
+            if (g.groundNum == groundNum)
+            {
+                print("water!");
+                g.Watering();
+                return;
+            }
+        }
     }
 
     public void plantSeed(int groundNum)
     {
-        int days = Random.Range(3, 7) - (CharacterManager.data._level/2);
+        int days = Random.Range(3, 3) - (CharacterManager.data._level/2);
         int grd = Random.Range(1,100) + CharacterManager.data._level;
         if (grd > 97)
         {
@@ -103,12 +123,21 @@ public class FarmingSystem : MonoBehaviour
         if (days < 1)
             days = 1;
         
-        ITEM_TYPE seed = ITEM_TYPE.Berry + grd;
-        currentUseGrounds.Add(new Farm(groundNum, seed, days));
+        ITEM_TYPE seed = ITEM_TYPE.Berry;
+        print("plant : " + grd);
+        currentUseGrounds.Add(new Farm(groundNum, seed, grd, days));
     }
 
     public void clearGround(int groundNum)
     {
+        print("clear!");
+        foreach(var f in currentUseGrounds)
+        {
+            if (f.growthTime == -2)
+            {
+                f.getItem();
+            }
+        }
         currentUseGrounds.Remove(currentUseGrounds.Find(x => x.groundNum == groundNum));
     }
 
@@ -120,7 +149,7 @@ public class FarmingSystem : MonoBehaviour
             {
                 return 1;
             }
-            else if (f.groundNum == groundNum && f.growthTime == -1)
+            else if (f.groundNum == groundNum && f.growthTime < 0)
             {
                 return -1;
             }

@@ -36,6 +36,7 @@ public class EventComponent : MonoBehaviour
             {
                 timeLapse.angleFactor.x=0f;
                 timeLapse.CountDay+=1;
+                FarmingSystem.instance.dayUpdate();
 
                 CharacterStatus.EarnHP(100);
                 if(timeLapse.Hour>18)

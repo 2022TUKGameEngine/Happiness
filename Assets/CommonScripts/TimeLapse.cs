@@ -46,7 +46,9 @@ public class TimeLapse : MonoBehaviour
         dirLight.transform.localEulerAngles=angleFactor;
 
         if(angleFactor.x>=0f && angleFactor.x<90f)
+        {
             DayCycle=Cycle.Morning;
+        }
 
         else if(angleFactor.x>=90f && angleFactor.x<180f)
         {
@@ -65,6 +67,7 @@ public class TimeLapse : MonoBehaviour
         {
             CountDay+=1;
             angleFactor.x=0;
+            FarmingSystem.instance.dayUpdate();
         }
 
         Hour=(int)(angleFactor.x/15);

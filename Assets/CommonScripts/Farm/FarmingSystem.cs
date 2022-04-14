@@ -1,10 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.VFX;
 
 public class Farm
 {
-    public GameObject self;
+    public VisualEffect berry;
     public int groundNum;
     public ITEM_TYPE farmedItem;
     public int grd;
@@ -13,9 +14,9 @@ public class Farm
     public bool isWateredToday;
     public int thisPlantDead;
     public Farm() { }
-    public Farm(GameObject _s, int _g, ITEM_TYPE _i, int _grd, int _gT)
+    public Farm(VisualEffect _s, int _g, ITEM_TYPE _i, int _grd, int _gT)
     {
-        self = _s;
+        berry = _s;
         thisPlantDead = 0;
         groundNum = _g;
         grd = _grd;
@@ -51,9 +52,15 @@ public class Farm
             {
                 growthTime++;
                 isWateredToday = false;
+                berry.SetFloat("LifetimeBush", growthTime < maxGrowthTime/2f ? growthTime / (maxGrowthTime / 2f) : 1f);
+                berry.SetFloat("LifetimeBerry", growthTime < maxGrowthTime/2f ? 0 : (growthTime - maxGrowthTime/2f) / (maxGrowthTime / 2f));
+                //berry.SetFloat("LifetimeBush", (float)growthTime / maxGrowthTime);
+                //berry.SetFloat("LifetimeBerry", (float)growthTime / maxGrowthTime); 
 
                 if (growthTime >= maxGrowthTime)
                 {
+                    berry.SetFloat("LifetimeBush", 1f);
+                    berry.SetFloat("LifetimeBerry",1f);
                     Debug.Log("Finish");
                     growthTime = -2;
                 }
@@ -103,7 +110,8 @@ public class FarmingSystem : MonoBehaviour
 
     public void plantSeed(GameObject s, int groundNum)
     {
-        int days = Random.Range(3, 3) - (CharacterManager.data._level/2);
+        int days = Random.Range(1, 4) - (CharacterManager.data._level/2);
+        if (days < 1) days = 1;
         int grd = Random.Range(1,100) + CharacterManager.data._level;
         if (grd > 97)
         {
@@ -122,8 +130,7 @@ public class FarmingSystem : MonoBehaviour
             grd = 1;
         }
 
-        if (days < grd)
-            days = grd - (CharacterManager.data._level/3);
+        days += grd - (CharacterManager.data._level/4);
         if (days < 1)
             days = 1;
         
@@ -131,7 +138,8 @@ public class FarmingSystem : MonoBehaviour
         print("plant : " + grd);
 
         GameObject berry = Instantiate(Bto.Berry_type_prefab[grd-1], s.transform.position, Quaternion.identity);
-        currentUseGrounds.Add(new Farm(s, groundNum, seed, grd, days));
+        berry.transform.parent = s.transform;
+        currentUseGrounds.Add(new Farm(berry.GetComponentInChildren<VisualEffect>(), groundNum, seed, grd, days));
     }
 
     public void clearGround(int groundNum)
@@ -142,6 +150,8 @@ public class FarmingSystem : MonoBehaviour
             if (f.growthTime == -2)
             {
                 f.getItem();
+                f.berry.Stop();
+                Destroy(f.berry.transform.parent.gameObject);
             }
         }
         currentUseGrounds.Remove(currentUseGrounds.Find(x => x.groundNum == groundNum));

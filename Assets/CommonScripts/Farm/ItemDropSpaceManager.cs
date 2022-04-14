@@ -25,7 +25,7 @@ public class ItemDropSpaceManager : MonoBehaviour
             area = dropSpaces[space].GetComponent<BoxCollider>();
 
             var drops = dropSpaces[space].GetComponent<ItemDropSpace>().whichItemDrop(dropItemPrefab);
-            Instantiate(dropItemPrefab, GetRandomPosition(), Quaternion.identity).GetComponent<GetDroppedItem>().init(drops.Item1,drops.Item2, 1, () => { spawnedItemNums--; });
+            Instantiate(dropItemPrefab, GetRandomPosition(), Quaternion.identity).GetComponent<GetDroppedItem>().init(drops.Item1,drops.Item2, Random.Range(1,4), () => { spawnedItemNums--; });
             spawnedItemNums++;
         }
     }

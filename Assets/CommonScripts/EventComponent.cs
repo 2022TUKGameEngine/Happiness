@@ -73,7 +73,7 @@ public class EventComponent : MonoBehaviour
             {
                 if (CharacterManager.data.inventory.GetComponent<InventorySystem>().useItem(ITEM_TYPE.Seed))
                 {
-                    FarmingSystem.instance.plantSeed(groundNum);
+                    FarmingSystem.instance.plantSeed(gameObject, groundNum);
                 }
             }
             else

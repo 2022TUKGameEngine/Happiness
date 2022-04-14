@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Farm
 {
+    public GameObject self;
     public int groundNum;
     public ITEM_TYPE farmedItem;
     public int grd;
@@ -12,8 +13,9 @@ public class Farm
     public bool isWateredToday;
     public int thisPlantDead;
     public Farm() { }
-    public Farm(int _g, ITEM_TYPE _i, int _grd, int _gT)
+    public Farm(GameObject _s, int _g, ITEM_TYPE _i, int _grd, int _gT)
     {
+        self = _s;
         thisPlantDead = 0;
         groundNum = _g;
         grd = _grd;
@@ -68,6 +70,8 @@ public class Farm
 public class FarmingSystem : MonoBehaviour
 {
     public static FarmingSystem instance;
+
+    public Berry_type_object Bto;
     private List<Farm> currentUseGrounds = new List<Farm>();
 
     private void Start()
@@ -97,7 +101,7 @@ public class FarmingSystem : MonoBehaviour
         }
     }
 
-    public void plantSeed(int groundNum)
+    public void plantSeed(GameObject s, int groundNum)
     {
         int days = Random.Range(3, 3) - (CharacterManager.data._level/2);
         int grd = Random.Range(1,100) + CharacterManager.data._level;
@@ -125,7 +129,9 @@ public class FarmingSystem : MonoBehaviour
         
         ITEM_TYPE seed = ITEM_TYPE.Berry;
         print("plant : " + grd);
-        currentUseGrounds.Add(new Farm(groundNum, seed, grd, days));
+
+        GameObject berry = Instantiate(Bto.Berry_type_prefab[grd-1], s.transform.position, Quaternion.identity);
+        currentUseGrounds.Add(new Farm(s, groundNum, seed, grd, days));
     }
 
     public void clearGround(int groundNum)

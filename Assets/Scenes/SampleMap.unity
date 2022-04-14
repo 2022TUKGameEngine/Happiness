@@ -1865,8 +1865,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spaceID: 1
-  dropItemTypes: 01000000
-  dropItemGrades: 01000000
+  dropItemTypes: 06000000
+  dropItemGrades: 00000000
   dropItemRatio: 01000000
 --- !u!65 &387463147
 BoxCollider:
@@ -2236,7 +2236,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 487329905}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9aedf4a3ce91e1743be4d845d28733bd, type: 3}
+  m_Script: {fileID: 11500000, guid: 95c466d47b5cc8044ae2466b57c7e16d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!4 &487329907
@@ -3582,7 +3582,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   statusPackage: {fileID: 697925874}
-  inventory: {fileID: 418440818}
+  inventory: {fileID: 1411424437}
   HPBar: {fileID: 1924024665}
   Money: {fileID: 621194050}
   Level: {fileID: 1185111882}

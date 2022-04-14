@@ -15,8 +15,8 @@ public class CharacterManager : MonoBehaviour
     public TMP_Text Level;
 
     public float PlayerHP;
-    public float _money;
-    public float _level;
+    public int _money;
+    public int _level;
 
     private Collider detectedCollider = null;
 
@@ -52,12 +52,12 @@ public class CharacterManager : MonoBehaviour
     {
         if(inventoryOpened)
         {
-            inventory.GetComponentInChildren<Animator>().SetTrigger("CloseInventory");
+            inventory.GetComponent<Animator>().SetTrigger("CloseInventory");
             inventoryOpened = false;
         }
         else
         {
-            inventory.GetComponentInChildren<Animator>().SetTrigger("OpenInventory");
+            inventory.GetComponent<Animator>().SetTrigger("OpenInventory");
             inventoryOpened = true;
         }
     }

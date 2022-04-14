@@ -61,8 +61,24 @@ public class EventComponent : MonoBehaviour
             break; 
 
         case "Farming":
-            
-            
+
+            int groundNum = (int)gameObject.GetComponent<floatsDataContainer>()._float1;
+
+            if (FarmingSystem.instance.isGroundFarmed(groundNum) > 0)
+            {
+                FarmingSystem.instance.watering(groundNum);
+            }
+            else if (FarmingSystem.instance.isGroundFarmed(groundNum) == 0)
+            {
+                if (CharacterManager.data.inventory.GetComponent<InventorySystem>().useItem(ITEM_TYPE.Seed))
+                {
+                    FarmingSystem.instance.plantSeed(groundNum);
+                }
+            }
+            else
+            {
+                FarmingSystem.instance.clearGround(groundNum);
+            }
 
             break;
         }

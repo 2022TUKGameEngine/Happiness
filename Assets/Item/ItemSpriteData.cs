@@ -8,6 +8,17 @@ public enum ITEM_TYPE
     Fish_Rare,
     Fish_SuperRare,
     Fish_Legend,
+    Seed,
+    Berry,
+    Berry_Normal,
+    Berry_Rare,
+    Berry_SuperRare,
+    Berry_Legend,
+    Ore,
+    Ore_Normal,
+    Ore_Rare,
+    Ore_SuperRare,
+    Ore_Legend,
 }
 
 [CreateAssetMenu(fileName = "Item Sprite Data", menuName = "Scriptable Object/Item Sprite Data", order = int.MaxValue)]

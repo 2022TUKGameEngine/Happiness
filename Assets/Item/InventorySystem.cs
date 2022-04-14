@@ -43,4 +43,23 @@ public class InventorySystem : MonoBehaviour
     {
         inven[invenNum].changeNumber(-sellNum);
     }
+
+    public bool useItem(ITEM_TYPE it)
+    {
+        int invenNum = -1;
+        foreach(var item in inven)
+        {
+            if(item.itemType == it)
+            {
+                invenNum = System.Array.IndexOf(inven,item);
+                break;
+            }
+        }
+        if (invenNum == -1)
+        {
+            return false;
+        }
+        inven[invenNum].changeNumber(-1);
+        return true;
+    }
 }

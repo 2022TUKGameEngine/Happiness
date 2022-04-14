@@ -841,7 +841,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: UnityEngine.Texture2D, UnityEngine.CoreModule, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
-      m_SerializableObject: '{"obj":{"fileID":2800000,"guid":"8aa339eab4bfdb045a3933bd42bf40f3","type":3}}'
+      m_SerializableObject: '{"obj":{"fileID":2800000,"guid":"5f3f22cc3a55ad04daf98870d5e9c10e","type":3}}'
     m_Space: 2147483647
   m_Property:
     name: mainTexture
@@ -2663,7 +2663,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: UnityEditor.VFX.TArcSphere, Unity.VisualEffectGraph.Editor,
           Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-      m_SerializableObject: '{"sphere":{"transform":{"position":{"x":0.000002426446371828206,"y":0.5069983005523682,"z":1.6929789126152174e-7},"angles":{"x":0.0,"y":0.0,"z":89.96013641357422},"scale":{"x":0.5455101132392883,"y":0.7545619010925293,"z":0.7545619010925293}},"radius":1.0444132089614869},"arc":3.140000104904175}'
+      m_SerializableObject: '{"sphere":{"transform":{"position":{"x":0.000002426446371828206,"y":0.5069983005523682,"z":1.6929789126152174e-7},"angles":{"x":0.0,"y":0.0,"z":89.96013641357422},"scale":{"x":0.5455101132392883,"y":0.7545619010925293,"z":0.7545619010925293}},"radius":1.0444132089614869},"arc":3.0899999141693117}'
     m_Space: 0
   m_Property:
     name: arcSphere

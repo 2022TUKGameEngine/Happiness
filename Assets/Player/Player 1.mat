@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Player
+  m_Name: Player 1
   m_Shader: {fileID: -6465566751694194690, guid: 4190661b10c812747af93e48f7679410, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 2
@@ -20,7 +20,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _MainTexture:
-        m_Texture: {fileID: 2800000, guid: 01844468926d61841ab91fe5059e944b, type: 3}
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _SampleTexture2D_2ba3dd5783574b82b9e90716bf5b4c1b_Texture_1:
@@ -45,7 +45,7 @@ Material:
     - _DecalMeshDepthBias: 0
     - _DecalMeshViewBias: 0
     - _DrawOrder: 0
-    - _EmissionPower: 0.43
+    - _EmissionPower: 0.58
     - _QueueControl: 0
     - _QueueOffset: 0
     - _RimLightPower: 0.05

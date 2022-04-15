@@ -9,6 +9,8 @@ public class EventComponent : MonoBehaviour
     public GameManager GameStatus;
     public Animator animController;
     public CharacterManager CharacterStatus;
+    public GameObject Shop;
+    public InventorySystem Inventory;
     
     private bool _isFishing = false;
     private float _waitingTime = 0.0f;
@@ -23,9 +25,10 @@ public class EventComponent : MonoBehaviour
         switch(EventType)
         {
         case "Sleep":
-            if(timeLapse.angleFactor.x>=0f && timeLapse.angleFactor.x<180f)
+            if(timeLapse.angleFactor.x>=270f || timeLapse.angleFactor.x<0f)
             {
-                timeLapse.angleFactor.x=180f;
+                timeLapse.angleFactor.x=90f;
+                timeLapse.CountDay+=1;
                 CharacterStatus.EarnHP(100);
                 if(timeLapse.Hour>6)
                 {
@@ -34,8 +37,7 @@ public class EventComponent : MonoBehaviour
             }
             else
             {
-                timeLapse.angleFactor.x=0f;
-                timeLapse.CountDay+=1;
+                timeLapse.angleFactor.x=270f;
                 FarmingSystem.instance.dayUpdate();
 
                 CharacterStatus.EarnHP(100);
@@ -82,6 +84,12 @@ public class EventComponent : MonoBehaviour
             }
 
             break;
+        
+        case "Shopping":
+
+            Shop.SetActive(true);
+
+            break;
         }
     }
 
@@ -108,4 +116,10 @@ public class EventComponent : MonoBehaviour
             InitFishTimer();
         }
     }
+
+    public void BuyItem()
+    {
+        InventorySystem.instance.GetItem(ITEM_TYPE.Fish,1);
+    }
+    
 }

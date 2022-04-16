@@ -43,6 +43,11 @@ public class CharacterMove : MonoBehaviour
 
   public void OnMove(InputValue value)
   {
+    if(playerAnimController.GetBool("isSitting"))
+    {
+        return;
+    }
+
     Vector2 input = value.Get<Vector2>();
     playerMovement = new Vector3(input.x, 0, input.y);
   }

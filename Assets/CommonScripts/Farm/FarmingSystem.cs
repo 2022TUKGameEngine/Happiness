@@ -150,7 +150,10 @@ public class FarmingSystem : MonoBehaviour
             if (f.growthTime < 0)
             {
                 if (f.growthTime == -2)
+                {
                     f.getItem();
+                    SoundManager.instance.getItem();
+                }
                 f.berry.SetFloat("LifetimeBush", 0f);
                 f.berry.SetFloat("LifetimeBerry", 0f);
                 Destroy(f.berry.transform.parent.gameObject);

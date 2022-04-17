@@ -101,6 +101,7 @@ public class ItemData : MonoBehaviour
                 changeNumber(-1);
             }
         }
+        SoundManager.instance.sellItem();
     }
 
     public void On_MouseEnter()

@@ -93,6 +93,18 @@ public class CharacterManager : MonoBehaviour
         }
     }
 
+    private void OnCollisionEnter(Collision other)
+    {
+        if (other.collider.tag == "Ground_Grass")
+        {
+            PlayerPrefs.SetInt("footStepIndex", 1);
+        }
+        else if (other.collider.tag == "Ground_Wood")
+        {
+            PlayerPrefs.SetInt("footStepIndex", 2);
+        }
+    }
+
     private void OnTriggerExit(Collider other)
     {
         if (other.CompareTag("EventCollider"))

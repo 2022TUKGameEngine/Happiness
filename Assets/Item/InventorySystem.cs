@@ -37,11 +37,13 @@ public class InventorySystem : MonoBehaviour
                 return;
             }
         }
+        SoundManager.instance.getItem();
     }
 
     public void SellItem(int invenNum, int sellNum)
     {
         inven[invenNum].changeNumber(-sellNum);
+        SoundManager.instance.sellItem();
     }
 
     public bool useItem(ITEM_TYPE it)

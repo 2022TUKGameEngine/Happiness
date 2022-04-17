@@ -8,6 +8,8 @@ TagManager:
   - EventCollider
   - InventoryItem
   - DropItem
+  - Ground_Grass
+  - Ground_Wood
   layers:
   - Default
   - TransparentFX

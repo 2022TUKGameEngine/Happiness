@@ -240,6 +240,7 @@ MonoBehaviour:
   CharacterStatus: {fileID: 0}
   Shop: {fileID: 0}
   Inventory: {fileID: 0}
+  chairObject: {fileID: 0}
   minFish: 3
   maxFish: 7
 --- !u!1001 &10660273
@@ -565,6 +566,7 @@ MonoBehaviour:
   CharacterStatus: {fileID: 0}
   Shop: {fileID: 1363815965}
   Inventory: {fileID: 0}
+  chairObject: {fileID: 0}
   minFish: 3
   maxFish: 7
 --- !u!65 &62330295
@@ -2890,7 +2892,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &595990130
 Transform:
   m_ObjectHideFlags: 0
@@ -2926,7 +2928,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 595990129}
-  m_Enabled: 0
+  m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -3379,6 +3381,7 @@ MonoBehaviour:
   CharacterStatus: {fileID: 0}
   Shop: {fileID: 0}
   Inventory: {fileID: 0}
+  chairObject: {fileID: 0}
   minFish: 3
   maxFish: 7
 --- !u!1 &664862477
@@ -4402,6 +4405,7 @@ MonoBehaviour:
   CharacterStatus: {fileID: 946267116}
   Shop: {fileID: 0}
   Inventory: {fileID: 0}
+  chairObject: {fileID: 0}
   minFish: 3
   maxFish: 7
 --- !u!65 &857964879
@@ -4652,6 +4656,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 695911914463180191, guid: f5c62c6859aa4984b837b53a17958c84, type: 3}
+      propertyPath: chairObject
+      value: 
+      objectReference: {fileID: 595990129}
     - target: {fileID: 695911914463180191, guid: f5c62c6859aa4984b837b53a17958c84, type: 3}
       propertyPath: animController
       value: 
@@ -8093,6 +8101,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 695911914463180191, guid: f5c62c6859aa4984b837b53a17958c84, type: 3}
+      propertyPath: chairObject
+      value: 
+      objectReference: {fileID: 595990129}
     - target: {fileID: 695911914463180191, guid: f5c62c6859aa4984b837b53a17958c84, type: 3}
       propertyPath: animController
       value: 

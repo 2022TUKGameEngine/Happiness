@@ -12,6 +12,7 @@ public class EventComponent : MonoBehaviour
     public GameObject Shop;
     public InventorySystem Inventory;
     
+    public GameObject chairObject;
     private bool _isFishing = false;
     private float _waitingTime = 0.0f;
     private float _fishTimer = 0.0f;
@@ -54,6 +55,7 @@ public class EventComponent : MonoBehaviour
 
             _isFishing = !_isFishing;
             animController.SetBool("isSitting", _isFishing);
+            chairObject.SetActive(_isFishing);
 
             if (_isFishing == false)
             {

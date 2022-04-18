@@ -148,15 +148,18 @@ public class FarmingSystem : MonoBehaviour
         print("clear!");
         foreach(var f in currentUseGrounds)
         {
-            if (f.growthTime < 0)
+            if (f.groundNum == groundNum)
             {
-                if (f.growthTime == -2)
+                if (f.growthTime < 0)
                 {
-                    f.getItem();
+                    if (f.growthTime == -2)
+                    {
+                        f.getItem();
+                    }
+                    f.berry.SetFloat("LifetimeBush", 0f);
+                    f.berry.SetFloat("LifetimeBerry", 0f);
+                    Destroy(f.berry.transform.parent.gameObject);
                 }
-                f.berry.SetFloat("LifetimeBush", 0f);
-                f.berry.SetFloat("LifetimeBerry", 0f);
-                Destroy(f.berry.transform.parent.gameObject);
             }
         }
 

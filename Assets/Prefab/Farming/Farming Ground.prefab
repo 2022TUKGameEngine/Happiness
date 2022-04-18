@@ -12,8 +12,6 @@ GameObject:
   - component: {fileID: 3880376943809092223}
   - component: {fileID: 1314251800333495989}
   - component: {fileID: 2002389381278672155}
-  - component: {fileID: 8971121924811498437}
-  - component: {fileID: 9106367114465299856}
   m_Layer: 0
   m_Name: Farming Ground
   m_TagString: EventCollider
@@ -99,41 +97,3 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 22.74672, y: 3.330724, z: 22.84991}
   m_Center: {x: -0.26755095, y: 1.665362, z: -0.46603823}
---- !u!114 &8971121924811498437
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 665923051407544160}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1b458a0941021f240aadbafff3bc38d5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  EventType: Farming
-  timeLapse: {fileID: 0}
-  GameStatus: {fileID: 0}
-  animController: {fileID: 0}
-  CharacterStatus: {fileID: 0}
-  Shop: {fileID: 0}
-  Inventory: {fileID: 0}
-  chairObject: {fileID: 0}
-  minFish: 3
-  maxFish: 7
---- !u!114 &9106367114465299856
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 665923051407544160}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8ec27438f1c0c98449810e75ee5dfd17, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _float1: 1
-  _float2: 0
-  _float3: 0
-  _float4: 0

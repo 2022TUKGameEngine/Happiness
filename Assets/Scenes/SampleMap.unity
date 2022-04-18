@@ -3293,37 +3293,15 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 664862479}
-  - component: {fileID: 664862478}
   - component: {fileID: 664862480}
   - component: {fileID: 664862481}
   m_Layer: 0
-  m_Name: FishSystem
-  m_TagString: EventCollider
+  m_Name: FishField
+  m_TagString: FishCollider
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &664862478
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 664862477}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1b458a0941021f240aadbafff3bc38d5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  EventType: Fishing
-  timeLapse: {fileID: 0}
-  GameStatus: {fileID: 0}
-  animController: {fileID: 621355591}
-  CharacterStatus: {fileID: 0}
-  Shop: {fileID: 0}
-  Inventory: {fileID: 0}
-  minFish: 3
-  maxFish: 7
 --- !u!4 &664862479
 Transform:
   m_ObjectHideFlags: 0
@@ -4454,7 +4432,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 903568037086926554, guid: 8a7bc7aa56cbd4a48baa751357f581da, type: 3}
   m_PrefabInstance: {fileID: 8710013970998160941}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1028250377}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b25fbbc664ccc034583e827e38eb67ed, type: 3}
@@ -4634,6 +4612,24 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 23
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1028250377 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8914898550928548210, guid: 8a7bc7aa56cbd4a48baa751357f581da, type: 3}
+  m_PrefabInstance: {fileID: 8710013970998160941}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1028250382
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1028250377}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f098d68fbe7f03b44b49c12be0864d07, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _fishCollider: {fileID: 550821345}
 --- !u!114 &1047886190 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3458077623722753611, guid: d4ed8ff75ab63df478f165b9506f1d18, type: 3}

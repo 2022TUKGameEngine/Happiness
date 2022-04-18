@@ -10,6 +10,7 @@ TagManager:
   - DropItem
   - Ground_Grass
   - Ground_Wood
+  - FishCollider
   layers:
   - Default
   - TransparentFX

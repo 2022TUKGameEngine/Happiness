@@ -25,6 +25,7 @@ public class InventorySystem : MonoBehaviour
             {
                 //print("Item plus");
                 inven[i].changeNumber(num);
+                SoundManager.instance.getItem();
                 return;
             }
         }
@@ -34,10 +35,11 @@ public class InventorySystem : MonoBehaviour
             {
                 //print("Item Add");
                 inven[i].SetItem(type, grade, num);
+                SoundManager.instance.getItem();
                 return;
             }
         }
-        SoundManager.instance.getItem();
+        
     }
 
     public void SellItem(int invenNum, int sellNum)

@@ -124,6 +124,7 @@ public class CharacterManager : MonoBehaviour
             if(DebugMode.instance.debugMode)
             {
                 InventorySystem.instance.GetItem(ITEM_TYPE.Fish,debug_grade,1);
+                SoundManager.instance.SwapBGM();
             }
         }
     }

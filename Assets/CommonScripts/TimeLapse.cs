@@ -47,7 +47,11 @@ public class TimeLapse : MonoBehaviour
 
         if(angleFactor.x>=0f && angleFactor.x<90f)
         {
-            DayCycle=Cycle.Morning;
+            if (DayCycle != Cycle.Morning)
+            {
+                DayCycle = Cycle.Morning;
+                SoundManager.instance.SwapBGM();
+            }
         }
 
         else if(angleFactor.x>=90f && angleFactor.x<180f)
@@ -56,7 +60,11 @@ public class TimeLapse : MonoBehaviour
         }
         else if(angleFactor.x>=180f && angleFactor.x<270f)
         {
-            DayCycle=Cycle.Evening;
+            if (DayCycle!= Cycle.Evening)
+            {
+                DayCycle=Cycle.Evening;
+                SoundManager.instance.SwapBGM();
+            }
         }
         else if(angleFactor.x>=270f&&angleFactor.x<360f)
         {
@@ -77,7 +85,7 @@ public class TimeLapse : MonoBehaviour
 
     public string getTimeContext()
     {
-        return CountDay.ToString()+" days, "+Hour.ToString()+":"+Minute.ToString();
+        return "Day "+CountDay.ToString()+"  "+Hour.ToString()+":"+Minute.ToString();
     }
 
     public int getHour()

@@ -71,6 +71,7 @@ public class Farm
     public void getItem()
     {
         InventorySystem.instance.GetItem(farmedItem, grd);
+        SoundManager.instance.getItem();
     }
 }
 
@@ -152,7 +153,6 @@ public class FarmingSystem : MonoBehaviour
                 if (f.growthTime == -2)
                 {
                     f.getItem();
-                    SoundManager.instance.getItem();
                 }
                 f.berry.SetFloat("LifetimeBush", 0f);
                 f.berry.SetFloat("LifetimeBerry", 0f);

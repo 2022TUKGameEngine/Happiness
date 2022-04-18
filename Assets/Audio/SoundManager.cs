@@ -5,6 +5,10 @@ using UnityEngine;
 public class SoundManager : MonoBehaviour
 {
     public static SoundManager instance;
+
+    public AudioSource dayMusic;
+    public AudioSource nightMusic;
+
     public AudioSource foot;
     public AudioSource SFXs;
 
@@ -47,5 +51,37 @@ public class SoundManager : MonoBehaviour
         SFXs.clip = FSC.ItemSFX[Random.Range(1, FSC.ItemSFX.Count)];
         SFXs.pitch = Random.Range(0.8f, 1.2f);
         SFXs.Play();
+    }
+
+    public void SwapBGM()
+    {
+        StartCoroutine(fadeBGM());
+    }
+
+    IEnumerator fadeBGM()
+    {
+        float startVolume = dayMusic.volume;
+        if (dayMusic.volume == 0)
+        {
+            while (dayMusic.volume < 1)
+            {
+                dayMusic.volume += 0.02f;
+                nightMusic.volume -= 0.02f;
+                yield return new WaitForSeconds(0.1f);
+            }
+            dayMusic.volume = 1;
+            nightMusic.volume = 0;
+        }
+        else
+        {
+            while (dayMusic.volume > 0)
+            {
+                dayMusic.volume -= 0.02f;
+                nightMusic.volume += 0.02f;
+                yield return new WaitForSeconds(0.1f);
+            }
+            dayMusic.volume = 0;
+            nightMusic.volume = 1;
+        }
     }
 }

@@ -19,6 +19,8 @@ public class EventComponent : MonoBehaviour
 
     public float minFish = 3.0f;
     public float maxFish = 7.0f;
+
+    public int FishLevel;
     
     public void TriggerEvent()
     {
@@ -121,7 +123,7 @@ public class EventComponent : MonoBehaviour
 
     public void BuyItem()
     {
-        InventorySystem.instance.GetItem(ITEM_TYPE.Fish,1);
+        InventorySystem.instance.GetItem(ITEM_TYPE.Fish,FishLevel);
     }
     
 }

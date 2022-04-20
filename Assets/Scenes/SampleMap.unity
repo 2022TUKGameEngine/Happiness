@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.262814, g: 0.7014316, b: 0.83198744, a: 1}
+  m_IndirectSpecularColor: {r: 0.26230463, g: 0.7014565, b: 0.83241963, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -240,9 +240,6 @@ MonoBehaviour:
   CharacterStatus: {fileID: 0}
   Shop: {fileID: 0}
   Inventory: {fileID: 0}
-  chairObject: {fileID: 0}
-  minFish: 3
-  maxFish: 7
   FishLevel: 0
 --- !u!1001 &10660273
 PrefabInstance:
@@ -653,9 +650,6 @@ MonoBehaviour:
   CharacterStatus: {fileID: 0}
   Shop: {fileID: 1363815965}
   Inventory: {fileID: 0}
-  chairObject: {fileID: 0}
-  minFish: 3
-  maxFish: 7
   FishLevel: 0
 --- !u!65 &62330295
 BoxCollider:
@@ -829,7 +823,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 93731193}
-  m_LocalRotation: {x: 0.3621432, y: -0.000000016038456, z: 0.000000006231175, w: 0.93212247}
+  m_LocalRotation: {x: 0.3621432, y: 0.000000016038454, z: -0.0000000062311747, w: 0.93212247}
   m_LocalPosition: {x: 49.1, y: 24, z: 23.98}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -3027,10 +3021,7 @@ MonoBehaviour:
   CharacterStatus: {fileID: 0}
   Shop: {fileID: 0}
   Inventory: {fileID: 0}
-  chairObject: {fileID: 0}
-  minFish: 3
-  maxFish: 7
-  FishLevel: 3
+  FishLevel: 0
 --- !u!114 &556649251
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3919,10 +3910,7 @@ MonoBehaviour:
   CharacterStatus: {fileID: 0}
   Shop: {fileID: 0}
   Inventory: {fileID: 0}
-  chairObject: {fileID: 0}
-  minFish: 3
-  maxFish: 7
-  FishLevel: 1
+  FishLevel: 0
 --- !u!1 &664862477
 GameObject:
   m_ObjectHideFlags: 0
@@ -5063,9 +5051,6 @@ MonoBehaviour:
   CharacterStatus: {fileID: 946267116}
   Shop: {fileID: 0}
   Inventory: {fileID: 0}
-  chairObject: {fileID: 0}
-  minFish: 3
-  maxFish: 7
   FishLevel: 0
 --- !u!65 &857964879
 BoxCollider:
@@ -5330,6 +5315,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 595990129}
     - target: {fileID: 695911914463180191, guid: f5c62c6859aa4984b837b53a17958c84, type: 3}
+      propertyPath: animController
+      value: 
+      objectReference: {fileID: 621355591}
+    - target: {fileID: 6682165238060546325, guid: f5c62c6859aa4984b837b53a17958c84, type: 3}
+      propertyPath: chairObject
+      value: 
+      objectReference: {fileID: 595990129}
+    - target: {fileID: 6682165238060546325, guid: f5c62c6859aa4984b837b53a17958c84, type: 3}
       propertyPath: animController
       value: 
       objectReference: {fileID: 621355591}
@@ -8199,10 +8192,7 @@ MonoBehaviour:
   CharacterStatus: {fileID: 0}
   Shop: {fileID: 0}
   Inventory: {fileID: 0}
-  chairObject: {fileID: 0}
-  minFish: 3
-  maxFish: 7
-  FishLevel: 2
+  FishLevel: 0
 --- !u!114 &1682402796
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8781,7 +8771,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1756357182}
-  m_LocalRotation: {x: 0.3621432, y: -0.000000016038456, z: 0.000000006231175, w: 0.93212247}
+  m_LocalRotation: {x: 0.3621432, y: 0.000000016038454, z: -0.0000000062311747, w: 0.93212247}
   m_LocalPosition: {x: 49.1, y: 24, z: 23.98}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -10123,6 +10113,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 595990129}
     - target: {fileID: 695911914463180191, guid: f5c62c6859aa4984b837b53a17958c84, type: 3}
+      propertyPath: animController
+      value: 
+      objectReference: {fileID: 621355591}
+    - target: {fileID: 6682165238060546325, guid: f5c62c6859aa4984b837b53a17958c84, type: 3}
+      propertyPath: chairObject
+      value: 
+      objectReference: {fileID: 595990129}
+    - target: {fileID: 6682165238060546325, guid: f5c62c6859aa4984b837b53a17958c84, type: 3}
       propertyPath: animController
       value: 
       objectReference: {fileID: 621355591}

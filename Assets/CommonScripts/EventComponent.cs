@@ -11,18 +11,10 @@ public class EventComponent : MonoBehaviour
     public CharacterManager CharacterStatus;
     public GameObject Shop;
     public InventorySystem Inventory;
-    
-    public GameObject chairObject;
-    private bool _isFishing = false;
-    private float _waitingTime = 0.0f;
-    private float _fishTimer = 0.0f;
-
-    public float minFish = 3.0f;
-    public float maxFish = 7.0f;
 
     public int FishLevel;
     
-    public void TriggerEvent()
+    public virtual void TriggerEvent()
     {
         Debug.Log(EventType);
         switch(EventType)
@@ -52,20 +44,6 @@ public class EventComponent : MonoBehaviour
             }
 
             break;
-
-        case "Fishing":
-
-            _isFishing = !_isFishing;
-            animController.SetBool("isSitting", _isFishing);
-            chairObject.SetActive(_isFishing);
-
-            if (_isFishing == false)
-            {
-                return;
-            }
-            
-            InitFishTimer();
-            break; 
 
         case "Farming":
 
@@ -97,28 +75,9 @@ public class EventComponent : MonoBehaviour
         }
     }
 
-    private void Update() 
+    protected virtual void Update() 
     {
-        if (_isFishing)
-        {
-            doFishing();
-        }    
-    }
 
-    private void InitFishTimer()
-    {
-        _waitingTime = Random.Range(minFish, maxFish);
-        _fishTimer = 0.0f;
-    }
-
-    private void doFishing()
-    {
-        _fishTimer += Time.deltaTime;
-        if (_fishTimer > _waitingTime)
-        {
-            InventorySystem.instance.GetItem(ITEM_TYPE.Fish, 1);
-            InitFishTimer();
-        }
     }
 
     public void BuyItem()

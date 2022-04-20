@@ -9,7 +9,7 @@ public class EventComponent : MonoBehaviour
     public GameManager GameStatus;
     public CharacterManager CharacterStatus;
     public GameObject Shop;
-
+    public GameObject ShopPanel;
     public int FishLevel;
     
     public virtual void TriggerEvent()
@@ -68,7 +68,8 @@ public class EventComponent : MonoBehaviour
         case "Shopping":
 
             Shop.SetActive(true);
-
+            ShopPanel.GetComponent<DragAndDrop>().ResetPos();
+            
             break;
         }
     }

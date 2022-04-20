@@ -47,7 +47,6 @@ public class CharacterMove : MonoBehaviour
     {
         return;
     }
-
     Vector2 input = value.Get<Vector2>();
     playerMovement = new Vector3(input.x, 0, input.y);
   }

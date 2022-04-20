@@ -32,11 +32,11 @@ public class GameManager : MonoBehaviour
             nowHour = TimeManager.Hour;
             if (TimeManager.DayCycle==TimeLapse.Cycle.Night)
             {
-                player.LoseHP(2);
+                player.EarnHP(2);
             }
             else
             {
-                player.LoseHP(1);
+                player.EarnHP(1);
             }
             
         }

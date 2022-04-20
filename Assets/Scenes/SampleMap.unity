@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.26230463, g: 0.7014565, b: 0.83241963, a: 1}
+  m_IndirectSpecularColor: {r: 0.262814, g: 0.7014316, b: 0.83198744, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -236,10 +236,10 @@ MonoBehaviour:
   EventType: Shopping
   timeLapse: {fileID: 0}
   GameStatus: {fileID: 0}
-  animController: {fileID: 0}
   CharacterStatus: {fileID: 0}
   Shop: {fileID: 0}
-  Inventory: {fileID: 0}
+  ShopPanel: {fileID: 0}
+  IsActive: 0
   FishLevel: 0
 --- !u!1001 &10660273
 PrefabInstance:
@@ -646,10 +646,10 @@ MonoBehaviour:
   EventType: Shopping
   timeLapse: {fileID: 0}
   GameStatus: {fileID: 0}
-  animController: {fileID: 0}
   CharacterStatus: {fileID: 0}
   Shop: {fileID: 1363815965}
-  Inventory: {fileID: 0}
+  ShopPanel: {fileID: 415496634}
+  IsActive: 0
   FishLevel: 0
 --- !u!65 &62330295
 BoxCollider:
@@ -2207,6 +2207,7 @@ GameObject:
   - component: {fileID: 415496636}
   - component: {fileID: 415496639}
   - component: {fileID: 415496640}
+  - component: {fileID: 415496641}
   m_Layer: 5
   m_Name: ShopPanel
   m_TagString: Untagged
@@ -2286,6 +2287,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5653463e7daa112448b268857e514c57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rect: {fileID: 415496635}
 --- !u!95 &415496640
 Animator:
   serializedVersion: 4
@@ -2306,6 +2308,26 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &415496641
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 415496634}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b458a0941021f240aadbafff3bc38d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EventType: 
+  timeLapse: {fileID: 0}
+  GameStatus: {fileID: 0}
+  CharacterStatus: {fileID: 0}
+  Shop: {fileID: 415496634}
+  ShopPanel: {fileID: 0}
+  IsActive: 0
+  FishLevel: 0
 --- !u!1 &418440818
 GameObject:
   m_ObjectHideFlags: 0
@@ -3017,10 +3039,10 @@ MonoBehaviour:
   EventType: 
   timeLapse: {fileID: 0}
   GameStatus: {fileID: 0}
-  animController: {fileID: 0}
   CharacterStatus: {fileID: 0}
   Shop: {fileID: 0}
-  Inventory: {fileID: 0}
+  ShopPanel: {fileID: 0}
+  IsActive: 0
   FishLevel: 0
 --- !u!114 &556649251
 MonoBehaviour:
@@ -3906,10 +3928,10 @@ MonoBehaviour:
   EventType: 
   timeLapse: {fileID: 0}
   GameStatus: {fileID: 0}
-  animController: {fileID: 0}
   CharacterStatus: {fileID: 0}
   Shop: {fileID: 0}
-  Inventory: {fileID: 0}
+  ShopPanel: {fileID: 0}
+  IsActive: 0
   FishLevel: 0
 --- !u!1 &664862477
 GameObject:
@@ -5047,10 +5069,10 @@ MonoBehaviour:
   EventType: Sleep
   timeLapse: {fileID: 1705217678}
   GameStatus: {fileID: 0}
-  animController: {fileID: 0}
   CharacterStatus: {fileID: 946267116}
   Shop: {fileID: 0}
-  Inventory: {fileID: 0}
+  ShopPanel: {fileID: 0}
+  IsActive: 0
   FishLevel: 0
 --- !u!65 &857964879
 BoxCollider:
@@ -8188,10 +8210,10 @@ MonoBehaviour:
   EventType: 
   timeLapse: {fileID: 0}
   GameStatus: {fileID: 0}
-  animController: {fileID: 0}
   CharacterStatus: {fileID: 0}
   Shop: {fileID: 0}
-  Inventory: {fileID: 0}
+  ShopPanel: {fileID: 0}
+  IsActive: 0
   FishLevel: 0
 --- !u!114 &1682402796
 MonoBehaviour:
@@ -8755,7 +8777,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.7777778, y: 1}
+    m_SensorSize: {x: 2.121212, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -14822,6 +14844,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -34.592464
       objectReference: {fileID: 0}
+    - target: {fileID: 5105444185965841759, guid: 8a7bc7aa56cbd4a48baa751357f581da, type: 3}
+      propertyPath: ShopPanel
+      value: 
+      objectReference: {fileID: 415496634}
     - target: {fileID: 5105444185965841759, guid: 8a7bc7aa56cbd4a48baa751357f581da, type: 3}
       propertyPath: playerAnimController
       value: 

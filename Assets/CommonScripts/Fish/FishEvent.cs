@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class FishEvent : EventComponent
 {
+    public Animator animController;
     public GameObject chairObject;
     private bool _isFishing = false;
     private float _waitingTime = 0.0f;

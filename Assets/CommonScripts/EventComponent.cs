@@ -7,10 +7,8 @@ public class EventComponent : MonoBehaviour
     public string EventType;
     public TimeLapse timeLapse;
     public GameManager GameStatus;
-    public Animator animController;
     public CharacterManager CharacterStatus;
     public GameObject Shop;
-    public InventorySystem Inventory;
 
     public int FishLevel;
     

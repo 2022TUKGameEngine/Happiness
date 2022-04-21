@@ -239,7 +239,6 @@ MonoBehaviour:
   CharacterStatus: {fileID: 0}
   Shop: {fileID: 0}
   ShopPanel: {fileID: 0}
-  IsActive: 0
   FishLevel: 0
 --- !u!1001 &10660273
 PrefabInstance:
@@ -649,7 +648,6 @@ MonoBehaviour:
   CharacterStatus: {fileID: 0}
   Shop: {fileID: 1363815965}
   ShopPanel: {fileID: 415496634}
-  IsActive: 0
   FishLevel: 0
 --- !u!65 &62330295
 BoxCollider:
@@ -2326,7 +2324,6 @@ MonoBehaviour:
   CharacterStatus: {fileID: 0}
   Shop: {fileID: 415496634}
   ShopPanel: {fileID: 0}
-  IsActive: 0
   FishLevel: 0
 --- !u!1 &418440818
 GameObject:
@@ -3042,7 +3039,6 @@ MonoBehaviour:
   CharacterStatus: {fileID: 0}
   Shop: {fileID: 0}
   ShopPanel: {fileID: 0}
-  IsActive: 0
   FishLevel: 0
 --- !u!114 &556649251
 MonoBehaviour:
@@ -3931,7 +3927,6 @@ MonoBehaviour:
   CharacterStatus: {fileID: 0}
   Shop: {fileID: 0}
   ShopPanel: {fileID: 0}
-  IsActive: 0
   FishLevel: 0
 --- !u!1 &664862477
 GameObject:
@@ -5072,7 +5067,6 @@ MonoBehaviour:
   CharacterStatus: {fileID: 946267116}
   Shop: {fileID: 0}
   ShopPanel: {fileID: 0}
-  IsActive: 0
   FishLevel: 0
 --- !u!65 &857964879
 BoxCollider:
@@ -8213,7 +8207,6 @@ MonoBehaviour:
   CharacterStatus: {fileID: 0}
   Shop: {fileID: 0}
   ShopPanel: {fileID: 0}
-  IsActive: 0
   FishLevel: 0
 --- !u!114 &1682402796
 MonoBehaviour:
@@ -8777,7 +8770,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 2.121212, y: 1}
+    m_SensorSize: {x: 1.7777778, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0

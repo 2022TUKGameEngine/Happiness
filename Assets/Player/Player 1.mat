@@ -45,12 +45,12 @@ Material:
     - _DecalMeshDepthBias: 0
     - _DecalMeshViewBias: 0
     - _DrawOrder: 0
-    - _EmissionPower: 0.58
+    - _EmissionPower: 1
     - _QueueControl: 0
     - _QueueOffset: 0
     - _RimLightPower: 0.05
     m_Colors:
-    - _Color: {r: 1, g: 1, b: 1, a: 0}
+    - _Color: {r: 0, g: 0, b: 0, a: 0}
   m_BuildTextureStacks: []
 --- !u!114 &5609413304296607399
 MonoBehaviour:

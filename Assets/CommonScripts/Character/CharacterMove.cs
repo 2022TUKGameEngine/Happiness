@@ -43,7 +43,7 @@ public class CharacterMove : MonoBehaviour
 
   public void OnMove(InputValue value)
   {
-    if(playerAnimController.GetBool("isSitting"))
+    if(playerAnimController.GetBool("isFishing"))
     {
         return;
     }

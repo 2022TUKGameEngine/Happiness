@@ -16,7 +16,7 @@ public class FishEvent : EventComponent
     public override void TriggerEvent()
     {
         _isFishing = !_isFishing;
-        animController.SetBool("isSitting", _isFishing);
+        animController.SetBool("isFishing", _isFishing);
         chairObject.SetActive(_isFishing);
 
         if (_isFishing == false)

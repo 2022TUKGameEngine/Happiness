@@ -28,7 +28,7 @@ public class TimeLapse : MonoBehaviour
 
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         angleFactor = new Vector3(0, -90, 0);
         DayCycle=Cycle.Morning;

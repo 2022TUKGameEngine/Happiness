@@ -71,6 +71,10 @@ public class EventComponent : MonoBehaviour
             ShopPanel.GetComponent<DragAndDrop>().ResetPos();
             
             break;
+
+        case "WorkMan":
+            Debug.Log("workman");
+            break;
         }
     }
 

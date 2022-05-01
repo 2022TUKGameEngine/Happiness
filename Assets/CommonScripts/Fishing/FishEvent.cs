@@ -9,15 +9,16 @@ public class FishEvent : EventComponent
     private bool _isFishing = false;
     private float _waitingTime = 0.0f;
     private float _fishTimer = 0.0f;
+    private float _playerFishDuration = 0.0f;
 
     public float minFish = 3.0f;
     public float maxFish = 7.0f;
+    public float fishMaxDuration = 10.0f;
+
 
     public override void TriggerEvent()
     {
-        _isFishing = !_isFishing;
-        animController.SetBool("isFishing", _isFishing);
-        chairObject.SetActive(_isFishing);
+        SwitchFishState();
 
         if (_isFishing == false)
         {
@@ -39,15 +40,30 @@ public class FishEvent : EventComponent
     {
         _waitingTime = Random.Range(minFish, maxFish);
         _fishTimer = 0.0f;
+        _playerFishDuration = 0.0f;
     }
 
     private void doFishing()
     {
         _fishTimer += Time.deltaTime;
+        _playerFishDuration += Time.deltaTime;
+        
         if (_fishTimer > _waitingTime)
         {
             InventorySystem.instance.GetItem(ITEM_TYPE.Fish, 1);
             InitFishTimer();
         }
+
+        if (_playerFishDuration > fishMaxDuration)
+        {
+            SwitchFishState();
+        }
+    }
+
+    private void SwitchFishState()
+    {
+        _isFishing = !_isFishing;
+        animController.SetBool("isFishing", _isFishing);
+        chairObject.SetActive(_isFishing);
     }
 }

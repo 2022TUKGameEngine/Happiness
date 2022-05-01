@@ -18,6 +18,11 @@ public class FishEvent : EventComponent
 
     public override void TriggerEvent()
     {
+        if (!IsStartFishing())
+        {
+             return;
+        }
+
         SwitchFishState();
 
         if (_isFishing == false)
@@ -65,5 +70,14 @@ public class FishEvent : EventComponent
         _isFishing = !_isFishing;
         animController.SetBool("isFishing", _isFishing);
         chairObject.SetActive(_isFishing);
+    }
+
+    private bool IsStartFishing()
+    {
+        if (_isFishing)
+        {
+            return true;
+        }
+        return InventorySystem.instance.useItem(ITEM_TYPE.Fish);
     }
 }

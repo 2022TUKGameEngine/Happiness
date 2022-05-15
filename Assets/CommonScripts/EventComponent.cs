@@ -60,5 +60,10 @@ public class EventComponent : MonoBehaviour
     {
         InventorySystem.instance.GetItem(ITEM_TYPE.Fish,FishLevel);
     }
+
+    public void BuyBait()
+    {
+        InventorySystem.instance.GetItem(ITEM_TYPE.Bait,0);
+    }
     
 }

@@ -78,6 +78,6 @@ public class FishEvent : EventComponent
         {
             return true;
         }
-        return InventorySystem.instance.useItem(ITEM_TYPE.Fish);
+        return InventorySystem.instance.useItem(ITEM_TYPE.Bait);
     }
 }

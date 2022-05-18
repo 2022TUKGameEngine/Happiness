@@ -6,11 +6,11 @@ public class SleepEvent : EventComponent
 
 {
     public TimeLapse timeLapse;
-    UnityEvent m_Event=new UnityEvent();
+    UnityEvent m_Events=new UnityEvent();
 
     void Awake()
     {
-        m_Event.AddListener(DayLeft);
+        m_Events.AddListener(DayLeft);
     }
 
     public override void TriggerEvent()
@@ -19,7 +19,7 @@ public class SleepEvent : EventComponent
         {
             timeLapse.angleFactor.x=90f;
             timeLapse.CountDay+=1;
-            m_Event.Invoke();
+            m_Events.Invoke();
             CharacterStatus.EarnHP(100);
             if(timeLapse.Hour>6)
             {

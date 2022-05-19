@@ -2259,6 +2259,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 837752063}
     m_Modifications:
+    - target: {fileID: 4894849518922201051, guid: dc53baa962b6d244cb9e81ec33c0865a, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4894849518924458267, guid: dc53baa962b6d244cb9e81ec33c0865a, type: 3}
       propertyPath: m_Name
       value: Rock10

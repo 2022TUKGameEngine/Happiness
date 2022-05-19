@@ -45,9 +45,15 @@ public class MiningEvent : EventComponent
             InitMiningTimer();
         }
 
-        _scaleVal += Time.deltaTime;
+        if (_scaleVal > 0.6f)
+        {
+            SwitchMiningState();
+            gameObject.SetActive(false);
+        }
+
+        _scaleVal += Time.deltaTime / 10.0f;
         float scaleVal = 1.0f - _scaleVal;
-        Vector3 val = new Vector3(scaleVal,scaleVal,scaleVal);
+        Vector3 val = new Vector3(scaleVal, scaleVal, scaleVal);
         transform.localScale = val;
     }
 
@@ -56,7 +62,6 @@ public class MiningEvent : EventComponent
         _waitingTime = Random.Range(minMining, maxMining);
         _miningTimer = 0.0f;
         _playerMiningDuration = 0.0f;
-        _scaleVal = 0.0f;
     }
 
     private void SwitchMiningState()

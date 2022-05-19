@@ -17438,11 +17438,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 862275755, guid: 6189ffb9f7093324baf9ed46504ccf4d, type: 3}
       propertyPath: m_fontSize
-      value: 1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 862275755, guid: 6189ffb9f7093324baf9ed46504ccf4d, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 260113f9fbefc3846858c7e2fa489ea7, type: 2}
+    - target: {fileID: 862275755, guid: 6189ffb9f7093324baf9ed46504ccf4d, type: 3}
       propertyPath: m_fontSizeMax
-      value: 1.1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 862275755, guid: 6189ffb9f7093324baf9ed46504ccf4d, type: 3}
       propertyPath: m_fontSizeMin
@@ -17452,6 +17456,10 @@ PrefabInstance:
       propertyPath: m_fontSizeBase
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 862275755, guid: 6189ffb9f7093324baf9ed46504ccf4d, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 6942098166200660907, guid: 260113f9fbefc3846858c7e2fa489ea7, type: 2}
     - target: {fileID: 862275755, guid: 6189ffb9f7093324baf9ed46504ccf4d, type: 3}
       propertyPath: m_enableAutoSizing
       value: 1
@@ -17514,7 +17522,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1887804725, guid: 6189ffb9f7093324baf9ed46504ccf4d, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.85
+      value: 0.8
       objectReference: {fileID: 0}
     - target: {fileID: 1887804725, guid: 6189ffb9f7093324baf9ed46504ccf4d, type: 3}
       propertyPath: m_LocalScale.y
@@ -17523,6 +17531,26 @@ PrefabInstance:
     - target: {fileID: 1887804725, guid: 6189ffb9f7093324baf9ed46504ccf4d, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1887804726, guid: 6189ffb9f7093324baf9ed46504ccf4d, type: 3}
+      propertyPath: m_Color.a
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1887804726, guid: 6189ffb9f7093324baf9ed46504ccf4d, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1887804726, guid: 6189ffb9f7093324baf9ed46504ccf4d, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1887804726, guid: 6189ffb9f7093324baf9ed46504ccf4d, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2051289011, guid: 6189ffb9f7093324baf9ed46504ccf4d, type: 3}
+      propertyPath: m_Name
+      value: TalkingCanvas
       objectReference: {fileID: 0}
     - target: {fileID: 2051289015, guid: 6189ffb9f7093324baf9ed46504ccf4d, type: 3}
       propertyPath: m_Camera

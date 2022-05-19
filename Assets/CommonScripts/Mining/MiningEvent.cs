@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class MiningEvent : EventComponent
 {
-
-    private bool isMining = false;
+    public Animator animController;
+    private bool _isMining = false;
     private float _waitingTime = 0.0f;
     private float _miningTimer = 0.0f;
     private float _playerMiningDuration = 0.0f;
@@ -16,17 +16,19 @@ public class MiningEvent : EventComponent
     
     public override void TriggerEvent()
     {
-        isMining = !isMining;
+        SwitchMiningState();
 
-        if (isMining == false)
+        if (_isMining == false)
         {
             return;
         }
+
+        InitMiningTimer();
     }
     
     protected override void Update()
     {
-        if (isMining)
+        if (_isMining)
         {
             doMining();
         }
@@ -54,5 +56,12 @@ public class MiningEvent : EventComponent
         _waitingTime = Random.Range(minMining, maxMining);
         _miningTimer = 0.0f;
         _playerMiningDuration = 0.0f;
+        _scaleVal = 0.0f;
+    }
+
+    private void SwitchMiningState()
+    {
+        _isMining = !_isMining;
+        animController.SetBool("isMining", _isMining);
     }
 }

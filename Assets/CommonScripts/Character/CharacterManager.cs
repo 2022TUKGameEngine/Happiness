@@ -14,7 +14,7 @@ public class CharacterManager : MonoBehaviour
     public TMP_Text Money;
     public TMP_Text Level;
 
-    public float PlayerHP;
+    public float PlayerStress;
     public int _money;
     public int _level;
 
@@ -69,7 +69,7 @@ public class CharacterManager : MonoBehaviour
 
     void Start()
     {
-        PlayerHP = 50;
+        PlayerStress = 50;
         inventoryOpened = false;
     }
 
@@ -77,7 +77,7 @@ public class CharacterManager : MonoBehaviour
     {
         if (HPBar)
         {
-            HPBar.fillAmount = PlayerHP / 200f;
+            HPBar.fillAmount = PlayerStress / 200f;
             HPBar.color = new Color(HPBar.fillAmount, 0, 0);
         }
 
@@ -129,21 +129,16 @@ public class CharacterManager : MonoBehaviour
         }
     }
 
-    public void EarnHP(int hp)
+    public void ChangeStress(int amount)
     {
-        PlayerHP += hp;
-        if(PlayerHP > 200)
+        PlayerStress += amount;
+        if(PlayerStress > 200)
         {
-            PlayerHP = 200;
+            PlayerStress = 200;
         }
-    }
-
-    public void LoseHP(int hp)
-    {
-        PlayerHP-=hp;
-        if(PlayerHP<=0)
+        if(PlayerStress<=0)
         {
-            PlayerHP=0;
+            PlayerStress=0;
         }
     }
 

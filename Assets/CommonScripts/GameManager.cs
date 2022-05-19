@@ -5,7 +5,7 @@ using TMPro;
 
 public class GameManager : MonoBehaviour
 {
-    public TimeLapse TimeManager;
+    public DayNightCycle TimeManager;
     private int nowHour = 0;
     private int nowMinute = 0;
     public CharacterManager player;
@@ -15,28 +15,28 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        nowHour = TimeManager.Hour;
-        nowMinute = TimeManager.Minute-1;
+        nowHour = TimeManager.hours;
+        nowMinute = TimeManager.minutes-1;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (TimeManager.Minute != nowMinute)
+        if (TimeManager.minutes != nowMinute)
         {
-            nowMinute = TimeManager.Minute;
+            nowMinute = TimeManager.minutes;
             time.text = TimeManager.getTimeContext();
         }
-        if (TimeManager.Hour != nowHour)
+        if (TimeManager.hours != nowHour)
         {
-            nowHour = TimeManager.Hour;
-            if (TimeManager.DayCycle==TimeLapse.Cycle.Night)
+            nowHour = TimeManager.hours;
+            if (TimeManager.DayCycle==DayNightCycle.Cycle.Night)
             {
-                player.EarnHP(2);
+                player.ChangeStress(2);
             }
             else
             {
-                player.EarnHP(1);
+                player.ChangeStress(1);
             }
             
         }

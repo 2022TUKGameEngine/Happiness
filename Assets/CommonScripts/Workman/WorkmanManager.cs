@@ -4,20 +4,20 @@ using UnityEngine;
 
 public class WorkmanManager : MonoBehaviour
 {
-    public TimeLapse timeLapse;
+    public DayNightCycle timeLapse;
 
     public bool gameOverFlag;
 
     public void Start()
     {
         gameOverFlag = false;
-        dayChanged();
     }
 
     public void dayChanged()
     {
         if (gameOverFlag)
         {
+            
             //게임 오버
         }
 
@@ -30,7 +30,7 @@ public class WorkmanManager : MonoBehaviour
 
     public void isDayOfCatcher()    //날짜 바뀌면 처리함
     {
-        if (timeLapse.CountDay % 7 == 0)
+        if (timeLapse.dayNumber % 7 == 0)
         {
             gameOverFlag = true;
         }

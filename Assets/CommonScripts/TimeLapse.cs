@@ -4,6 +4,7 @@ using System;
 using UnityEngine;
 
 
+//LEGACY
 public class TimeLapse : MonoBehaviour
 {
     public GameObject dirLight;

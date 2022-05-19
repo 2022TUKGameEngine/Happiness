@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
+
 public class DayNightCycle : MonoBehaviour
 {
     [Header("Time")]
@@ -71,6 +73,8 @@ public class DayNightCycle : MonoBehaviour
     [SerializeField]
     private Gradient sunColor;
 
+    public UnityEvent daybreakEvents;
+
     public  enum Cycle
     {
         Morning,
@@ -114,6 +118,8 @@ public class DayNightCycle : MonoBehaviour
         {
             _dayNumber++;
             _timeOfDay-=1;
+
+            daybreakEvents.Invoke();
 
         }
 
@@ -159,5 +165,15 @@ public class DayNightCycle : MonoBehaviour
     private void adjustSunColor()
     {
         sun.color=sunColor.Evaluate(intensity);
+    }
+
+    public string getTimeContext()
+    {
+        return "Day "+dayNumber.ToString()+"  "+hours.ToString()+":"+minutes.ToString();
+    }
+
+    public void addTime(float addMinutes)
+    {
+        _timeOfDay+=addMinutes/1440f;
     }
 }

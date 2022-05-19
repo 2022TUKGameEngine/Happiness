@@ -13,9 +13,11 @@ GameObject:
   - component: {fileID: 7462569862154447986}
   - component: {fileID: 7853197629731922307}
   - component: {fileID: 4608243724773960583}
+  - component: {fileID: 3124204333814224594}
+  - component: {fileID: 354153695666046454}
   m_Layer: 0
   m_Name: Rock4
-  m_TagString: Untagged
+  m_TagString: EventCollider
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -120,3 +122,37 @@ MonoBehaviour:
   animController: {fileID: 0}
   minMining: 3
   maxMining: 5
+--- !u!114 &3124204333814224594
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7462569862156710578}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 04db88870f35b14408237cf335bf9a68, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EventType: 
+  GameStatus: {fileID: 0}
+  CharacterStatus: {fileID: 0}
+  Shop: {fileID: 0}
+  ShopPanel: {fileID: 0}
+  FishLevel: 0
+  animController: {fileID: 0}
+  minMining: 3
+  maxMining: 5
+--- !u!135 &354153695666046454
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7462569862156710578}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.84191346
+  m_Center: {x: -0.14134549, y: 0.8372152, z: -0.103985325}

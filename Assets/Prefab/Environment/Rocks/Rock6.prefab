@@ -12,9 +12,11 @@ GameObject:
   - component: {fileID: 8210548377926242884}
   - component: {fileID: 8210548377925275780}
   - component: {fileID: 64038500534576512}
+  - component: {fileID: 4563260926539155212}
+  - component: {fileID: 4463803255232900401}
   m_Layer: 0
   m_Name: Rock6
-  m_TagString: Untagged
+  m_TagString: EventCollider
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -98,3 +100,37 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: 4cfe42c97b386f64db12ed55713310df, type: 3}
+--- !u!114 &4563260926539155212
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8210548377923341892}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 04db88870f35b14408237cf335bf9a68, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EventType: 
+  GameStatus: {fileID: 0}
+  CharacterStatus: {fileID: 0}
+  Shop: {fileID: 0}
+  ShopPanel: {fileID: 0}
+  FishLevel: 0
+  animController: {fileID: 0}
+  minMining: 3
+  maxMining: 5
+--- !u!135 &4463803255232900401
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8210548377923341892}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 1.2535093
+  m_Center: {x: 0.20103051, y: 1.0492411, z: 0.21128139}

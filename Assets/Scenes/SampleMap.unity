@@ -894,7 +894,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 93731193}
-  m_LocalRotation: {x: 0.3621432, y: -0.000000016038454, z: 0.0000000062311747, w: 0.93212247}
+  m_LocalRotation: {x: 0.3621432, y: 0.000000016038456, z: -0.000000006231175, w: 0.93212247}
   m_LocalPosition: {x: 49.1, y: 24, z: 23.74}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -6439,7 +6439,7 @@ MonoBehaviour:
   Shop: {fileID: 0}
   ShopPanel: {fileID: 0}
   FishLevel: 0
-  timeLapse: {fileID: 1705217678}
+  timeLapse: {fileID: 1101988337}
 --- !u!1 &868127902
 GameObject:
   m_ObjectHideFlags: 0
@@ -7149,6 +7149,33 @@ MonoBehaviour:
     m_Mode: 0
     m_NumColorKeys: 3
     m_NumAlphaKeys: 2
+  daybreakEvents:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 487329906}
+        m_TargetAssemblyTypeName: FarmingSystem, Assembly-CSharp
+        m_MethodName: dayUpdate
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1818622763}
+        m_TargetAssemblyTypeName: WorkmanManager, Assembly-CSharp
+        m_MethodName: dayChanged
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   DayCycle: 0
 --- !u!4 &1101988338
 Transform:
@@ -11248,7 +11275,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.3333334, y: 1}
+    m_SensorSize: {x: 1.7777778, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -11264,7 +11291,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1756357182}
-  m_LocalRotation: {x: 0.3621432, y: -0.000000016038454, z: 0.0000000062311747, w: 0.93212247}
+  m_LocalRotation: {x: 0.3621432, y: 0.000000016038456, z: -0.000000006231175, w: 0.93212247}
   m_LocalPosition: {x: 49.1, y: 24, z: 23.74}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -11629,6 +11656,17 @@ Transform:
   m_Father: {fileID: 1315083416}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1818622763 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1121530635651593994, guid: 6189ffb9f7093324baf9ed46504ccf4d, type: 3}
+  m_PrefabInstance: {fileID: 3049103554880418929}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4fdd9e8dd6a09d846aaa0882d1201b2f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1820939450
 GameObject:
   m_ObjectHideFlags: 0
@@ -11962,7 +12000,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72183e8df2ee3974c966edab1b0f944d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TimeManager: {fileID: 1705217678}
+  TimeManager: {fileID: 1101988337}
   player: {fileID: 946267116}
   time: {fileID: 707056714}
 --- !u!4 &1887567401
@@ -17354,7 +17392,7 @@ PrefabInstance:
     - target: {fileID: 1121530635651593994, guid: 6189ffb9f7093324baf9ed46504ccf4d, type: 3}
       propertyPath: timeLapse
       value: 
-      objectReference: {fileID: 1705217678}
+      objectReference: {fileID: 1101988337}
     - target: {fileID: 2116682582437535919, guid: 6189ffb9f7093324baf9ed46504ccf4d, type: 3}
       propertyPath: timeLapse
       value: 

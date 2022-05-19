@@ -5,64 +5,88 @@ using UnityEngine.InputSystem;
 
 public class CharacterMove : MonoBehaviour
 {
-  public float moveSpeed = 10.0f;
-  public float rotateSpeed = 10.0f;
-  public Animator playerAnimController;
-  Rigidbody body;
+    public static CharacterMove data;
+    public float moveSpeed = 10.0f;
+    public float rotateSpeed = 10.0f;
+    public Animator playerAnimController;
+    Rigidbody body;
 
-  private Vector3 playerMovement;
+    private Vector3 playerMovement;
 
-  void Start()
-  {
-    body = GetComponent<Rigidbody>();
-     
-    playerAnimController.SetBool("isWalking", false);
-  }
-  
-  void FixedUpdate()
-  {  
-    SetPlayerMovement();
-    MovePlayer();
-    RotatePlayer();
-  }
+    private bool freeze;
 
-  void SetPlayerMovement()
-  {
-    //Debug.Log(fHorizontal + fVertical);
-
-    if (Mathf.Abs(playerMovement.x) + Mathf.Abs(playerMovement.z) <= 0)
+    void Awake()
     {
-      playerAnimController.SetBool("isWalking", false);
+        data = this;
     }
-    else
+    void Start()
     {
-      playerAnimController.SetBool("isWalking", true);
-    }
-    
-  }
+        freeze = false;
+        body = GetComponent<Rigidbody>();
 
-  public void OnMove(InputValue value)
-  {
-    if(playerAnimController.GetBool("isFishing"))
+        playerAnimController.SetBool("isWalking", false);
+    }
+
+    void FixedUpdate()
     {
-        return;
-    }
-    Vector2 input = value.Get<Vector2>();
-    playerMovement = new Vector3(input.x, 0, input.y);
-  }
-
-  void MovePlayer()
-  {
-    playerMovement = playerMovement.normalized*moveSpeed*Time.fixedDeltaTime;
-    body.MovePosition(body.position + playerMovement);
-  }
-
-  void RotatePlayer()
-  {
-    if (playerMovement == Vector3.zero) {
-      return;
+        if (!freeze)
+        {
+            SetPlayerMovement();
+            MovePlayer();
+            RotatePlayer();
+        }
     }
 
-    body.rotation = Quaternion.Slerp(body.rotation,Quaternion.LookRotation(playerMovement), rotateSpeed * Time.fixedDeltaTime);
-  }
+    void SetPlayerMovement()
+    {
+        //Debug.Log(fHorizontal + fVertical);
+
+        if (Mathf.Abs(playerMovement.x) + Mathf.Abs(playerMovement.z) <= 0)
+        {
+            playerAnimController.SetBool("isWalking", false);
+        }
+        else
+        {
+            playerAnimController.SetBool("isWalking", true);
+        }
+
+    }
+
+    public void OnMove(InputValue value)
+    {
+        if (playerAnimController.GetBool("isFishing"))
+        {
+            return;
+        }
+        Vector2 input = value.Get<Vector2>();
+        playerMovement = new Vector3(input.x, 0, input.y);
+    }
+
+    void MovePlayer()
+    {
+        playerMovement = playerMovement.normalized * moveSpeed * Time.fixedDeltaTime;
+        body.MovePosition(body.position + playerMovement);
+    }
+
+    void RotatePlayer()
+    {
+        if (playerMovement == Vector3.zero)
+        {
+            return;
+        }
+
+        body.rotation = Quaternion.Slerp(body.rotation, Quaternion.LookRotation(playerMovement), rotateSpeed * Time.fixedDeltaTime);
+    }
+
+    public void Purchase()
+    {
+        freeze = true;
+        playerAnimController.SetTrigger("Payment");
+
+    }
+    public void PurchaseEnd()
+    {
+        freeze = false;
+        playerAnimController.SetTrigger("PaymentEnd");
+    }
 }

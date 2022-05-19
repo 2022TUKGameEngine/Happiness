@@ -45,8 +45,9 @@ public class EventComponent : MonoBehaviour
             
             break;
 
-        case "WorkMan":
-            Debug.Log("workman");
+        case "NPC":
+            gameObject.GetComponent<NPC_Technologies>().Evented(Random.Range(0,100));
+            //Debug.Log("workman");
             break;
         }
     }

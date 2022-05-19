@@ -62,6 +62,7 @@ public class CharacterManager : MonoBehaviour
         }
     }
 
+
     void Awake()
     {
         data = this;

@@ -18,6 +18,10 @@ public class CharacterManager : MonoBehaviour
     public int _money;
     public int _level;
 
+    public int _FarmingLevel;
+    public int _MiningLevel;
+    public int _FishingLevel;
+
     private Collider detectedCollider = null;
 
     public int debug_grade;
@@ -83,7 +87,7 @@ public class CharacterManager : MonoBehaviour
         }
 
         Money.text = _money.ToString();
-        Level.text = _level.ToString();
+        //Level.text = _level.ToString();
     }
 
     private void OnTriggerEnter(Collider collision)
@@ -148,9 +152,32 @@ public class CharacterManager : MonoBehaviour
         _money += money;
     }
 
+    public void SpendMoney(int money)
+    {
+        _money-=money;
+    }
+
     public void EarnLevel(int level)
     {
         _level += level;
+    }
+
+    public void EarnFarmingLevel()
+    {
+        _FarmingLevel+=1;
+        Debug.Log(_FarmingLevel);
+    }
+
+    public void EarnMiningLevel()
+    {
+        _MiningLevel+=1;
+        Debug.Log(_MiningLevel);
+
+    }
+    public void EarnFishingLevel()
+    {
+        _FishingLevel+=1;
+        Debug.Log(_FishingLevel);
     }
 
 }

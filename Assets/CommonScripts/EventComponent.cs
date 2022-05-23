@@ -7,9 +7,8 @@ public class EventComponent : MonoBehaviour
     public string EventType;
     public GameManager GameStatus;
     public CharacterManager CharacterStatus;
-    public GameObject Shop;
-    public GameObject ShopPanel;
-    public int FishLevel;
+    public Animator Animation;
+    private bool BreakerIn=false;
     
     public virtual void TriggerEvent()
     {
@@ -38,33 +37,33 @@ public class EventComponent : MonoBehaviour
 
             break;
         
-        case "Shopping":
-
-            Shop.SetActive(true);
-            ShopPanel.GetComponent<DragAndDrop>().ResetPos();
-            
-            break;
 
         case "NPC":
             gameObject.GetComponent<NPC_Technologies>().Evented(Random.Range(0,100));
             //Debug.Log("workman");
             break;
+
+        case "Breaker":
+            if(CharacterManager.data._money>50 && BreakerIn==false)
+            {
+                CharacterManager.data.SpendMoney(50);
+                BreakerIn=true;
+                Animation.SetBool("IsOpen",true);
+            }
+
+            else if(BreakerIn==true)
+            {
+                BreakerIn=false;
+                Animation.SetBool("IsOpen",true);
+            }
+
+            break;
+
         }
     }
 
+
     protected virtual void Update() 
     {
-
-    }
-
-    public void BuyItem()
-    {
-        InventorySystem.instance.GetItem(ITEM_TYPE.Fish,FishLevel);
-    }
-
-    public void BuyBait()
-    {
-        InventorySystem.instance.GetItem(ITEM_TYPE.Bait,0);
-    }
-    
+    }    
 }

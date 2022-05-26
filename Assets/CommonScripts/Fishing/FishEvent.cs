@@ -14,7 +14,8 @@ public class FishEvent : EventComponent
     public float minFish = 3.0f;
     public float maxFish = 7.0f;
     public float fishMaxDuration = 10.0f;
-
+    public int _minLevel = 1;
+    public int _maxLevel = 4;
 
     public override void TriggerEvent()
     {
@@ -55,7 +56,8 @@ public class FishEvent : EventComponent
         
         if (_fishTimer > _waitingTime)
         {
-            InventorySystem.instance.GetItem(ITEM_TYPE.Fish, 1);
+            int level = Random.Range(_minLevel, _maxLevel);
+            InventorySystem.instance.GetItem(ITEM_TYPE.Fish, level);
             InitFishTimer();
         }
 

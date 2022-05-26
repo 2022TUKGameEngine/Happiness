@@ -13,7 +13,9 @@ public class MiningEvent : EventComponent
 
     public float minMining = 3.0f;
     public float maxMining = 5.0f;
-    
+    public int _minLevel = 1;
+    public int _maxLevel = 3;
+
     public override void TriggerEvent()
     {
         SwitchMiningState();
@@ -41,7 +43,8 @@ public class MiningEvent : EventComponent
 
         if (_miningTimer > _waitingTime)
         {
-            InventorySystem.instance.GetItem(ITEM_TYPE.Ore, 1);
+            int level = Random.Range(_minLevel,_maxLevel);
+            InventorySystem.instance.GetItem(ITEM_TYPE.Ore, level);
             InitMiningTimer();
         }
 

@@ -302,6 +302,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 837752063}
     m_Modifications:
     - target: {fileID: 95217414425534258, guid: 169e5f050a9f145489237cc7105f3c1d, type: 3}
+      propertyPath: _maxLevel
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 95217414425534258, guid: 169e5f050a9f145489237cc7105f3c1d, type: 3}
       propertyPath: animController
       value: 
       objectReference: {fileID: 621355591}
@@ -898,8 +902,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 93731193}
-  m_LocalRotation: {x: 0.3621432, y: -0.000000016038454, z: 0.0000000062311747, w: 0.93212247}
-  m_LocalPosition: {x: 48.15, y: 24, z: 22.55}
+  m_LocalRotation: {x: 0.36214334, y: 0.000000016038454, z: -0.0000000062311765, w: 0.9321224}
+  m_LocalPosition: {x: 47.179, y: 24.138, z: 40.988}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4229,6 +4233,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Rock5 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 1610710808853518274, guid: daf661d478fbcbf4791f00721500cb43, type: 3}
+      propertyPath: _maxLevel
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1610710808853518274, guid: daf661d478fbcbf4791f00721500cb43, type: 3}
+      propertyPath: _minLevel
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: daf661d478fbcbf4791f00721500cb43, type: 3}
 --- !u!1 &550222977
@@ -4856,6 +4868,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 837752063}
     m_Modifications:
+    - target: {fileID: 2798470159802428051, guid: c0695e50372965840badd7b84ed57617, type: 3}
+      propertyPath: _maxLevel
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 2798470159802428051, guid: c0695e50372965840badd7b84ed57617, type: 3}
       propertyPath: animController
       value: 
@@ -10630,6 +10646,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1130088376}
     m_Modifications:
+    - target: {fileID: 3124204333814224594, guid: 1aba0fbf10ced5447ad5eb30f4652084, type: 3}
+      propertyPath: _maxLevel
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3124204333814224594, guid: 1aba0fbf10ced5447ad5eb30f4652084, type: 3}
+      propertyPath: _minLevel
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 7462569862156710578, guid: 1aba0fbf10ced5447ad5eb30f4652084, type: 3}
       propertyPath: m_Name
       value: Rock4 (1)
@@ -11942,6 +11966,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5554879100868746886, guid: c00ecfa9e008e304ca87beda15e69f43, type: 3}
+      propertyPath: _maxLevel
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5554879100868746886, guid: c00ecfa9e008e304ca87beda15e69f43, type: 3}
+      propertyPath: _minLevel
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c00ecfa9e008e304ca87beda15e69f43, type: 3}
 --- !u!1001 &1699157439
@@ -12543,8 +12575,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1756357182}
-  m_LocalRotation: {x: 0.3621432, y: -0.000000016038454, z: 0.0000000062311747, w: 0.93212247}
-  m_LocalPosition: {x: 48.15, y: 24, z: 22.55}
+  m_LocalRotation: {x: 0.36214334, y: 0.000000016038454, z: -0.0000000062311765, w: 0.9321224}
+  m_LocalPosition: {x: 47.179, y: 24.138, z: 40.988}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -14309,6 +14341,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6895726418637826519, guid: 936441e8ad7465e409c2285b778dfd8f, type: 3}
+      propertyPath: _maxLevel
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6895726418637826519, guid: 936441e8ad7465e409c2285b778dfd8f, type: 3}
       propertyPath: animController
       value: 
       objectReference: {fileID: 621355591}
@@ -14487,6 +14523,8 @@ MonoBehaviour:
   animController: {fileID: 621355591}
   minMining: 3
   maxMining: 5
+  _minLevel: 1
+  _maxLevel: 3
 --- !u!135 &2122372894
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -14838,6 +14876,10 @@ PrefabInstance:
       propertyPath: animController
       value: 
       objectReference: {fileID: 621355591}
+    - target: {fileID: 6682165238060546325, guid: f5c62c6859aa4984b837b53a17958c84, type: 3}
+      propertyPath: _maxLevel
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6682165238060546325, guid: f5c62c6859aa4984b837b53a17958c84, type: 3}
       propertyPath: chairObject
       value: 

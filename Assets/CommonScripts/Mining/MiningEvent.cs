@@ -72,4 +72,13 @@ public class MiningEvent : EventComponent
         _isMining = !_isMining;
         animController.SetBool("isMining", _isMining);
     }
+
+    public void InitScale()
+    {
+        gameObject.SetActive(true);
+        _scaleVal = 0.0f;
+        float scaleVal = 1.0f - _scaleVal;
+        Vector3 val = new Vector3(scaleVal, scaleVal, scaleVal);
+        transform.localScale = val;
+    }
 }

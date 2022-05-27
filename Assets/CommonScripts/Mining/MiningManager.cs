@@ -8,7 +8,16 @@ public class MiningManager : MonoBehaviour
     {
         foreach(Transform child in transform)
         {
-            Debug.Log(child.name);
+            if (child.gameObject.active)
+            {
+                return;
+            }
+        }
+
+        foreach (Transform child in transform)
+        {
+            print("active component");
+            child.gameObject.GetComponent<MiningEvent>().InitScale();
         }
     }
 }

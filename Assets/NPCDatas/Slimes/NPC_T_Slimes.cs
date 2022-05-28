@@ -5,6 +5,7 @@ using UnityEngine;
 public class NPC_T_Slimes : NPC_Technologies
 {
     public int SlimeNumber;
+
     private SkinnedMeshRenderer slimeMeshRenderer;
 
     public NPC_Slime_Selector selector;
@@ -71,6 +72,7 @@ public class NPC_T_Slimes : NPC_Technologies
         {
             case 0:
                 if (check) c = new Color(0.8f, 0.75f, 0.95f);
+                NName.text = "»Â∏∞ ΩΩ∂Û¿”";
                 break;
             case 1:
                 if (check) c = Color.white;

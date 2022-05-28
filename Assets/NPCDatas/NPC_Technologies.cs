@@ -7,6 +7,7 @@ public class NPC_Technologies : MonoBehaviour
 {
     public UnityEvent TakeFunctions;
 
+    public TMPro.TMP_Text NName;
     public NPC_Serifs serif;
 
     protected TalkUI TalkBalloon;

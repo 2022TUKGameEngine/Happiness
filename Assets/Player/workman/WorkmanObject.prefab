@@ -247,6 +247,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isTalking: 0
+  serif: {fileID: 0}
 --- !u!1 &1887804724
 GameObject:
   m_ObjectHideFlags: 0
@@ -504,9 +505,7 @@ MonoBehaviour:
   EventType: NPC
   GameStatus: {fileID: 0}
   CharacterStatus: {fileID: 0}
-  Shop: {fileID: 0}
-  ShopPanel: {fileID: 0}
-  FishLevel: 0
+  Animation: {fileID: 0}
 --- !u!114 &1818622765
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -523,7 +522,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   serif: {fileID: 0}
-  TalkBalloon: {fileID: 0}
+  progress: 0
+  quested: 0
   thresholds: e8030000d0070000b80b0000a00f000088130000
   WM: {fileID: 0}
 --- !u!1001 &3049103555545285858

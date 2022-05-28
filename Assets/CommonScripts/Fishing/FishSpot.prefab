@@ -87,12 +87,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   EventType: 
-  timeLapse: {fileID: 0}
   GameStatus: {fileID: 0}
-  animController: {fileID: 0}
   CharacterStatus: {fileID: 0}
-  Shop: {fileID: 0}
-  Inventory: {fileID: 0}
+  Animation: {fileID: 0}
+  animController: {fileID: 0}
   chairObject: {fileID: 0}
   minFish: 3
   maxFish: 7
+  fishMaxDuration: 10
+  _minLevel: 1
+  _maxLevel: 4

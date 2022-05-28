@@ -20,7 +20,27 @@ public class NPC_Technologies : MonoBehaviour
 
     virtual public void Evented(int seed)
     {
+        //NEED for Serif System
+        if (!TalkBalloon.isTalking)
+        {
+            progress = 0;
+            TalkBalloon.openBalloon();
+        }
+        else
+        {
+            progress++;
+        }
 
+        if (progress >= serif.RandomSerifs.Count)
+        {
+            progress = 0;
+            TalkBalloon.closeBalloon();
+            serif.rand();
+            return;
+        }
+
+        TalkBalloon.serif.text = serif.RandomSerifs[progress];
+        //*************************
     }
     
 }

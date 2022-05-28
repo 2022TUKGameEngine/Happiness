@@ -17,6 +17,7 @@ public class NPC_T_Workman : NPC_Technologies
 
     override public void Evented(int seed)
     {
+        
         if (!TalkBalloon.isTalking)
         {
             progress = 0;

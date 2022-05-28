@@ -8,7 +8,7 @@ public class MiningManager : MonoBehaviour
     {
         foreach(Transform child in transform)
         {
-            if (child.gameObject.active)
+            if (child.gameObject.activeSelf)
             {
                 return;
             }

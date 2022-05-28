@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 200ed24bebd86734aaa7ef552faf6b01, type: 3}
+  m_Name: Serif_Slime_Selector
+  m_EditorClassIdentifier: 
+  serif:
+  - {fileID: 11400000, guid: 8110754aafea7a945853f45e4f40669a, type: 2}
+  - {fileID: 11400000, guid: caa206403c359e74ca2fd2c0a617f7e4, type: 2}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}

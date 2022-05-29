@@ -33,6 +33,16 @@ public class ShopEvent : EventComponent
         InventorySystem.instance.GetItem(ITEM_TYPE.Seed,0);
     }
 
+    public void BuyEnergyBar()
+    {
+        InventorySystem.instance.GetItem(ITEM_TYPE.EnergyBar,0);
+    }
+
+    public void BuyEnergyDrink()
+    {
+        InventorySystem.instance.GetItem(ITEM_TYPE.EnergyDrink,0);
+    }
+
     public void FarmingLevelUp()
     {
         CharacterManager.data.EarnFarmingLevel();

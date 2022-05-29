@@ -20,6 +20,8 @@ public enum ITEM_TYPE
     Ore_SuperRare,
     Ore_Legend,
     Bait,
+    EnergyBar,
+    EnergyDrink
 }
 
 [CreateAssetMenu(fileName = "Item Sprite Data", menuName = "Scriptable Object/Item Sprite Data", order = int.MaxValue)]

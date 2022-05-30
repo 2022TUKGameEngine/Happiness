@@ -12,6 +12,7 @@ public class NPC_Technologies : MonoBehaviour
 
     protected TalkUI TalkBalloon;
 
+    [System.NonSerialized]
     public int progress;
     public bool quested = false;
 

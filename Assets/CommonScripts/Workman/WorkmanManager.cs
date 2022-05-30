@@ -36,7 +36,7 @@ public class WorkmanManager : MonoBehaviour
 
     public void isDayOfCatcher()    //날짜 바뀌면 처리함
     {
-        if (timeLapse.dayNumber % 7 == 0) //&& timeLapse.dayNumber > 0)
+        if (timeLapse.dayNumber % 7 == 0 && timeLapse.dayNumber > 0)
         {
             gameOverFlag = true;
         }

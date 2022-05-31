@@ -4837,6 +4837,10 @@ PrefabInstance:
       propertyPath: _minLevel
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 1610710808853518274, guid: daf661d478fbcbf4791f00721500cb43, type: 3}
+      propertyPath: animController
+      value: 
+      objectReference: {fileID: 621355591}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: daf661d478fbcbf4791f00721500cb43, type: 3}
 --- !u!1 &550222977
@@ -13050,6 +13054,10 @@ PrefabInstance:
       propertyPath: _minLevel
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 3124204333814224594, guid: 1aba0fbf10ced5447ad5eb30f4652084, type: 3}
+      propertyPath: animController
+      value: 
+      objectReference: {fileID: 621355591}
     - target: {fileID: 7462569862156710578, guid: 1aba0fbf10ced5447ad5eb30f4652084, type: 3}
       propertyPath: m_Name
       value: Rock4 (1)
@@ -13098,7 +13106,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4608243724773960583, guid: 1aba0fbf10ced5447ad5eb30f4652084, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 1aba0fbf10ced5447ad5eb30f4652084, type: 3}
 --- !u!4 &1511566888 stripped
 Transform:
@@ -14660,6 +14669,10 @@ PrefabInstance:
       propertyPath: _minLevel
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 5554879100868746886, guid: c00ecfa9e008e304ca87beda15e69f43, type: 3}
+      propertyPath: animController
+      value: 
+      objectReference: {fileID: 621355591}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c00ecfa9e008e304ca87beda15e69f43, type: 3}
 --- !u!1001 &1699157439
@@ -23950,15 +23963,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4269654177804652010, guid: 8a7bc7aa56cbd4a48baa751357f581da, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 4269654177804652010, guid: 8a7bc7aa56cbd4a48baa751357f581da, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 4269654177804652010, guid: 8a7bc7aa56cbd4a48baa751357f581da, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 4269654177804652010, guid: 8a7bc7aa56cbd4a48baa751357f581da, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x

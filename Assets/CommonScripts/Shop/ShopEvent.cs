@@ -7,6 +7,10 @@ public class ShopEvent : EventComponent
     public GameObject Shop;
     public GameObject ShopPanel;
 
+    public ItemSpriteData ItemData;
+
+    public int ItemDataNumber;
+
 
     public int ItemGrade;
 
@@ -20,27 +24,11 @@ public class ShopEvent : EventComponent
 
     public void BuyItem()
     {
-        InventorySystem.instance.GetItem(ITEM_TYPE.Fish,ItemGrade);
-    }
-
-    public void BuyBait()
-    {
-        InventorySystem.instance.GetItem(ITEM_TYPE.Bait,0);
-    }
-
-    public void BuySeed()
-    {
-        InventorySystem.instance.GetItem(ITEM_TYPE.Seed,0);
-    }
-
-    public void BuyEnergyBar()
-    {
-        InventorySystem.instance.GetItem(ITEM_TYPE.EnergyBar,0);
-    }
-
-    public void BuyEnergyDrink()
-    {
-        InventorySystem.instance.GetItem(ITEM_TYPE.EnergyDrink,0);
+        if(CharacterManager.data._money>=ItemData.ItemPrices[ItemDataNumber])
+        {
+            InventorySystem.instance.GetItem((ITEM_TYPE)ItemDataNumber,0);
+            CharacterManager.data.SpendMoney(ItemData.ItemPrices[ItemDataNumber]);
+        }
     }
 
     public void FarmingLevelUp()

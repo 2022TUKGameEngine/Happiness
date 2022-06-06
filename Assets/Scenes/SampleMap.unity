@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 1225963676}
-  m_IndirectSpecularColor: {r: 0.12731852, g: 0.13414773, b: 0.12107754, a: 1}
+  m_IndirectSpecularColor: {r: 0.12731896, g: 0.13414797, b: 0.12107769, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2496,6 +2496,8 @@ MonoBehaviour:
   Animation: {fileID: 0}
   Shop: {fileID: 0}
   ShopPanel: {fileID: 0}
+  ItemData: {fileID: 11400000, guid: 41d634a1997c97e46b8888a40a26fa76, type: 2}
+  ItemDataNumber: 19
   ItemGrade: 0
 --- !u!114 &226446194
 MonoBehaviour:
@@ -2543,7 +2545,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 226446193}
         m_TargetAssemblyTypeName: ShopEvent, Assembly-CSharp
-        m_MethodName: BuyEnergyDrink
+        m_MethodName: BuyItem
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2846,6 +2848,8 @@ MonoBehaviour:
   Animation: {fileID: 0}
   Shop: {fileID: 0}
   ShopPanel: {fileID: 0}
+  ItemData: {fileID: 11400000, guid: 41d634a1997c97e46b8888a40a26fa76, type: 2}
+  ItemDataNumber: 18
   ItemGrade: 0
 --- !u!114 &238091613
 MonoBehaviour:
@@ -2893,7 +2897,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 238091612}
         m_TargetAssemblyTypeName: ShopEvent, Assembly-CSharp
-        m_MethodName: BuyEnergyBar
+        m_MethodName: BuyItem
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5265,6 +5269,8 @@ MonoBehaviour:
   Animation: {fileID: 0}
   Shop: {fileID: 0}
   ShopPanel: {fileID: 0}
+  ItemData: {fileID: 0}
+  ItemDataNumber: 0
   ItemGrade: 0
 --- !u!1 &564783846
 GameObject:
@@ -6801,6 +6807,8 @@ MonoBehaviour:
   Animation: {fileID: 0}
   Shop: {fileID: 0}
   ShopPanel: {fileID: 0}
+  ItemData: {fileID: 0}
+  ItemDataNumber: 0
   ItemGrade: 1
 --- !u!1 &664862477
 GameObject:
@@ -14540,6 +14548,8 @@ MonoBehaviour:
   Animation: {fileID: 0}
   Shop: {fileID: 0}
   ShopPanel: {fileID: 0}
+  ItemData: {fileID: 0}
+  ItemDataNumber: 0
   ItemGrade: 2
 --- !u!1001 &1690157237
 PrefabInstance:
@@ -15258,7 +15268,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.9171647, y: 1}
+    m_SensorSize: {x: 2.1271675, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -23032,6 +23042,8 @@ MonoBehaviour:
   Animation: {fileID: 0}
   Shop: {fileID: 1363815965}
   ShopPanel: {fileID: 415496634}
+  ItemData: {fileID: 0}
+  ItemDataNumber: 0
   ItemGrade: 0
 --- !u!65 &4144519539818729986
 BoxCollider:
@@ -23513,6 +23525,18 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -100
       objectReference: {fileID: 0}
+    - target: {fileID: 138178631, guid: b63e104db4cb554468b9bd873d5f7f0c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: BuyItem
+      objectReference: {fileID: 0}
+    - target: {fileID: 138178634, guid: b63e104db4cb554468b9bd873d5f7f0c, type: 3}
+      propertyPath: ItemData
+      value: 
+      objectReference: {fileID: 11400000, guid: 41d634a1997c97e46b8888a40a26fa76, type: 2}
+    - target: {fileID: 138178634, guid: b63e104db4cb554468b9bd873d5f7f0c, type: 3}
+      propertyPath: ItemDataNumber
+      value: 17
+      objectReference: {fileID: 0}
     - target: {fileID: 334155358, guid: b63e104db4cb554468b9bd873d5f7f0c, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -23552,6 +23576,18 @@ PrefabInstance:
     - target: {fileID: 537538279, guid: b63e104db4cb554468b9bd873d5f7f0c, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: -100
+      objectReference: {fileID: 0}
+    - target: {fileID: 537538281, guid: b63e104db4cb554468b9bd873d5f7f0c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: BuyItem
+      objectReference: {fileID: 0}
+    - target: {fileID: 537538284, guid: b63e104db4cb554468b9bd873d5f7f0c, type: 3}
+      propertyPath: ItemData
+      value: 
+      objectReference: {fileID: 11400000, guid: 41d634a1997c97e46b8888a40a26fa76, type: 2}
+    - target: {fileID: 537538284, guid: b63e104db4cb554468b9bd873d5f7f0c, type: 3}
+      propertyPath: ItemDataNumber
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 1085975179, guid: b63e104db4cb554468b9bd873d5f7f0c, type: 3}
       propertyPath: m_LocalScale.x

@@ -85,6 +85,13 @@ public class ItemData : MonoBehaviour
         //print(itemType);
         if (itemType == ITEM_TYPE.NONE)
             return;
+            
+        if(itemType==ITEM_TYPE.EnergyDrink || itemType==ITEM_TYPE.EnergyBar)
+        {
+            CharacterManager.data.SpendMoney(itemPrice);
+            CharacterManager.data.ChangeStress(-50);
+        }//에너지바, 에너지드링크면 판매시에 돈 증가 안되게(사용되게)
+
         if (isAlchemicable)
         {
             if (numbers > 0)
@@ -101,6 +108,7 @@ public class ItemData : MonoBehaviour
                 changeNumber(-1);
             }
         }
+
         SoundManager.instance.sellItem();
     }
 

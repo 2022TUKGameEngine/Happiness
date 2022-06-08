@@ -20,11 +20,12 @@ public class NPC_DropManager : MonoBehaviour
         {
             foreach (var v in drops[i].NPCs)
             {
-                if (i == 0)
-                    v.SetActive(true);
-                else
-                    v.SetActive(false);
+                v.SetActive(false);
             }
+        }
+        foreach (var v in drops[0].NPCs)
+        {
+            v.SetActive(true);
         }
     }
 
@@ -32,9 +33,12 @@ public class NPC_DropManager : MonoBehaviour
     {
         if (TimeLapsed.dayNumber < drops.Count)
         {
-            foreach (var v in drops[TimeLapsed.dayNumber - 1].NPCs)
+            if (TimeLapsed.dayNumber > 0)
             {
-                v.SetActive(false);
+                foreach (var v in drops[TimeLapsed.dayNumber - 1].NPCs)
+                {
+                    v.SetActive(false);
+                }
             }
             foreach (var v in drops[TimeLapsed.dayNumber].NPCs)
             {

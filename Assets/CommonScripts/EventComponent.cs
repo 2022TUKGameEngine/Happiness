@@ -59,6 +59,10 @@ public class EventComponent : MonoBehaviour
 
             break;
 
+        case "Digging":
+            Debug.Log("dig");
+            Animation.SetBool("isDigging",true);
+        break;
         }
     }
 

@@ -14,11 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   randomSerifs:
   - s:
-    - "\uC2AC\uB77C\uC784 \uB300\uC0AC 1-1"
-    - "\uC2AC\uB77C\uC784 \uB300\uC0AC 1-2"
+    - ...
+    - "(\uAF2C\uB974\uB975)"
   - s:
-    - "\uC2AC\uB77C\uC784 \uB300\uC0AC 2-1"
-    - "\uC2AC\uB77C\uC784 \uB300\uC0AC 2-2"
-    - "\uC2AC\uB77C\uC784 \uB300\uC0AC 2-3"
+    - "\uC790\uD310\uAE30\uB97C \uBD80\uC218\uBA74..."
+    - ...
+    - ...
   questSerifs: []
   resultSerifs: []

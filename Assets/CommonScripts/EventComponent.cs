@@ -66,6 +66,8 @@ public class EventComponent : MonoBehaviour
 
         case "Digging":
             Debug.Log("dig");
+            CharacterMove.data.dig = 50;
+            StartCoroutine(CharacterMove.data.digPanel());
             Animation.SetBool("isDigging",true);
         break;
         }

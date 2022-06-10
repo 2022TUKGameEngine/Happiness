@@ -11,6 +11,8 @@ public class CharacterMove : MonoBehaviour
     public Animator playerAnimController;
     Rigidbody body;
 
+    public int dig = 0;
+
     private Vector3 playerMovement;
 
     private bool freeze;
@@ -52,9 +54,43 @@ public class CharacterMove : MonoBehaviour
 
     }
 
+    void OnDig(InputValue value)
+    {
+        if (playerAnimController.GetBool("isDigging"))
+        {
+            dig += 5;
+        }
+
+    }
+
+    public IEnumerator digPanel()
+    {
+        while (dig > 0 && dig < 100)
+        {
+            print($"dig : {dig}");
+            dig -= 1;
+            yield return new WaitForSeconds(0.25f);
+
+        }
+        if (dig <= 0)
+        {
+            //실패
+            playerAnimController.SetBool("isDigging", false);
+
+        }
+        else if (dig >= 100)
+        {
+            //성공
+            playerAnimController.SetBool("isDigging", false);
+            InventorySystem.instance.GetItem(ITEM_TYPE.Seed, 1);
+        }
+    }
+
+
+
     public void OnMove(InputValue value)
     {
-        if (playerAnimController.GetBool("isFishing"))
+        if (playerAnimController.GetBool("isFishing") || playerAnimController.GetBool("isDigging"))
         {
             return;
         }

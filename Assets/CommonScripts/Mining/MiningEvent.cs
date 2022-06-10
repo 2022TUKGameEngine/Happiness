@@ -38,6 +38,7 @@ public class MiningEvent : EventComponent
 
     private void doMining()
     {
+        
         _miningTimer += Time.deltaTime;
         _playerMiningDuration += Time.deltaTime;
 
@@ -46,6 +47,7 @@ public class MiningEvent : EventComponent
             int level = Random.Range(_minLevel,_maxLevel);
             InventorySystem.instance.GetItem(ITEM_TYPE.Ore, level);
             InitMiningTimer();
+            CharacterManager.data.ChangeStress(10);
         }
 
         if (_scaleVal > 0.6f)

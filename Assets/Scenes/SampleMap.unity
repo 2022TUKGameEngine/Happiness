@@ -20,11 +20,11 @@ RenderSettings:
   m_FogDensity: 0.01
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
-  m_AmbientSkyColor: {r: 0.212, g: 0.227, b: 0.259, a: 1}
+  m_AmbientSkyColor: {r: 1, g: 1, b: 1, a: 1}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
   m_AmbientIntensity: 1
-  m_AmbientMode: 0
+  m_AmbientMode: 3
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
   m_SkyboxMaterial: {fileID: 2100000, guid: a488c0675b57d7b47929b7e161bdb128, type: 2}
   m_HaloStrength: 0.5
@@ -12864,6 +12864,27 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3459954031337841175, guid: 57ae9c255efa434489227bbc517b1686, type: 3}
   m_PrefabInstance: {fileID: 189280684}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1446972714 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4536988999878009099, guid: 114493b33737d0a44ace37f2c11adc14, type: 3}
+  m_PrefabInstance: {fileID: 3235223791388228772}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1446972720
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1446972714}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b458a0941021f240aadbafff3bc38d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EventType: Breaker
+  GameStatus: {fileID: 0}
+  CharacterStatus: {fileID: 0}
+  Animation: {fileID: 1258499599}
 --- !u!1 &1447297734
 GameObject:
   m_ObjectHideFlags: 0
@@ -15419,7 +15440,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.7777778, y: 1}
+    m_SensorSize: {x: 2.1242774, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -23009,6 +23030,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Breaker
       objectReference: {fileID: 0}
+    - target: {fileID: 1236562767611183520, guid: 114493b33737d0a44ace37f2c11adc14, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1957013448154035777, guid: 114493b33737d0a44ace37f2c11adc14, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -23052,6 +23077,10 @@ PrefabInstance:
     - target: {fileID: 1957013448154035777, guid: 114493b33737d0a44ace37f2c11adc14, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4536988999878009099, guid: 114493b33737d0a44ace37f2c11adc14, type: 3}
+      propertyPath: m_TagString
+      value: EventCollider
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 114493b33737d0a44ace37f2c11adc14, type: 3}

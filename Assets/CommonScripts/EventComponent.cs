@@ -22,17 +22,22 @@ public class EventComponent : MonoBehaviour
             if (FarmingSystem.instance.isGroundFarmed(groundNum) > 0)
             {
                 FarmingSystem.instance.watering(groundNum);
+                CharacterManager.data.ChangeStress(10);
+
             }
             else if (FarmingSystem.instance.isGroundFarmed(groundNum) == 0)
             {
                 if (CharacterManager.data.inventory.GetComponent<InventorySystem>().useItem(ITEM_TYPE.Seed))
                 {
                     FarmingSystem.instance.plantSeed(gameObject, groundNum);
+                    CharacterManager.data.ChangeStress(10);
+
                 }
             }
             else
             {
                 FarmingSystem.instance.clearGround(groundNum);
+                CharacterManager.data.ChangeStress(10);
             }
 
             break;

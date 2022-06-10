@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
-
 public class DayNightCycle : MonoBehaviour
 {
     [Header("Time")]
@@ -84,7 +83,9 @@ public class DayNightCycle : MonoBehaviour
     };
 
     public Cycle DayCycle;
-
+    private Color32 LerpedColor;
+    private Color32 NightColor=new Color32(35,45,115,255);
+    private Color32 DayColor=new Color32(255,243,221,255);
     private void Awake()
     {
         DayCycle=Cycle.Morning;
@@ -96,6 +97,20 @@ public class DayNightCycle : MonoBehaviour
         {
             UpdateTimeScale();
             UpdateTime();
+
+            if(_timeOfDay>=0.5&&_timeOfDay<1)
+                RenderSettings.ambientLight=new Color32(35,45,115,255);
+            else //if(_timeOfDay>=0&&_timeOfDay<0.25)
+                {
+                    //RenderSettings.ambientLight=DayColor;
+                    LerpedColor=Color32.Lerp(NightColor,DayColor,Mathf.PingPong(_timeOfDay,0.25f));
+                    RenderSettings.ambientLight=new Color32(LerpedColor.r,LerpedColor.g,LerpedColor.b,LerpedColor.a);
+                }
+            // else if(_timeOfDay>=0.25&&_timeOfDay<0.5)
+            // {
+            //         LerpedColor=Color32.Lerp(DayColor,NightColor,Mathf.PingPong(_timeOfDay,0.5f));
+            //         RenderSettings.ambientLight=new Color32(LerpedColor.r,LerpedColor.g,LerpedColor.b,LerpedColor.a);
+            // }
         }
         adjustSunRotation();
     }

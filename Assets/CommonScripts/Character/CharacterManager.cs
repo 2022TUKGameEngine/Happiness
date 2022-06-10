@@ -164,20 +164,32 @@ public class CharacterManager : MonoBehaviour
 
     public void EarnFarmingLevel()
     {
-        _FarmingLevel+=1;
-        Debug.Log(_FarmingLevel);
+        if(CharacterManager.data._money>=(_FarmingLevel+1)*50)
+        {
+            CharacterManager.data.SpendMoney((_FarmingLevel+1)*50);
+            _FarmingLevel+=1;
+            Debug.Log(_FarmingLevel);
+        }
     }
 
     public void EarnMiningLevel()
     {
-        _MiningLevel+=1;
-        Debug.Log(_MiningLevel);
+        if(CharacterManager.data._money>=(_MiningLevel+1)*50)
+        {
+            CharacterManager.data.SpendMoney((_MiningLevel+1)*50);
+            _MiningLevel+=1;
+            Debug.Log(_MiningLevel);
+        }
 
     }
     public void EarnFishingLevel()
     {
-        _FishingLevel+=1;
-        Debug.Log(_FishingLevel);
+        if(CharacterManager.data._money>=(_FishingLevel+1)*50)
+        {
+            CharacterManager.data.SpendMoney((_FishingLevel+1)*50);
+            _FishingLevel+=1;
+            Debug.Log(_FishingLevel);
+        }
     }
 
 }

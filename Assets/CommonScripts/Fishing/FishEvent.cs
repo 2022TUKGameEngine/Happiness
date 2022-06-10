@@ -58,6 +58,7 @@ public class FishEvent : EventComponent
         {
             int level = Random.Range(_minLevel, _maxLevel);
             InventorySystem.instance.GetItem(ITEM_TYPE.Fish, level);
+            CharacterManager.data.ChangeStress(10);
             InitFishTimer();
         }
 

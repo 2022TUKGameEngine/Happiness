@@ -21,6 +21,7 @@ public class CharacterManager : MonoBehaviour
     public int _FarmingLevel;
     public int _MiningLevel;
     public int _FishingLevel;
+    public int _DiggingLevel;
 
     private Collider detectedCollider = null;
 
@@ -65,7 +66,6 @@ public class CharacterManager : MonoBehaviour
             inventoryOpened = true;
         }
     }
-
 
     void Awake()
     {

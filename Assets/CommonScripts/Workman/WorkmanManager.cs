@@ -18,8 +18,7 @@ public class WorkmanManager : MonoBehaviour
     {
         if (gameOverFlag)
         {
-            Debug.LogError("GAMEOVER");
-            //°ÔÀÓ ¿À¹ö
+            GameOverManager.Instance.setGameOver();
         }
 
         isDayOfCatcher();
@@ -34,7 +33,7 @@ public class WorkmanManager : MonoBehaviour
         }
     }
 
-    public void isDayOfCatcher()    //³¯Â¥ ¹Ù²î¸é Ã³¸®ÇÔ
+    public void isDayOfCatcher()    //ï¿½ï¿½Â¥ ï¿½Ù²ï¿½ï¿½ Ã³ï¿½ï¿½ï¿½ï¿½
     {
         if (timeLapse.dayNumber % 7 == 0 && timeLapse.dayNumber > 0)
         {

@@ -74,7 +74,7 @@ public class CharacterManager : MonoBehaviour
 
     void Start()
     {
-        PlayerStress = 50;
+        PlayerStress = 10;
         inventoryOpened = false;
     }
 
@@ -134,7 +134,7 @@ public class CharacterManager : MonoBehaviour
         }
     }
 
-    public void ChangeStress(int amount)
+    public void ChangeStress(float amount)
     {
         PlayerStress += amount;
         if(PlayerStress > 200)

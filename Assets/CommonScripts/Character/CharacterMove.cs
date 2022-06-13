@@ -12,6 +12,7 @@ public class CharacterMove : MonoBehaviour
     Rigidbody body;
 
     public int dig = 0;
+    public GameObject sap;
 
     private Vector3 playerMovement;
 
@@ -27,6 +28,18 @@ public class CharacterMove : MonoBehaviour
         body = GetComponent<Rigidbody>();
 
         playerAnimController.SetBool("isWalking", false);
+    }
+
+    void Update()
+    {
+        if (playerAnimController.GetBool("isDigging"))
+        {
+            sap.SetActive(true);
+        }
+        else
+        {
+            sap.SetActive(false);
+        }
     }
 
     void FixedUpdate()
@@ -59,6 +72,7 @@ public class CharacterMove : MonoBehaviour
         if (playerAnimController.GetBool("isDigging"))
         {
             dig += 5;
+            CharacterManager.data.ChangeStress(0.5f);
         }
 
     }
@@ -67,7 +81,7 @@ public class CharacterMove : MonoBehaviour
     {
         while (dig > 0 && dig < 100)
         {
-            print($"dig : {dig}");
+            //print($"dig : {dig}");
             dig -= 1;
             yield return new WaitForSeconds(0.25f);
 
@@ -82,7 +96,9 @@ public class CharacterMove : MonoBehaviour
         {
             //¼º°ø
             playerAnimController.SetBool("isDigging", false);
-            InventorySystem.instance.GetItem(ITEM_TYPE.Seed, 1);
+
+            
+            InventorySystem.instance.GetItem(ITEM_TYPE.Fossil1, Random.Range(0,4));
         }
     }
 

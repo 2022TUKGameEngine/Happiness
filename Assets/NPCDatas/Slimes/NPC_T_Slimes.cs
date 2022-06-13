@@ -24,7 +24,8 @@ public class NPC_T_Slimes : NPC_Technologies
         check = false;
         slimeMeshRenderer = gameObject.GetComponentInChildren<SkinnedMeshRenderer>();
         TalkBalloon = gameObject.GetComponentInChildren<TalkUI>();
-        TalkBalloon.isTalking = false;
+        if (TalkBalloon != null)
+            TalkBalloon.isTalking = false;
         quested = false;
         defaultSerifSystem = true;
 

@@ -21,28 +21,13 @@ public class WorkmanManager : MonoBehaviour
             GameOverManager.Instance.setGameOver();
         }
 
-        isDayOfCatcher();
-        if (gameOverFlag)
-        {
-            gameObject.SetActive(true);
-        }
-        else
-        {
-            
-            gameObject.SetActive(false);
-        }
+        gameOverFlag = isDayOfCatcher();
+        gameObject.SetActive(gameOverFlag);
     }
 
-    public void isDayOfCatcher()    //��¥ �ٲ�� ó����
+    public bool isDayOfCatcher()
     {
-        if (timeLapse.dayNumber % 7 == 0 && timeLapse.dayNumber > 0)
-        {
-            gameOverFlag = true;
-        }
-        else
-        {
-            gameOverFlag = false;
-        }
+        return (timeLapse.dayNumber % 7 == 0 && timeLapse.dayNumber > 0);
     }
 
     public void takeMoney(int amount)

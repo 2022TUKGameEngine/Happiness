@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
 
 public class CharacterMove : MonoBehaviour
 {
@@ -13,6 +14,8 @@ public class CharacterMove : MonoBehaviour
 
     public int dig = 0;
     public GameObject sap;
+    public GameObject DigPanel;
+    public Image digGauge;
 
     private Vector3 playerMovement;
 
@@ -35,10 +38,12 @@ public class CharacterMove : MonoBehaviour
         if (playerAnimController.GetBool("isDigging"))
         {
             sap.SetActive(true);
+            DigPanel.SetActive(true);
         }
         else
         {
             sap.SetActive(false);
+            DigPanel.SetActive(false);
         }
     }
 
@@ -83,6 +88,7 @@ public class CharacterMove : MonoBehaviour
         {
             //print($"dig : {dig}");
             dig -= 1;
+            digGauge.fillAmount = dig / 100f;
             yield return new WaitForSeconds(0.25f);
 
         }

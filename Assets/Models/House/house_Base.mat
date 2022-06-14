@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Shader Graphs_PlayerBasic 1
+  m_Name: house_Base
   m_Shader: {fileID: -6465566751694194690, guid: 1ba5f896a175a46428fc0a06b0b58d2b, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 2
@@ -19,6 +19,10 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
+    - _EmissionTexture:
+        m_Texture: {fileID: 2800000, guid: 28875dcc99f091f4b9b90e5ce59edf6f, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _MainTexture:
         m_Texture: {fileID: 2800000, guid: be03c6b850b0b7d45a5a4eae61b237b9, type: 3}
         m_Scale: {x: 1, y: 1}
@@ -37,12 +41,13 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _EmissionPower: 0.01
+    - _EmissionPower: 0
     - _QueueControl: 0
     - _QueueOffset: 0
     - _RimLightPower: 1
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 0}
+    - _EmissionColor: {r: 1, g: 0.47088063, b: 0, a: 0}
   m_BuildTextureStacks: []
 --- !u!114 &9095344567565024000
 MonoBehaviour:

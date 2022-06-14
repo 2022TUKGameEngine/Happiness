@@ -91,6 +91,8 @@ public class DayNightCycle : MonoBehaviour
         DayCycle=Cycle.Morning;
     }
 
+    public Material m_Material;
+
     private void Update()
     {
         if(!pause)
@@ -137,6 +139,15 @@ public class DayNightCycle : MonoBehaviour
             daybreakEvents.Invoke();
 
         }
+        if(_hours>=19 || _hours <= 5)
+        {
+            m_Material.SetFloat("_EmissionPower", 10.0f);
+        }
+        else
+        {
+            m_Material.SetFloat("_EmissionPower", 0.0f);
+        }
+
 
         // if(_hours>=6&&_hours<12)
         // {

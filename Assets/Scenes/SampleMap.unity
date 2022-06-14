@@ -8868,6 +8868,7 @@ MonoBehaviour:
         m_CallState: 2
   DayCycle: 0
   m_Material: {fileID: 2100000, guid: 6aaa5bf234c96124fa75c8c1740f443e, type: 2}
+  m_Material_1: {fileID: 2100000, guid: 9c7d2f248a47ff043a39d1d891389d34, type: 2}
 --- !u!4 &1101988338
 Transform:
   m_ObjectHideFlags: 0

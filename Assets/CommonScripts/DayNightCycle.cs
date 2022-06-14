@@ -92,6 +92,7 @@ public class DayNightCycle : MonoBehaviour
     }
 
     public Material m_Material;
+    public Material m_Material_1;
 
     private void Update()
     {
@@ -142,10 +143,12 @@ public class DayNightCycle : MonoBehaviour
         if(_hours>=19 || _hours <= 5)
         {
             m_Material.SetFloat("_EmissionPower", 10.0f);
+            m_Material_1.SetFloat("_EmissionPower", 10.0f);
         }
         else
         {
             m_Material.SetFloat("_EmissionPower", 0.0f);
+            m_Material_1.SetFloat("_EmissionPower", 0.0f);
         }
 
 

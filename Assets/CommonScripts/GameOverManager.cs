@@ -9,10 +9,11 @@ public class GameOverManager : MonoBehaviour
     private static GameOverManager _instance;
     public GameObject gameOverCanvas;
     public TMPro.TMP_Text OverText;
+    public GameObject soundManager;
 
     private void Awake()
     {
-
+        
     }
 
     public static GameOverManager Instance
@@ -33,11 +34,13 @@ public class GameOverManager : MonoBehaviour
     {
         OverText.SetText("GameOver!!");
         gameOverCanvas.SetActive(true);
+        soundManager.SetActive(false);
     }
 
     public void setGameClear()
     {
         OverText.SetText("GameClear!!");
         gameOverCanvas.SetActive(true);
+        soundManager.SetActive(false);
     }
 }

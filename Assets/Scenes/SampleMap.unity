@@ -1242,6 +1242,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameOverCanvas: {fileID: 932045958}
   OverText: {fileID: 1296669324}
+  soundManager: {fileID: 398797480}
 --- !u!4 &116728689
 Transform:
   m_ObjectHideFlags: 0

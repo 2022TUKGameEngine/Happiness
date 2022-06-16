@@ -1055,7 +1055,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 93731193}
-  m_LocalRotation: {x: 0.3539414, y: 1e-45, z: 0, w: 0.9352676}
+  m_LocalRotation: {x: 0.3539414, y: 1e-45, z: -1e-45, w: 0.9352676}
   m_LocalPosition: {x: 51.13, y: 24.138, z: 31.29}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -12646,7 +12646,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1551440535
 Transform:
   m_ObjectHideFlags: 0
@@ -14678,7 +14678,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1756357182}
-  m_LocalRotation: {x: 0.3539414, y: 1e-45, z: 0, w: 0.9352676}
+  m_LocalRotation: {x: 0.3539414, y: 1e-45, z: -1e-45, w: 0.9352676}
   m_LocalPosition: {x: 51.13, y: 24.138, z: 31.29}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -21999,6 +21999,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1818622765, guid: 6189ffb9f7093324baf9ed46504ccf4d, type: 3}
+      propertyPath: thresholds.Array.data[0]
+      value: 100000
+      objectReference: {fileID: 0}
+    - target: {fileID: 1818622765, guid: 6189ffb9f7093324baf9ed46504ccf4d, type: 3}
+      propertyPath: thresholds.Array.data[1]
+      value: 200000
+      objectReference: {fileID: 0}
+    - target: {fileID: 1818622765, guid: 6189ffb9f7093324baf9ed46504ccf4d, type: 3}
+      propertyPath: thresholds.Array.data[2]
+      value: 300000
+      objectReference: {fileID: 0}
+    - target: {fileID: 1818622765, guid: 6189ffb9f7093324baf9ed46504ccf4d, type: 3}
+      propertyPath: thresholds.Array.data[3]
+      value: 400000
+      objectReference: {fileID: 0}
+    - target: {fileID: 1818622765, guid: 6189ffb9f7093324baf9ed46504ccf4d, type: 3}
+      propertyPath: thresholds.Array.data[4]
+      value: 500000
+      objectReference: {fileID: 0}
     - target: {fileID: 2051289015, guid: 6189ffb9f7093324baf9ed46504ccf4d, type: 3}
       propertyPath: m_Camera
       value: 

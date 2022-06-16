@@ -16,12 +16,13 @@ public class CharacterManager : MonoBehaviour
 
     public float PlayerStress;
     public int _money;
-    public int _level;
+  
 
     public int _FarmingLevel;
     public int _MiningLevel;
     public int _FishingLevel;
-    public int _DiggingLevel;
+
+    public int _level{get {return (_FarmingLevel+_MiningLevel+_FishingLevel)/4 + 1;}}
 
     private Collider detectedCollider = null;
 
@@ -159,7 +160,7 @@ public class CharacterManager : MonoBehaviour
 
     public void EarnLevel(int level)
     {
-        _level += level;
+        //_level += level;
     }
 
     public void EarnFarmingLevel()
@@ -174,9 +175,9 @@ public class CharacterManager : MonoBehaviour
 
     public void EarnMiningLevel()
     {
-        if(CharacterManager.data._money>=(_MiningLevel+1)*50)
+        if(CharacterManager.data._money>=(_MiningLevel+1)*60)
         {
-            CharacterManager.data.SpendMoney((_MiningLevel+1)*50);
+            CharacterManager.data.SpendMoney((_MiningLevel+1)*60);
             _MiningLevel+=1;
             Debug.Log(_MiningLevel);
         }

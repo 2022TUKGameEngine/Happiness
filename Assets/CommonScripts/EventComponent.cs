@@ -21,6 +21,7 @@ public class EventComponent : MonoBehaviour
 
             if (FarmingSystem.instance.isGroundFarmed(groundNum) > 0)
             {
+                Animation.SetTrigger("pickUp");
                 FarmingSystem.instance.watering(groundNum);
                 CharacterManager.data.ChangeStress(5);
 
@@ -29,6 +30,7 @@ public class EventComponent : MonoBehaviour
             {
                 if (CharacterManager.data.inventory.GetComponent<InventorySystem>().useItem(ITEM_TYPE.Seed))
                 {
+                    Animation.SetTrigger("pickUp");
                     FarmingSystem.instance.plantSeed(gameObject, groundNum);
                     CharacterManager.data.ChangeStress(5);
 
@@ -36,6 +38,7 @@ public class EventComponent : MonoBehaviour
             }
             else
             {
+                Animation.SetTrigger("pickUp");
                 FarmingSystem.instance.clearGround(groundNum);
                 CharacterManager.data.ChangeStress(5);
             }

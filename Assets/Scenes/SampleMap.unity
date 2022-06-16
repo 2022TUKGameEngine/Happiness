@@ -665,6 +665,10 @@ PrefabInstance:
       propertyPath: m_Size.z
       value: 1.9
       objectReference: {fileID: 0}
+    - target: {fileID: 2963037180065964270, guid: a81cff09ed9173047a7ed020eda28fce, type: 3}
+      propertyPath: Animation
+      value: 
+      objectReference: {fileID: 621355591}
     - target: {fileID: 7899571308303757838, guid: a81cff09ed9173047a7ed020eda28fce, type: 3}
       propertyPath: m_Name
       value: Farming Ground (9)
@@ -1532,6 +1536,10 @@ PrefabInstance:
       propertyPath: m_Size.z
       value: 1.9
       objectReference: {fileID: 0}
+    - target: {fileID: 2963037180065964270, guid: a81cff09ed9173047a7ed020eda28fce, type: 3}
+      propertyPath: Animation
+      value: 
+      objectReference: {fileID: 621355591}
     - target: {fileID: 7899571308303757838, guid: a81cff09ed9173047a7ed020eda28fce, type: 3}
       propertyPath: m_Name
       value: Farming Ground (6)
@@ -9657,6 +9665,10 @@ PrefabInstance:
       propertyPath: m_Size.z
       value: 1.9
       objectReference: {fileID: 0}
+    - target: {fileID: 2963037180065964270, guid: a81cff09ed9173047a7ed020eda28fce, type: 3}
+      propertyPath: Animation
+      value: 
+      objectReference: {fileID: 621355591}
     - target: {fileID: 7899571308303757838, guid: a81cff09ed9173047a7ed020eda28fce, type: 3}
       propertyPath: m_Name
       value: Farming Ground (10)
@@ -11500,6 +11512,10 @@ PrefabInstance:
       propertyPath: m_Size.z
       value: 1.9
       objectReference: {fileID: 0}
+    - target: {fileID: 2963037180065964270, guid: a81cff09ed9173047a7ed020eda28fce, type: 3}
+      propertyPath: Animation
+      value: 
+      objectReference: {fileID: 621355591}
     - target: {fileID: 7899571308303757838, guid: a81cff09ed9173047a7ed020eda28fce, type: 3}
       propertyPath: m_Name
       value: Farming Ground (8)
@@ -12019,6 +12035,10 @@ PrefabInstance:
       propertyPath: m_Size.z
       value: 1.9
       objectReference: {fileID: 0}
+    - target: {fileID: 2963037180065964270, guid: a81cff09ed9173047a7ed020eda28fce, type: 3}
+      propertyPath: Animation
+      value: 
+      objectReference: {fileID: 621355591}
     - target: {fileID: 7899571308303757838, guid: a81cff09ed9173047a7ed020eda28fce, type: 3}
       propertyPath: m_Name
       value: Farming Ground (5)
@@ -13836,6 +13856,10 @@ PrefabInstance:
       propertyPath: m_Size.z
       value: 1.9
       objectReference: {fileID: 0}
+    - target: {fileID: 2963037180065964270, guid: a81cff09ed9173047a7ed020eda28fce, type: 3}
+      propertyPath: Animation
+      value: 
+      objectReference: {fileID: 621355591}
     - target: {fileID: 7899571308303757838, guid: a81cff09ed9173047a7ed020eda28fce, type: 3}
       propertyPath: m_Name
       value: Farming Ground (11)
@@ -16475,6 +16499,10 @@ PrefabInstance:
       propertyPath: m_Size.z
       value: 1.9
       objectReference: {fileID: 0}
+    - target: {fileID: 2963037180065964270, guid: a81cff09ed9173047a7ed020eda28fce, type: 3}
+      propertyPath: Animation
+      value: 
+      objectReference: {fileID: 621355591}
     - target: {fileID: 7899571308303757838, guid: a81cff09ed9173047a7ed020eda28fce, type: 3}
       propertyPath: m_Name
       value: Farming Ground (7)
@@ -16556,6 +16584,10 @@ PrefabInstance:
       propertyPath: m_Size.z
       value: 1.9
       objectReference: {fileID: 0}
+    - target: {fileID: 2963037180065964270, guid: a81cff09ed9173047a7ed020eda28fce, type: 3}
+      propertyPath: Animation
+      value: 
+      objectReference: {fileID: 621355591}
     - target: {fileID: 7899571308303757838, guid: a81cff09ed9173047a7ed020eda28fce, type: 3}
       propertyPath: m_Name
       value: Farming Ground (4)

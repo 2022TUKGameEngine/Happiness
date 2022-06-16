@@ -56,7 +56,7 @@ public class FishEvent : EventComponent
         
         if (_fishTimer > _waitingTime)
         {
-            int level = Random.Range(_minLevel +  CharacterManager.data._FishingLevel, _maxLevel);
+            int level = Random.Range(_minLevel + (CharacterManager.data._FishingLevel-1), _maxLevel);
             InventorySystem.instance.GetItem(ITEM_TYPE.Fish, level);
             CharacterManager.data.ChangeStress(10);
 

@@ -111,9 +111,9 @@ public class FarmingSystem : MonoBehaviour
 
     public void plantSeed(GameObject s, int groundNum)
     {
-        int days = Random.Range(1, 4) - (CharacterManager.data._FarmingLevel/2);
+        int days = Random.Range(1, 4) - ((CharacterManager.data._FarmingLevel-1)/2);
         if (days < 1) days = 1;
-        int grd = Random.Range(1,100) + CharacterManager.data._FarmingLevel;
+        int grd = Random.Range(1,100) +(CharacterManager.data._FarmingLevel-1);
         if (grd > 97)
         {
             grd = 4;
@@ -131,7 +131,7 @@ public class FarmingSystem : MonoBehaviour
             grd = 1;
         }
 
-        days += grd - (CharacterManager.data._FarmingLevel/4);
+        days += grd - ((CharacterManager.data._FarmingLevel-1)/4);
         if (days < 1)
             days = 1;
         

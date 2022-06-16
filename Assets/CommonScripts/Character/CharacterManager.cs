@@ -22,7 +22,7 @@ public class CharacterManager : MonoBehaviour
     public int _MiningLevel;
     public int _FishingLevel;
 
-    public int _level{get {return (_FarmingLevel+_MiningLevel+_FishingLevel)/3 + 1;}}
+    public int _level{get {return (_FarmingLevel+_MiningLevel+_FishingLevel)/3;}}
 
     private Collider detectedCollider = null;
 
@@ -71,6 +71,9 @@ public class CharacterManager : MonoBehaviour
     void Awake()
     {
         data = this;
+        _FarmingLevel=1;
+        _MiningLevel=1;
+        _FishingLevel=1;
     }
 
     void Start()

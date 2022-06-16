@@ -58,7 +58,7 @@ public class MiningEvent : EventComponent
 
         if (_miningTimer > _waitingTime)
         {
-            int level = Random.Range(_minLevel+CharacterManager.data._MiningLevel,_maxLevel);
+            int level = Random.Range(_minLevel+(CharacterManager.data._MiningLevel-1),_maxLevel);
             InventorySystem.instance.GetItem(ITEM_TYPE.Ore, level);
             InitMiningTimer();
             CharacterManager.data.ChangeStress(13);

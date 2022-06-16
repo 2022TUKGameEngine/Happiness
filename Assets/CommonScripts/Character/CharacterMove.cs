@@ -76,7 +76,7 @@ public class CharacterMove : MonoBehaviour
     {
         if (playerAnimController.GetBool("isDigging"))
         {
-            dig += 2 + CharacterManager.data._MiningLevel;
+            dig += 4 + (CharacterManager.data._MiningLevel-1);
             CharacterManager.data.ChangeStress(0.5f);
         }
 
@@ -87,9 +87,9 @@ public class CharacterMove : MonoBehaviour
         while (dig > 0 && dig < 100)
         {
             //print($"dig : {dig}");
-            dig -= 5/CharacterManager.data._MiningLevel;
+            dig -= 3/CharacterManager.data._MiningLevel;
             digGauge.fillAmount = dig / 100f;
-            yield return new WaitForSeconds(0.25f);
+            yield return new WaitForSeconds(0.3f);
 
         }
         if (dig <= 0)

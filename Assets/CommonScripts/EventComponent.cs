@@ -76,5 +76,9 @@ public class EventComponent : MonoBehaviour
 
     protected virtual void Update() 
     {
-    }    
+    }
+
+    protected virtual void FixedUpdate()
+    {
+    }
 }

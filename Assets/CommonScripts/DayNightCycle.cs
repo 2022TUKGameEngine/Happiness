@@ -73,6 +73,8 @@ public class DayNightCycle : MonoBehaviour
     private Gradient sunColor;
 
     public UnityEvent daybreakEvents;
+    public UnityEvent morningEvents;
+    bool morningTicker = true;
 
     public  enum Cycle
     {
@@ -136,12 +138,17 @@ public class DayNightCycle : MonoBehaviour
         {
             _dayNumber++;
             _timeOfDay-=1;
+            morningTicker = true;
 
             daybreakEvents.Invoke();
-
         }
         if(_hours>=19 || _hours <= 5)
         {
+            if (morningTicker)
+            {
+                morningEvents.Invoke();
+                morningTicker = false;
+            }
             m_Material.SetFloat("_EmissionPower", 10.0f);
             m_Material_1.SetFloat("_EmissionPower", 3.0f);
         }
@@ -150,12 +157,13 @@ public class DayNightCycle : MonoBehaviour
             m_Material.SetFloat("_EmissionPower", 0.0f);
             m_Material_1.SetFloat("_EmissionPower", 0.5f);
         }
+        
 
 
         // if(_hours>=6&&_hours<12)
         // {
         //     DayCycle=Cycle.Morning;
-        //     SoundManager.instance.SwapBGM();
+        //     //SoundManager.instance.SwapBGM();
 
         // }
         // else if(_hours>=12&&_hours<18)
@@ -166,7 +174,7 @@ public class DayNightCycle : MonoBehaviour
         // else if(_hours>=18&&_hours<24)
         // {
         //     DayCycle=Cycle.Evening;
-        //     SoundManager.instance.SwapBGM();
+        //     //SoundManager.instance.SwapBGM();
         // }
         // else
         // {

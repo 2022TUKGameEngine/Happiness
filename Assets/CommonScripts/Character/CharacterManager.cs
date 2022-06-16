@@ -168,6 +168,7 @@ public class CharacterManager : MonoBehaviour
         if(PlayerStress > 200)
         {
             PlayerStress = 200;
+            GameOverManager.Instance.setGameOver();
         }
         if(PlayerStress<=0)
         {

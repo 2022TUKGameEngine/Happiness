@@ -19,10 +19,8 @@ public class DebugMode : MonoBehaviour
     
     void Start()
     {
-        if (debugMode)
-                debugText.SetActive(true);
-        else
-            debugText.SetActive(false);
+        
+        debugText.SetActive(false);
 
     }
 }

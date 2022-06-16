@@ -118,7 +118,7 @@ public class ItemData : MonoBehaviour
         if (itemType == ITEM_TYPE.NONE)
             return;
        
-        if (!isAlchemicable)
+        if (isAlchemicable)
             SellingPriceImage.GetComponentInChildren<TMP_Text>().text = itemPrice.ToString();
         else
             SellingPriceImage.GetComponentInChildren<TMP_Text>().text = (Random.Range(50,100)*itemPrice*itemPrice).ToString();

@@ -63,7 +63,12 @@ public class InventorySystem : MonoBehaviour
         {
             return false;
         }
-        inven[invenNum].changeNumber(-1);
-        return true;
+        if (inven[invenNum].numbers > 0)
+        {
+            inven[invenNum].changeNumber(-1);
+            return true;
+        }
+
+        return false;
     }
 }

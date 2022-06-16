@@ -46,26 +46,30 @@ public class FishEvent : EventComponent
     {
         _waitingTime = Random.Range(minFish, maxFish);
         _fishTimer = 0.0f;
-        _playerFishDuration = 0.0f;
+        //_playerFishDuration = 0.0f;
     }
 
     private void doFishing()
     {
         _fishTimer += Time.deltaTime;
-        _playerFishDuration += Time.deltaTime;
+        //_playerFishDuration += Time.deltaTime;
         
         if (_fishTimer > _waitingTime)
         {
             int level = Random.Range(_minLevel +  CharacterManager.data._FishingLevel, _maxLevel);
             InventorySystem.instance.GetItem(ITEM_TYPE.Fish, level);
             CharacterManager.data.ChangeStress(10);
-            InitFishTimer();
+
+            if (InventorySystem.instance.useItem(ITEM_TYPE.Bait))
+                InitFishTimer();
+            else
+                SwitchFishState();
         }
 
-        if (_playerFishDuration > fishMaxDuration)
-        {
-            SwitchFishState();
-        }
+        // if (_playerFishDuration > fishMaxDuration)
+        // {
+        //     SwitchFishState();
+        // }
     }
 
     private void SwitchFishState()

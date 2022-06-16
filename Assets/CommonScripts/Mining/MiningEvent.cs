@@ -5,6 +5,7 @@ using UnityEngine;
 public class MiningEvent : EventComponent
 {
     public Animator animController;
+    private static bool _isPlayerEvent = false;
     private bool _isMining = false;
     private float _waitingTime = 0.0f;
     private float _miningTimer = 0.0f;
@@ -15,6 +16,12 @@ public class MiningEvent : EventComponent
     public float maxMining = 5.0f;
     public int _minLevel = 1;
     public int _maxLevel = 3;
+
+    public void Start()
+    {
+        _isPlayerEvent = false;
+        _isMining = false;
+    }
 
     public override void TriggerEvent()
     {
@@ -30,6 +37,10 @@ public class MiningEvent : EventComponent
     
     protected override void Update()
     {
+        if (_isPlayerEvent == false){
+            _isMining = false;
+        }
+
         if (_isMining)
         {
             doMining();
@@ -72,6 +83,7 @@ public class MiningEvent : EventComponent
     private void SwitchMiningState()
     {
         _isMining = !_isMining;
+        _isPlayerEvent = _isMining;
         animController.SetBool("isMining", _isMining);
     }
 
@@ -82,5 +94,15 @@ public class MiningEvent : EventComponent
         float scaleVal = 1.0f - _scaleVal;
         Vector3 val = new Vector3(scaleVal, scaleVal, scaleVal);
         transform.localScale = val;
+    }
+
+    public static bool isPlayerEvent()
+    {
+        return _isPlayerEvent;
+    }
+
+    public static void setPlayerEvent(bool value)
+    {
+        _isPlayerEvent = value;
     }
 }

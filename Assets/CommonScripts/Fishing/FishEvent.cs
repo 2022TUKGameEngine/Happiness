@@ -6,6 +6,7 @@ public class FishEvent : EventComponent
 {
     public Animator animController;
     public GameObject chairObject;
+    public GameObject handObject;
     private bool _isFishing = false;
     private float _waitingTime = 0.0f;
     private float _fishTimer = 0.0f;
@@ -77,6 +78,7 @@ public class FishEvent : EventComponent
         _isFishing = !_isFishing;
         animController.SetBool("isFishing", _isFishing);
         chairObject.SetActive(_isFishing);
+        handObject.SetActive(_isFishing);
     }
 
     private bool IsStartFishing()

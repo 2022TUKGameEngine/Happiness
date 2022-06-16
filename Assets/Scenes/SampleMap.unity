@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 1225963676}
-  m_IndirectSpecularColor: {r: 0.12731896, g: 0.13414797, b: 0.12107769, a: 1}
+  m_IndirectSpecularColor: {r: 0.12731852, g: 0.13414773, b: 0.12107754, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -981,7 +981,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 93731193}
-  m_LocalRotation: {x: 0.35394144, y: 1e-45, z: 0, w: 0.9352676}
+  m_LocalRotation: {x: 0.3539414, y: -3e-45, z: 1e-45, w: 0.9352676}
   m_LocalPosition: {x: 51.13, y: 24.138, z: 31.29}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -7894,7 +7894,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 903568037086926554, guid: 8a7bc7aa56cbd4a48baa751357f581da, type: 3}
   m_PrefabInstance: {fileID: 8710013970998160941}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 8710013970998160942}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b25fbbc664ccc034583e827e38eb67ed, type: 3}
@@ -9164,6 +9164,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1182456676}
   - component: {fileID: 1182456675}
+  - component: {fileID: 1182456677}
   m_Layer: 0
   m_Name: MiningSpot
   m_TagString: EventCollider
@@ -9199,6 +9200,26 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 43
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1182456677
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1182456674}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8582dee1ece5ec944983901e5810c32b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EventType: 
+  GameStatus: {fileID: 0}
+  CharacterStatus: {fileID: 0}
+  Animation: {fileID: 621355591}
+  _maxSpotTime: 20
+  _currentSpotTime: 20
+  targetObject: {fileID: 1910212944}
+  playerObject: {fileID: 8710013970998160942}
 --- !u!1 &1185111880
 GameObject:
   m_ObjectHideFlags: 0
@@ -13793,7 +13814,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.7777778, y: 1}
+    m_SensorSize: {x: 1.9812666, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -13809,7 +13830,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1756357182}
-  m_LocalRotation: {x: 0.35394144, y: 1e-45, z: 0, w: 0.9352676}
+  m_LocalRotation: {x: 0.3539414, y: -3e-45, z: 1e-45, w: 0.9352676}
   m_LocalPosition: {x: 51.13, y: 24.138, z: 31.29}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -16427,7 +16448,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -271, y: 22}
+  m_AnchoredPosition: {x: -271.00003, y: 22}
   m_SizeDelta: {x: -337.4, y: 145.4}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2121733136
@@ -22165,3 +22186,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8a7bc7aa56cbd4a48baa751357f581da, type: 3}
+--- !u!1 &8710013970998160942 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8914898550928548210, guid: 8a7bc7aa56cbd4a48baa751357f581da, type: 3}
+  m_PrefabInstance: {fileID: 8710013970998160941}
+  m_PrefabAsset: {fileID: 0}

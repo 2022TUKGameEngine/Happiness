@@ -33,16 +33,16 @@ public class GameOverManager : MonoBehaviour
     public void setGameOver()
     {
         SceneManager.LoadScene("GameFail");
-        OverText.SetText("GameOver!!");
-        gameOverCanvas.SetActive(true);
-        soundManager.SetActive(false);
+        //OverText.SetText("GameOver!!");
+        //gameOverCanvas.SetActive(true);
+        //soundManager.SetActive(false);
     }
 
     public void setGameClear()
     {
         SceneManager.LoadScene("GameClear");
-        OverText.SetText("GameClear!!");
-        gameOverCanvas.SetActive(true);
-        soundManager.SetActive(false);
+        //OverText.SetText("GameClear!!");
+        //gameOverCanvas.SetActive(true);
+        //soundManager.SetActive(false);
     }
 }

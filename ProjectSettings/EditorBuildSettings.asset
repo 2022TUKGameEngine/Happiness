@@ -8,4 +8,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SampleMap.unity
     guid: 60a51af6970edbb468edc859b1025abe
+  - enabled: 1
+    path: Assets/Scenes/End/GameClear.unity
+    guid: cbddf06b422406d4c87d1b3cf1248ac7
+  - enabled: 1
+    path: Assets/Scenes/End/GameFail.unity
+    guid: c729229f644a673498764f71e2e0864a
   m_configObjects: {}

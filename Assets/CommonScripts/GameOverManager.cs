@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class GameOverManager : MonoBehaviour
 {
@@ -31,6 +32,7 @@ public class GameOverManager : MonoBehaviour
 
     public void setGameOver()
     {
+        SceneManager.LoadScene("GameFail");
         OverText.SetText("GameOver!!");
         gameOverCanvas.SetActive(true);
         soundManager.SetActive(false);
@@ -38,6 +40,7 @@ public class GameOverManager : MonoBehaviour
 
     public void setGameClear()
     {
+        SceneManager.LoadScene("GameClear");
         OverText.SetText("GameClear!!");
         gameOverCanvas.SetActive(true);
         soundManager.SetActive(false);

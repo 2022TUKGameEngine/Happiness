@@ -22,7 +22,7 @@ public class CharacterManager : MonoBehaviour
     public int _MiningLevel;
     public int _FishingLevel;
 
-    public int _level{get {return (_FarmingLevel+_MiningLevel+_FishingLevel)/4 + 1;}}
+    public int _level{get {return (_FarmingLevel+_MiningLevel+_FishingLevel)/3 + 1;}}
 
     private Collider detectedCollider = null;
 
@@ -88,7 +88,7 @@ public class CharacterManager : MonoBehaviour
         }
 
         Money.text = _money.ToString();
-        //Level.text = _level.ToString();
+        Level.text = _level.ToString();
     }
 
     private void OnTriggerEnter(Collider collision)

@@ -68,8 +68,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 25c56aabf9fd7324fbb478dd928dbb41, type: 2}
-  m_sharedMaterial: {fileID: -3871548080543617768, guid: 25c56aabf9fd7324fbb478dd928dbb41, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 260113f9fbefc3846858c7e2fa489ea7, type: 2}
+  m_sharedMaterial: {fileID: 6942098166200660907, guid: 260113f9fbefc3846858c7e2fa489ea7, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -93,12 +93,12 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 0.5
+  m_fontSizeBase: 1
   m_fontWeight: 400
   m_enableAutoSizing: 1
-  m_fontSizeMin: 18
-  m_fontSizeMax: 72
+  m_fontSizeMin: 0.1
+  m_fontSizeMax: 0.5
   m_fontStyle: 0
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
@@ -164,7 +164,7 @@ RectTransform:
   m_GameObject: {fileID: 1074746360}
   m_LocalRotation: {x: 0.3621432, y: 0.000000016038456, z: -0.000000006231175, w: 0.93212247}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.004262928, y: 0.004262928, z: 0.004262928}
+  m_LocalScale: {x: 0, y: 0, z: 0.004262928}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1887804725}
@@ -173,8 +173,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 700, y: 500}
+  m_AnchoredPosition: {x: 0, y: 0.3}
+  m_SizeDelta: {x: 3, y: 2}
   m_Pivot: {x: 0, y: 0}
 --- !u!222 &1074746364
 CanvasRenderer:
@@ -204,7 +204,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: d8f7cee0a63ecc6418232a3a05da1a79, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 9419b85acd99d3749875e1b0aee5c12a, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -247,7 +247,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isTalking: 0
-  serif: {fileID: 0}
+  serif: {fileID: 862275755}
 --- !u!1 &1887804724
 GameObject:
   m_ObjectHideFlags: 0
@@ -275,7 +275,7 @@ RectTransform:
   m_GameObject: {fileID: 1887804724}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.8, y: 0.6, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 862275754}
@@ -284,8 +284,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 1.2200012}
-  m_SizeDelta: {x: -39.999992, y: -237.56}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1887804727
 CanvasRenderer:
@@ -308,7 +308,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0.93157715, b: 0.7877358, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -338,7 +338,7 @@ GameObject:
   - component: {fileID: 2051289014}
   - component: {fileID: 2051289013}
   m_Layer: 0
-  m_Name: Canvas
+  m_Name: TalkingCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -521,8 +521,8 @@ MonoBehaviour:
   TakeFunctions:
     m_PersistentCalls:
       m_Calls: []
-  serif: {fileID: 0}
-  progress: 0
+  NName: {fileID: 0}
+  serif: {fileID: 11400000, guid: bc63d356960bbaa4a88397b6f776344d, type: 2}
   quested: 0
   thresholds: e8030000d0070000b80b0000a00f000088130000
   WM: {fileID: 0}
@@ -533,6 +533,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3049103554145367831}
     m_Modifications:
+    - target: {fileID: -8834072954491864287, guid: a371e53131fdeaa42824fc46c59ccf29, type: 3}
+      propertyPath: m_Name
+      value: Bip001 Spine
+      objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a371e53131fdeaa42824fc46c59ccf29, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -589,14 +593,106 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -8275450696849953490, guid: a371e53131fdeaa42824fc46c59ccf29, type: 3}
+      propertyPath: m_Name
+      value: Bip001 L Toe0
+      objectReference: {fileID: 0}
+    - target: {fileID: -7562536460066630632, guid: a371e53131fdeaa42824fc46c59ccf29, type: 3}
+      propertyPath: m_Name
+      value: Bip001 L Hand
+      objectReference: {fileID: 0}
+    - target: {fileID: -7322672975274376277, guid: a371e53131fdeaa42824fc46c59ccf29, type: 3}
+      propertyPath: m_Name
+      value: Bip001 Spine1
+      objectReference: {fileID: 0}
+    - target: {fileID: -6278971082601217883, guid: a371e53131fdeaa42824fc46c59ccf29, type: 3}
+      propertyPath: m_Name
+      value: Bip001 L Forearm
+      objectReference: {fileID: 0}
+    - target: {fileID: -5594242592443182070, guid: a371e53131fdeaa42824fc46c59ccf29, type: 3}
+      propertyPath: m_Name
+      value: Bip001 Neck
+      objectReference: {fileID: 0}
+    - target: {fileID: -5354097316523450408, guid: a371e53131fdeaa42824fc46c59ccf29, type: 3}
+      propertyPath: m_Name
+      value: Bip001 R Foot
+      objectReference: {fileID: 0}
+    - target: {fileID: -3363155073988674882, guid: a371e53131fdeaa42824fc46c59ccf29, type: 3}
+      propertyPath: m_Name
+      value: Bip001
+      objectReference: {fileID: 0}
+    - target: {fileID: -3116324831180497305, guid: a371e53131fdeaa42824fc46c59ccf29, type: 3}
+      propertyPath: m_Name
+      value: Bip001 R Calf
+      objectReference: {fileID: 0}
+    - target: {fileID: -2971407395798411339, guid: a371e53131fdeaa42824fc46c59ccf29, type: 3}
+      propertyPath: m_Name
+      value: Bip001 R Clavicle
+      objectReference: {fileID: 0}
+    - target: {fileID: -1533636669363327519, guid: a371e53131fdeaa42824fc46c59ccf29, type: 3}
+      propertyPath: m_Name
+      value: Bip001 L Foot
+      objectReference: {fileID: 0}
+    - target: {fileID: -326033440982357423, guid: a371e53131fdeaa42824fc46c59ccf29, type: 3}
+      propertyPath: m_Name
+      value: Bip001 R Thigh
+      objectReference: {fileID: 0}
+    - target: {fileID: -13271082630376631, guid: a371e53131fdeaa42824fc46c59ccf29, type: 3}
+      propertyPath: m_Name
+      value: Bip001 Pelvis
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: a371e53131fdeaa42824fc46c59ccf29, type: 3}
       propertyPath: m_Name
       value: workman
+      objectReference: {fileID: 0}
+    - target: {fileID: 1100060012718322039, guid: a371e53131fdeaa42824fc46c59ccf29, type: 3}
+      propertyPath: m_Name
+      value: Bip001 R Forearm
+      objectReference: {fileID: 0}
+    - target: {fileID: 1234315960883811204, guid: a371e53131fdeaa42824fc46c59ccf29, type: 3}
+      propertyPath: m_Name
+      value: Bip001 L Calf
       objectReference: {fileID: 0}
     - target: {fileID: 1432486168942080045, guid: a371e53131fdeaa42824fc46c59ccf29, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 48d9cf6a6f0c0ad48bbba319ceea1178, type: 2}
+    - target: {fileID: 1649351718390269484, guid: a371e53131fdeaa42824fc46c59ccf29, type: 3}
+      propertyPath: m_Name
+      value: Bip001 L Toe0Nub
+      objectReference: {fileID: 0}
+    - target: {fileID: 1853120360629308579, guid: a371e53131fdeaa42824fc46c59ccf29, type: 3}
+      propertyPath: m_Name
+      value: Bip001 L Clavicle
+      objectReference: {fileID: 0}
+    - target: {fileID: 2728358157928581489, guid: a371e53131fdeaa42824fc46c59ccf29, type: 3}
+      propertyPath: m_Name
+      value: Bip001 L UpperArm
+      objectReference: {fileID: 0}
+    - target: {fileID: 4219552715650871962, guid: a371e53131fdeaa42824fc46c59ccf29, type: 3}
+      propertyPath: m_Name
+      value: Bip001 L Thigh
+      objectReference: {fileID: 0}
+    - target: {fileID: 5191728774039191468, guid: a371e53131fdeaa42824fc46c59ccf29, type: 3}
+      propertyPath: m_Name
+      value: Bip001 HeadNub
+      objectReference: {fileID: 0}
+    - target: {fileID: 7815535406501859540, guid: a371e53131fdeaa42824fc46c59ccf29, type: 3}
+      propertyPath: m_Name
+      value: Bip001 R Hand
+      objectReference: {fileID: 0}
+    - target: {fileID: 8359398832749700265, guid: a371e53131fdeaa42824fc46c59ccf29, type: 3}
+      propertyPath: m_Name
+      value: Bip001 Footsteps
+      objectReference: {fileID: 0}
+    - target: {fileID: 8531361833558206584, guid: a371e53131fdeaa42824fc46c59ccf29, type: 3}
+      propertyPath: m_Name
+      value: Bip001 Head
+      objectReference: {fileID: 0}
+    - target: {fileID: 9146060085734904216, guid: a371e53131fdeaa42824fc46c59ccf29, type: 3}
+      propertyPath: m_Name
+      value: Bip001 R UpperArm
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a371e53131fdeaa42824fc46c59ccf29, type: 3}
 --- !u!1 &2779282092593609139 stripped

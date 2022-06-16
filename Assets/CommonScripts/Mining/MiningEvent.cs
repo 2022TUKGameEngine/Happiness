@@ -5,6 +5,7 @@ using UnityEngine;
 public class MiningEvent : EventComponent
 {
     public Animator animController;
+    public GameObject handleObject;
     private static bool _isPlayerEvent = false;
     private bool _isMining = false;
     private float _waitingTime = 0.0f;
@@ -21,6 +22,7 @@ public class MiningEvent : EventComponent
     {
         _isPlayerEvent = false;
         _isMining = false;
+        handleObject.SetActive(false);
     }
 
     public override void TriggerEvent()
@@ -39,6 +41,7 @@ public class MiningEvent : EventComponent
     {
         if (_isPlayerEvent == false){
             _isMining = false;
+            handleObject.SetActive(false);
         }
 
         if (_isMining)
@@ -85,6 +88,7 @@ public class MiningEvent : EventComponent
         _isMining = !_isMining;
         _isPlayerEvent = _isMining;
         animController.SetBool("isMining", _isMining);
+        handleObject.SetActive(_isMining);
     }
 
     public void InitScale()

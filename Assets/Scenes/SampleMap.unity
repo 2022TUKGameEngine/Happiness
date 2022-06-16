@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 1225963676}
-  m_IndirectSpecularColor: {r: 0.12731852, g: 0.13414773, b: 0.12107754, a: 1}
+  m_IndirectSpecularColor: {r: 0.12731896, g: 0.13414797, b: 0.12107769, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1051,7 +1051,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 93731193}
-  m_LocalRotation: {x: 0.35394144, y: 1e-45, z: -1e-45, w: 0.9352676}
+  m_LocalRotation: {x: 0.3539414, y: 1e-45, z: 0, w: 0.9352676}
   m_LocalPosition: {x: 51.13, y: 24.138, z: 31.29}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -9313,6 +9313,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 550222978}
+        m_TargetAssemblyTypeName: ItemDropSpaceManager, Assembly-CSharp
+        m_MethodName: itemDrop
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   morningEvents:
     m_PersistentCalls:
       m_Calls:
@@ -14626,7 +14638,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.7441047, y: 1}
+    m_SensorSize: {x: 1.7777778, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -14642,7 +14654,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1756357182}
-  m_LocalRotation: {x: 0.35394144, y: 1e-45, z: -1e-45, w: 0.9352676}
+  m_LocalRotation: {x: 0.3539414, y: 1e-45, z: 0, w: 0.9352676}
   m_LocalPosition: {x: 51.13, y: 24.138, z: 31.29}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0

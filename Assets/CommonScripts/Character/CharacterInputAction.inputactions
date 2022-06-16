@@ -51,6 +51,15 @@
                     "initialStateCheck": false
                 },
                 {
+                    "name": "GameEndDebug",
+                    "type": "Value",
+                    "id": "2d388d17-ccf5-4b93-a251-4640f29b61f6",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
                     "name": "Dig",
                     "type": "Button",
                     "id": "27ff3163-eefa-46e5-8a03-8fc647d78b1c",
@@ -162,50 +171,6 @@
                 },
                 {
                     "name": "",
-                    "id": "84095b1f-6012-49e4-9e2a-729a71f366b1",
-                    "path": "<Keyboard>/f2",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "DebugStage",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "1ad8ed4a-3363-439f-a346-b084126ed002",
-                    "path": "<Keyboard>/f3",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "DebugStage",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "3fb66685-2bda-40f7-928e-9b332c6fb29d",
-                    "path": "<Keyboard>/f4",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "DebugStage",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "2af17e52-5046-4d0b-a6a0-cc70b1c43e1e",
-                    "path": "<Keyboard>/f5",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "DebugStage",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "11b542b6-58a0-4970-ac54-13870dd59892",
                     "path": "<Keyboard>/leftArrow",
                     "interactions": "",
@@ -225,6 +190,61 @@
                     "action": "Dig",
                     "isComposite": false,
                     "isPartOfComposite": false
+                },
+                {
+                    "name": "2D Vector",
+                    "id": "6dd96733-23fa-4a83-bf12-f017245abf9e",
+                    "path": "2DVector",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "GameEndDebug",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "Up",
+                    "id": "8fe1cd56-7496-468d-a79c-48e9273b3f03",
+                    "path": "<Keyboard>/f2",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "GameEndDebug",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "Down",
+                    "id": "3c7918f4-a299-457b-ba18-317d3145d398",
+                    "path": "<Keyboard>/f3",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "GameEndDebug",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "Left",
+                    "id": "43023a77-d784-4cd1-a183-f8182b445280",
+                    "path": "<Keyboard>/f4",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "GameEndDebug",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "Right",
+                    "id": "f41767a1-906d-4ea8-bb27-cd8492f6e382",
+                    "path": "<Keyboard>/f5",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "GameEndDebug",
+                    "isComposite": false,
+                    "isPartOfComposite": true
                 }
             ]
         },

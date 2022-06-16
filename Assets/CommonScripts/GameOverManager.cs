@@ -6,14 +6,13 @@ using TMPro;
 
 public class GameOverManager : MonoBehaviour
 {
-    private static GameOverManager _instance;
+    public static GameOverManager _instance;
     public GameObject gameOverCanvas;
     public TMPro.TMP_Text OverText;
     public GameObject soundManager;
 
     private void Awake()
     {
-        
     }
 
     public static GameOverManager Instance

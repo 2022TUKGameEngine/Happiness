@@ -135,6 +135,30 @@ public class CharacterManager : MonoBehaviour
         }
     }
 
+    void OnGameEndDebug(InputValue value)
+    {
+        Vector2 input = value.Get<Vector2>();
+        if (input.x == -1)
+        {
+            //4
+        }
+        else if (input.x == 1)
+        {
+            //5
+        }
+        else if (input.y == -1)
+        {
+            //3
+            GameOverManager.Instance.setGameOver();
+        }
+        else if (input.y == 1)
+        {
+            //2
+            GameOverManager.Instance.setGameClear();
+        }
+    }
+
+
     public void ChangeStress(float amount)
     {
         PlayerStress += amount;
